@@ -5,7 +5,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "export": "next build && next export",
+    "release": "standard-version && git push --follow-tags origin master",
+    "release:develop": "standard-version && git push --follow-tags origin develop"
   },
   "dependencies": {
     "next": "latest",
