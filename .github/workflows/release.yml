@@ -1,17 +1,22 @@
 name: Production Deployment workflow
 
 on:
+  release:
+    types: ['published']
   push:
+    tags:
+      - 'v*'
     branches:
       - master
 
 jobs:
   deploy:
+    name: 'Deploy'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
 
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -25,6 +30,8 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.PROD_NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_TO_PROD: true
+          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
         with:
           args: deploy --dir=out --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
