@@ -1,4 +1,5 @@
-# PotPay Website
+# PotPay Website 
+![Production](https://github.com/PotPay/potpay-website/workflows/Production/badge.svg)
 
 ### NextJS + TypeScript + Strapi CMS + GraphQL + Netlify
 
