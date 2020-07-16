@@ -7,7 +7,17 @@ const pathList = [
         route: "/",
         page: "/",
         query: {}
-    }
+    },
+    {
+        route: "/en",
+        page: "/[lang]",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar",
+        page: "/[lang]",
+        query: {lang: "ar"}
+    },
 ]
 
 const nextConfig = {
