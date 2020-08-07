@@ -4,7 +4,6 @@ import {LocaleProvider} from "../context/LocaleContext";
 import useTranslation from "../hooks/useTranslations";
 import {PageTransition} from 'next-page-transitions';
 
-
 const PotPayApp = ({Component, pageProps}) => {
     const {locale} = useTranslation();
 
@@ -26,5 +25,8 @@ PotPayApp.getInitialProps = async ({Component, ctx}) => {
 
     return {pageProps};
 };
+
+//Added by Hassan for the form submission
+
 
 export default PotPayApp;
