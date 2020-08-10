@@ -71,6 +71,7 @@ export const Form = () => {
         setEmailError(error);
         return error;
     };
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const firstNameValidationError = validateFirstName(firstName);
@@ -90,49 +91,48 @@ export const Form = () => {
     };
     return (
         <form noValidate={true} onSubmit={handleSubmit}>
-            <div>
-                Request a Demo
-            </div>
 
-            <div>
-                <label htmlFor="firstName">First Name</label>
-                <input id="firstName" value={firstName} onChange={handleFirstNameChange} />
-                <span className="error">{firstNameError}</span>
+            <div style={{position:"absolute", bottom:"430px", right:"420px"}}>
+                <h1>
+                    Request a Demo
+                </h1>
             </div>
+                <div style={{position:"absolute", bottom: "345px", right: "450px", padding: "10px"}}>
+                    <label style={{display: "block", padding:"8px"}} htmlFor="firstName">First Name</label>
+                    <input style={{marginRight:"10px", borderRadius: '100px'}} id="firstName" value={firstName} onChange={handleFirstNameChange} />
+                    <span className="error">{firstNameError}</span>
+                </div>
+                <div style={{position:"absolute", bottom: "345px", right: "250px", padding: "10px"}}>
+                    <label style={{display: "block", padding:"8px"}} htmlFor="lastName">Last Name</label>
+                    <input style={{borderRadius: '100px'}} id="lastName" value={lastName} onChange={handleLastNameChange} />
+                    <span className="error">{lastNameError}</span>
+                </div>
 
-            <div>
-                <label htmlFor="lastName">Last Name</label>
-                <input id="lastName" value={lastName} onChange={handleLastNameChange} />
-                <span className="error">{lastNameError}</span>
-            </div>
+                <div style={{position:"absolute", bottom: "280px", right: "250px", padding: "10px"}}>
+                    <label style={{display: "block", padding:"8px"}} htmlFor="company">Company</label>
+                    <input style={{borderRadius: '100px', width:"370px"}} id="company" value={company} onChange={handleCompanyChange}/>
+                    <span className="error">{companyError}</span>
+                </div>
+                <div style={{position:"absolute", bottom: "220px", right: "250px", padding: "10px"}}>
+                    <label style={{display: "block", padding:"8px"}} htmlFor="email">Email</label>
+                    <input style={{ borderRadius: '100px', width:"370px"}} id="email" value={email} onChange={handleEmailChange}/>
+                    <span className="error">{emailError}</span>
+                </div>
 
-            <div>
-                <label htmlFor="company">Company</label>
-                <input id="company" value={company} onChange={handleCompanyChange}/>
-                <span className="error">{companyError}</span>
-            </div>
-
-            <div>
-                <label htmlFor="email">Email</label>
-                <input id="email" value={email} onChange={handleEmailChange}/>
-                <span className="error">{emailError}</span>
-            </div>
-
-            <div>
-            <button type="submit" disabled={submitted && submitResult.success}>
-                Submit
-            </button>
-            </div>
-            {/*{*/}
-            {/*    submitted && (*/}
-            {/*        <div>*/}
-            {/*        <span className={submitResult.success ? "submit-success" : "submit-failure"}>*/}
-            {/*            {submitResult.message}*/}
-            {/*        </span>*/}
-            {/*        </div>*/}
-            {/*    )*/}
-            {/*};*/}
-
+                <div>
+                <button style={{borderRadius: '100px', margin:"30px 10px 25px 25px", position:"absolute", bottom: "160px", right: "250px"}} type="submit" disabled={submitted && submitResult.success}>
+                    Submit
+                </button>
+                </div>
+                {/*{*/}
+                {/*    submitted && (*/}
+                {/*        <div>*/}
+                {/*        <span className={submitResult.success ? "submit-success" : "submit-failure"}>*/}
+                {/*            {submitResult.message}*/}
+                {/*        </span>*/}
+                {/*        </div>*/}
+                {/*    )*/}
+                {/*};*/}
         </form>
     );
 }
