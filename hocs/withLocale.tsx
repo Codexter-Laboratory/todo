@@ -10,23 +10,26 @@ interface LangProps {
 }
 
 export default (WrappedPage: NextPage<any>) => {
-    const WithLocale: NextPage<any, LangProps> = ({locale, token, ...pageProps}) => {
+    const WithLocale: NextPage<any, LangProps> = ({locale, ...pageProps}) => {
         if (!locale) {
             // no valid locale detected
             return <Error statusCode={404}/>
         }
 
-        // if(!token)
         return (
             <LocaleProvider lang={locale}>
-                <WrappedPage {...pageProps} token={token}/>
+                <WrappedPage {...pageProps} />
             </LocaleProvider>
         )
-    };
+    }
 
     WithLocale.getInitialProps = async ctx => {
         // retrieve initial props of the wrapped component
         let pageProps = {};
+
+        if(WrappedPage.getInitialProps) {
+            pageProps = await WrappedPage.getInitialProps(ctx);
+        }
 
         if (typeof ctx.query.lang !== 'string' || !isLocale(ctx.query.lang)) {
             // in case the value of 'lang' is not a valid locale return it as undefined

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const Index = () => {
     const router = useRouter();
     useEffect(() => {
-        router.replace(`/${getInitLocale()}`).then(res => res);
+        router.replace(`/${getInitLocale()}`);
     });
     return (
         <Head>
