@@ -10,7 +10,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({pageData}: Props) => {
-    console.log(pageData, 'page peropsi')
 
     return(
         <></>
@@ -18,18 +17,20 @@ const Home: NextPage<Props> = ({pageData}: Props) => {
 }
 
 Home.getInitialProps = async (ctx) => {
-    // let res = await Fetcher('page_home')
 
-    const res = await axios({
-        url: 'http://localhost:1337/graphql',
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        data: JSON.stringify({
-            query: getPageData('page_home')
-        })
-    });
+    let res = await Fetcher('page_home')
+    {
+        axios({
+            url: 'http://localhost:1337/graphql',
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: JSON.stringify({
+                query: getPageData('page_home')
+            })
+        });
+    }
     let pageData = res.data;
     return {
         pageData
