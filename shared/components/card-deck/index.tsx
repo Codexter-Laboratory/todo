@@ -1,9 +1,9 @@
 import React from 'react';
 
-export interface deckProps{
+export interface Props{
     children: any;
 }
-const CardDeck = (props:deckProps) => {
+const CardDeck = (props:Props) => {
     return (
         <div>
             {props.children}

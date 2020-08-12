@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import style from './style.module.scss'
 
-export interface formData{
+export interface FormData{
     firstName: string;
     lastName: string;
     company: string;
@@ -79,7 +79,8 @@ export const Form = () => {
         const lastNameValidationError = validateLastName(lastName);
         const companyValidationError = validateCompany(company);
         const emailValidationError = validateEmail(email);
-        if (firstNameValidationError === "" && lastNameValidationError === "" && companyValidationError === "" &&  emailValidationError === "") {
+        if (firstNameValidationError === ("" || null) && lastNameValidationError === ("" || null)
+            && companyValidationError === ("" || null) &&  emailValidationError === ("" || null) ) {
             const result = {
                 firstName,
                 lastName,
@@ -100,13 +101,13 @@ export const Form = () => {
                 </h1>
             </div>
 
-                <div className={style.fname}>
+                <div className={style.firstName}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="firstName">First Name</label>
                     <input style={{borderRadius: '100px', height:"30px"}} id="firstName" value={firstName} onChange={handleFirstNameChange} />
                     <span className="error">{firstNameError}</span>
                 </div>
 
-                <div className={style.lname}>
+                <div className={style.lastName}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="lastName">Last Name</label>
                     <input style={{borderRadius: '100px', height:"30px"}} id="lastName" value={lastName} onChange={handleLastNameChange} />
                     <span className="error">{lastNameError}</span>
@@ -130,26 +131,15 @@ export const Form = () => {
                 </button>
                 </div>
             </div>
-                {/*{*/}
-                {/*    submitted && (*/}
-                {/*        <div>*/}
-                {/*        <span className={submitResult.success ? "submit-success" : "submit-failure"}>*/}
-                {/*            {submitResult.message}*/}
-                {/*        </span>*/}
-                {/*        </div>*/}
-                {/*    )*/}
-                {/*};*/}
         </form>
     );
 }
 
 export default Form;
 
-// the following code should be added to the App.tsx file
-
 /*
-const handleOnSubmit(data: formData) {
-    console.info("formData", data);
+const handleOnSubmit(data: FormData) {
+    console.info("FormData", data);
     return {
         message: "Your request has been successfully sent!",
         success: true

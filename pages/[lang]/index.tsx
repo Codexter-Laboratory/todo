@@ -2,12 +2,12 @@ import React from 'react';
 import {NextPage} from "next";
 import useTranslation from 'hooks/useTranslations';
 import withLocale from "hocs/withLocale";
-import Form from "../../shared/components/form";
-import Cards from "../../shared/components/card";
-import Footer from "../../shared/components/footer";
-import Paragraph from "../../shared/components/paragraph";
-import Service from "../../shared/components/service";
-import CardDeck from "../../shared/components/card-deck";
+import Form from "shared/components/form";
+import Cards from "shared/components/card";
+import Footer from "shared/components/footer";
+import Paragraph from "shared/components/paragraph";
+import Service from "shared/components/service";
+import CardDeck from "shared/components/card-deck";
 
 interface Props {
     pageData: any;

@@ -2,7 +2,7 @@ import React from 'react';
 import Card from "react-bootstrap/cjs/Card";
 import styles from './style.module.scss';
 
-export interface cardProps{
+export interface Props{
     title: string;
     description: string;
     sub_description: string;
@@ -10,7 +10,7 @@ export interface cardProps{
     children: any;
 }
 
-const Cards = (props: cardProps) => {
+const Cards = (props: Props) => {
     console.log(props);
         return (
                 <Card className={styles.CardStyle}>
