@@ -26,7 +26,8 @@ const Home: NextPage<Props> = () => {
             <Form/>
             <CardDeck>
                 <Cards title="01." description="Install PotPay's application on your POS terminal"
-                    sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
+                    sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/pic.ico">
+                </Cards>
             </CardDeck>
 
         </div>
