@@ -11,6 +11,7 @@
     "release:develop": "standard-version && git push --follow-tags origin develop"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "next": "latest",
     "next-page-transitions": "^1.0.0-beta.2",
     "react": "~16.13.1",

@@ -18,6 +18,16 @@ const pathList = [
         page: "/[lang]",
         query: {lang: "ar"}
     },
+    {
+        route: "/en/business/home",
+        page: "/[lang]/business/home",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/business/home",
+        page: "/[lang]/business/home",
+        query: {lang: "ar"}
+    },
 ]
 
 const nextConfig = {
