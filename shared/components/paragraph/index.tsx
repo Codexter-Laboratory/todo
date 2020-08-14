@@ -1,5 +1,5 @@
 import React from 'react';
-
+import style from './style.module.scss';
 interface Props {
     header: string;
     content: string;
@@ -12,7 +12,7 @@ const Paragraph = (props: Props) => {
     return (
         <div>
             <h1>{props.header}</h1>
-            <div>
+            <div className={style.paragraph_body}>
                 {props.content}
             </div>
             <div>

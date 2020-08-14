@@ -1,9 +1,13 @@
 import React from 'react';
 
-const LogoDeck = () => {
+export interface Props{
+    children: any;
+}
+const LogoDeck = (props:Props) => {
     return (
-        <>
-        </>
+        <div>
+            {props.children}
+        </div>
     )
 }
 
