@@ -1,10 +1,13 @@
 import React from 'react';
 
-const CardDeck = () => {
+export interface Props{
+    children: any;
+}
+const CardDeck = (props:Props) => {
     return (
-        <>
-        </>
-
+        <div>
+            {props.children}
+        </div>
     )
 }
 

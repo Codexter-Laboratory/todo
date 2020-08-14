@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
+import style from './style.module.scss'
 
-export interface formData{
+export interface FormData{
     firstName: string;
     lastName: string;
     company: string;
@@ -78,7 +79,8 @@ export const Form = () => {
         const lastNameValidationError = validateLastName(lastName);
         const companyValidationError = validateCompany(company);
         const emailValidationError = validateEmail(email);
-        if (firstNameValidationError === "" && lastNameValidationError === "" && companyValidationError === "" &&  emailValidationError === "") {
+        if (firstNameValidationError === ("" || null) && lastNameValidationError === ("" || null)
+            && companyValidationError === ("" || null) &&  emailValidationError === ("" || null) ) {
             const result = {
                 firstName,
                 lastName,
@@ -91,59 +93,53 @@ export const Form = () => {
     };
     return (
         <form noValidate={true} onSubmit={handleSubmit}>
+            <div>
 
-            <div style={{position:"absolute", bottom:"430px", right:"420px"}}>
+            <div className={style.demo}>
                 <h1>
                     Request a Demo
                 </h1>
             </div>
-                <div style={{position:"absolute", bottom: "345px", right: "450px", padding: "10px"}}>
+
+                <div className={style.firstName}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="firstName">First Name</label>
-                    <input style={{marginRight:"10px", borderRadius: '100px'}} id="firstName" value={firstName} onChange={handleFirstNameChange} />
+                    <input style={{borderRadius: '100px', height:"30px"}} id="firstName" value={firstName} onChange={handleFirstNameChange} />
                     <span className="error">{firstNameError}</span>
                 </div>
-                <div style={{position:"absolute", bottom: "345px", right: "250px", padding: "10px"}}>
+
+                <div className={style.lastName}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="lastName">Last Name</label>
-                    <input style={{borderRadius: '100px'}} id="lastName" value={lastName} onChange={handleLastNameChange} />
+                    <input style={{borderRadius: '100px', height:"30px"}} id="lastName" value={lastName} onChange={handleLastNameChange} />
                     <span className="error">{lastNameError}</span>
                 </div>
 
-                <div style={{position:"absolute", bottom: "280px", right: "250px", padding: "10px"}}>
+                <div className={style.company}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="company">Company</label>
-                    <input style={{borderRadius: '100px', width:"370px"}} id="company" value={company} onChange={handleCompanyChange}/>
+                    <input style={{borderRadius: '100px', width:"370px", height:"30px"}} id="company" value={company} onChange={handleCompanyChange}/>
                     <span className="error">{companyError}</span>
                 </div>
-                <div style={{position:"absolute", bottom: "220px", right: "250px", padding: "10px"}}>
+
+                <div className={style.email}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="email">Email</label>
-                    <input style={{ borderRadius: '100px', width:"370px"}} id="email" value={email} onChange={handleEmailChange}/>
+                    <input style={{ borderRadius: '100px', width:"370px", height:"30px"}} id="email" value={email} onChange={handleEmailChange}/>
                     <span className="error">{emailError}</span>
                 </div>
 
                 <div>
-                <button style={{borderRadius: '100px', margin:"30px 10px 25px 25px", position:"absolute", bottom: "160px", right: "250px"}} type="submit" disabled={submitted && submitResult.success}>
+                <button className={style.button} type="submit" disabled={submitted && submitResult.success}>
                     Submit
                 </button>
                 </div>
-                {/*{*/}
-                {/*    submitted && (*/}
-                {/*        <div>*/}
-                {/*        <span className={submitResult.success ? "submit-success" : "submit-failure"}>*/}
-                {/*            {submitResult.message}*/}
-                {/*        </span>*/}
-                {/*        </div>*/}
-                {/*    )*/}
-                {/*};*/}
+            </div>
         </form>
     );
 }
 
 export default Form;
 
-// the following code should be added to the App.tsx file
-
 /*
-const handleOnSubmit(data: formData) {
-    console.info("formData", data);
+const handleOnSubmit(data: FormData) {
+    console.info("FormData", data);
     return {
         message: "Your request has been successfully sent!",
         success: true

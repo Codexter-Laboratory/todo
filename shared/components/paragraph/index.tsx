@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface parProps {
+interface Props {
     header: string;
     content: string;
     subContent:string;
@@ -8,7 +8,7 @@ interface parProps {
     
 }
 
-const Paragraph = (props: parProps) => {
+const Paragraph = (props: Props) => {
     return (
         <div>
             <h1>{props.header}</h1>

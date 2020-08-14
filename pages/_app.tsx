@@ -26,7 +26,6 @@ PotPayApp.getInitialProps = async ({Component, ctx}) => {
     return {pageProps};
 };
 
-//Added by Hassan for the form submission
 
 
 export default PotPayApp;
