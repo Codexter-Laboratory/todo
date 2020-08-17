@@ -1,6 +1,5 @@
-export interface NavLinksInterface {
-
-    title: {
+export interface LabelsInterface {
+    name: {
         ar: string,
         en: string
     };

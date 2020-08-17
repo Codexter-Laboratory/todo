@@ -9,6 +9,7 @@ import Paragraph from "shared/components/paragraph";
 import Service from "shared/components/service";
 import CardDeck from "shared/components/card-deck";
 import Header from "../../shared/components/header";
+import Image from "../../shared/components/image";
 
 interface Props {
     pageData: any;
@@ -18,19 +19,23 @@ const Home: NextPage<Props> = () => {
     const {locale} = useTranslation();
 
     return (
-        <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'} >
+        <div className= "page-wrapper"  dir={locale === 'ar' ? 'rtl' : 'ltr'} >
 
             <Header></Header>
 
-            <Paragraph header="Say Hello to Digital Receipts" content="Unlock the power of your in-store data by digitizing your customer's receipts" subContent="PotPay" children=""/>
-            <Footer/>
+            <Image image="assets/desktop-2.png"/>
 
-            <Service  icon="assets/pic.ico" title="Identify and analyze customers" description="get deep insights on customer profiles and purchasing behavior"/>
-            <Form/>
-            <CardDeck>
-                <Cards title="01." description="Install PotPay's application on your POS terminal"
-                    sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
-            </CardDeck>
+            <Footer></Footer>
+
+            {/*<Paragraph header="Say Hello to Digital Receipts" content="Unlock the power of your in-store data by digitizing your customer's receipts" subContent="PotPay" children=""/>*/}
+            {/*<Footer/>*/}
+
+            {/*<Service  icon="assets/pic.ico" title="Identify and analyze customers" description="get deep insights on customer profiles and purchasing behavior"/>*/}
+            {/*<Form/>*/}
+            {/*<CardDeck>*/}
+            {/*    <Cards title="01." description="Install PotPay's application on your POS terminal"*/}
+            {/*        sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>*/}
+            {/*</CardDeck>*/}
 
 
         </div>

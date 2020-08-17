@@ -1,49 +1,25 @@
 import React from 'react';
-import style from './style.module.scss'
+import style from './style.module.scss';
+import {businessStubs} from '../../stubs/footerLabels.stubs'
+import useTranslation from "hooks/useTranslations";
 const Footer = () => {
+    const {locale} = useTranslation();
+    let renderLinks = (item: { route: string | undefined; name: { [x: string]: React.ReactNode; }; }) => {
+        return (
+            <li className={style.link}><a href={item.route}>{item.name[locale]}</a></li>
+        )
+    }
     return (
-        <footer>
-                <div className={style.Customer}>
-                    <h4>Customers</h4>
-                </div>
-
-                <div className={style.dash1}>
-                    <h4>|</h4>
-                </div>
-
-                <div className={style.Story}>
-                    <h4>Our Story</h4>
-                </div>
-
-                <div className={style.dash2}>
-                    <h4>|</h4>
-                </div>
-
-                <div className={style.Press}>
-                    <h4>Press</h4>
-                </div>
-
-                <div className={style.dash3}>
-                    <h4>|</h4>
-                </div>
-
-                <div className={style.Privacy}>
-                    <h4>Privacy Policy</h4>
-                </div>
-
-                <div className={style.dash4}>
-                    <h4>|</h4>
-                </div>
-                <div className={style.Careers}>
-                    <h4>Careers</h4>
-                </div>
-
-                <div className={style.PP}>
+        <footer className={style.footer_container} >
+            <ul className={style.listLinks}>
+                {
+                    businessStubs.map(renderLinks)
+                }
+                <a className={style.PP}>
                     @ 2020 PotPay
-                </div>
-
+                </a>
+            </ul>
         </footer>
     );
 }
-
 export default Footer;

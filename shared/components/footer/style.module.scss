@@ -1,62 +1,42 @@
-.Customer{
-  position:absolute;
-  bottom: 25px;
-  left:10px
+.link>a{
+
+  @media screen and (max-width: 600px ){
+      font-size: 9px;
+  }
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration:none;
+  font-style: normal;
+  text-align: left;
+  display: inline-flex;
+  margin: 0 1rem;
 }
 
-.dash1
-{
-  position:absolute;
-  bottom: 25px;
-  left:100px
-}
-.Story{
-  position:absolute;
-  bottom: 25px;
-  left:130px
+
+.listLinks {
+  padding-top: 6%;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
 }
 
-.dash2
-{
-  position:absolute;
-  bottom: 25px;
-  left:230px
-}
+.footer_container{
 
-.Press{
-  position:absolute;
-  bottom: 25px;
-  left:280px
-}
+  clear: both;
+  position: relative;
+  margin-top: -200px;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to bottom, #2a2a73, #1e1e6a);
 
-.dash3
-{
-  position:absolute;
-  bottom: 25px;
-  left:360px
-}
-
-.Privacy{
-  position:absolute;
-  bottom: 25px;
-  left:410px
-}
-
-.dash4
-{
-  position:absolute;
-  bottom: 25px;
-  left:550px
-}
-
-.Careers{
-  position:absolute;
-  bottom: 25px;
-  left:600px
 }
 
 .PP{
   position:absolute;
-  bottom: 15px;
-  left:10px
+  bottom: 10%;
+  font-size: 12px;
+  color: #dbdbdb;
+  text-align: left;
+  left: 55px;
 }
