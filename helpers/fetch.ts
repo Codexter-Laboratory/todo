@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 import {getPageData} from './queries';
 
 function Fetcher (pageName: string) {
@@ -13,4 +13,5 @@ function Fetcher (pageName: string) {
         })
     });
 }
+
 export {Fetcher};

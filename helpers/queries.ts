@@ -61,7 +61,7 @@ let teamMembersQuery = `team_members {
     title_en,
     title_ar,
     name_en,
-    name_ar
+    name_ar,
     ${imagesQuery}
 }`;
 

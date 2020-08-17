@@ -101,27 +101,27 @@ export const Form = () => {
                 </h1>
             </div>
 
-                <div className={style.firstName}>
-                    <label style={{display: "block", padding:"8px"}} htmlFor="firstName">First Name</label>
-                    <input style={{borderRadius: '100px', height:"30px"}} id="firstName" value={firstName} onChange={handleFirstNameChange} />
+                <div className={style.first_name}>
+                    <label className={style.label} htmlFor="firstName">First Name</label>
+                    <input className={style.input_1} id="firstName" value={firstName} onChange={handleFirstNameChange} />
                     <span className="error">{firstNameError}</span>
                 </div>
 
-                <div className={style.lastName}>
-                    <label style={{display: "block", padding:"8px"}} htmlFor="lastName">Last Name</label>
-                    <input style={{borderRadius: '100px', height:"30px"}} id="lastName" value={lastName} onChange={handleLastNameChange} />
+                <div className={style.last_name}>
+                    <label className={style.label} htmlFor="lastName">Last Name</label>
+                    <input className={style.input_1} id="lastName" value={lastName} onChange={handleLastNameChange} />
                     <span className="error">{lastNameError}</span>
                 </div>
 
                 <div className={style.company}>
-                    <label style={{display: "block", padding:"8px"}} htmlFor="company">Company</label>
-                    <input style={{borderRadius: '100px', width:"370px", height:"30px"}} id="company" value={company} onChange={handleCompanyChange}/>
+                    <label className={style.label} htmlFor="company">Company</label>
+                    <input className={style.input_2} id="company" value={company} onChange={handleCompanyChange}/>
                     <span className="error">{companyError}</span>
                 </div>
 
                 <div className={style.email}>
-                    <label style={{display: "block", padding:"8px"}} htmlFor="email">Email</label>
-                    <input style={{ borderRadius: '100px', width:"370px", height:"30px"}} id="email" value={email} onChange={handleEmailChange}/>
+                    <label className={style.label} htmlFor="email">Email</label>
+                    <input className={style.input_2} id="email" value={email} onChange={handleEmailChange}/>
                     <span className="error">{emailError}</span>
                 </div>
 

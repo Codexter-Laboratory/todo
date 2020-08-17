@@ -4,14 +4,30 @@
   left: 900px
 }
 
-.firstName{
+.label{
+  display: block;
+  padding: 8px;
+}
+
+.input_1{
+  border-radius: 100px;
+  height: 30px
+}
+
+.input_2{
+  border-radius: 100px;
+  width: 370px;
+  height: 30px
+}
+
+.first_name{
   position: absolute;
   bottom: 345px;
   left: 900px;
   padding: 10px
 }
 
-.lastName{
+.last_name{
   position: absolute;
   bottom: 345px;
   right: 245px;

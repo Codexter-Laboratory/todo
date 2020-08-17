@@ -1,85 +1,34 @@
-.Customer{
-  position:absolute;
-  bottom: 25px;
-  left:10px
-}
-
-.Footer {
-  position:absolute;
-  width: 399px;
-  height: 20px;
-  font-family: HelveticaNeue;
-  font-size: 9px;
-  font-weight: bold;
-  font-stretch: normal;
-  bottom: 25px;
-  font-style: normal;
-  line-height: 1.22;
-  letter-spacing: normal;
-  text-align: left;
+.link>a{
+  font-weight: 400;
+  font-size: 18px;
   color: #ffffff;
+  text-decoration:none;
+  font-style: normal;
+  text-align: left;
+  margin: 0 15px;
+  left: 80px;
 }
+
+.listLinks {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
 .footerDiv{
-  position:absolute;
-    bottom: 20px;
-    width: 960px;
-    height: 86.5px;
-    background-image: linear-gradient(to bottom, #2a2a73, #1e1e6a);
-}
-
-.dash1
-{
-  position:absolute;
-  bottom: 25px;
-  left:100px
-}
-.Story{
-  position:absolute;
-  bottom: 25px;
-  left:130px
-}
-
-.dash2
-{
-  position:absolute;
-  bottom: 25px;
-  left:230px
-}
-
-.Press{
-  position:absolute;
-  bottom: 25px;
-  left:280px
-}
-
-.dash3
-{
-  position:absolute;
-  bottom: 25px;
-  left:360px
-}
-
-.Privacy{
-  position:absolute;
-  bottom: 25px;
-  left:410px
-}
-
-.dash4
-{
-  position:absolute;
-  bottom: 25px;
-  left:550px
-}
-
-.Careers{
-  position:absolute;
-  bottom: 25px;
-  left:600px
+  position:fixed;
+  bottom: 0;
+  height: 86.5px;
+  left: 0%;
+  background-color: #1e1e6a;
+  width: 100%;
 }
 
 .PP{
   position:absolute;
   bottom: 15px;
-  left:10px
+  font-size: 12px;
+  color: #ffffff;
+  text-align: left;
+  left: 80px;
 }

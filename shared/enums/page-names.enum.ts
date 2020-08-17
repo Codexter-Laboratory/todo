@@ -4,4 +4,8 @@
  */
 
 export enum PageNames {
+
+}
+
+export enum CardDeckTypes{
 }

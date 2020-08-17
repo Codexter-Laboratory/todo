@@ -1,6 +1,7 @@
 import React from "react";
 import {NextPage} from "next";
 import withLocale from "../../../hocs/withLocale";
+import {Fetcher} from "../../../helpers/fetch";
 
 interface Props {
     pageData: any;
@@ -13,8 +14,12 @@ const Home: NextPage<Props> = ({pageData}: Props) => {
     );
 }
 
-Home.getInitialProps = ({req}) => {
-    let pageData;
+Home.getInitialProps = async (ctx) => {
+
+    let res = await Fetcher('page_home');
+
+    let pageData = res.data;
+
     return {
         pageData
     };

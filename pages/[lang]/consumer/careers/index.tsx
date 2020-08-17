@@ -4,18 +4,18 @@ import withLocale from "../../../../hocs/withLocale";
 
 interface Props {
     pageData: any;
+
 }
 
-const OurStory: NextPage<Props> = ({pageData}: Props) => {
+const Careers: NextPage<Props> = ({pageData}:Props) => {
     return (
-      <></>
+        <></>
     );
 }
-
-OurStory.getInitialProps = ({req}) => {
+Careers.getInitialProps=({req}) => {
+    let pageData;
     return {
         pageData
     };
 }
-
-export default withLocale(OurStory);
+export default withLocale(Careers);

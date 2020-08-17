@@ -1,6 +1,7 @@
 import React from "react";
 import {NextPage} from "next";
 import withLocale from "../../../../hocs/withLocale";
+import {Fetcher} from "../../../../helpers/fetch";
 
 interface Props {
     pageData: any;
@@ -8,14 +9,18 @@ interface Props {
 }
 
 const Privacy: NextPage<Props> = ({pageData}:Props) => {
+    console.log(pageData)
     return (
         <></>
     );
 }
-Privacy.getInitialProps=({req}) => {
-    let pageData;
+
+Privacy.getInitialProps = async (ctx) => {
+    let res = await Fetcher('page_privacy');
+    let pageData = res.data;
     return {
         pageData
     };
 }
+
 export default withLocale(Privacy);

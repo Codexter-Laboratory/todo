@@ -1,35 +1,136 @@
 import {LabelsInterface} from "../interfaces/labels.interface";
 
-export const footerLabelsStubs: LabelsInterface [] = [
+export const businessStubs: LabelsInterface [] = [
     {
         name: {
             ar: 'الزبائن',
-            en: ''
+            en: 'Customer'
         },
-        route: '/consumer'
+        route: '/ar/consumer'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
     },
     {
         name: {
             ar: 'من نحن',
-            en: 'our story'
+            en: 'Our Story'
         },
-        route: '/'
+        route: '/our_story'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
     },
     {
         name: {
             ar: '',
-            en: ''
+            en: 'Press'
         },
-        route: ''
+        route: '/press'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
     },
     {
         name: {
             ar: '',
-            en: ''
+            en: 'Privacy Policy'
         },
-        route: ''
+        route: '/business/privacy_policy'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
+    },
+    {
+        name: {
+            ar: '',
+            en: 'Careers'
+        },
+        route: '/consumer/careers'
     },
 ];
+
+export const consumerStubs: LabelsInterface [] = [
+    {
+        name: {
+            ar: '',
+            en: 'Retailers'
+        },
+        route: '/business'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
+    },
+    {
+        name: {
+            ar: 'من نحن',
+            en: 'Our Story'
+        },
+        route: '/our_story'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
+    },
+    {
+        name: {
+            ar: '',
+            en: 'Press'
+        },
+        route: '/press'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
+    },
+    {
+        name: {
+            ar: '',
+            en: 'Privacy Policy'
+        },
+        route: '/consumer/privacy_policy'
+    },
+    {
+        name:{
+            ar: '|',
+            en: '|'
+        },
+        route: null
+    },
+    {
+        name: {
+            ar: '',
+            en: 'Careers'
+        },
+        route: '/consumer/careers'
+    },
+]
 
 
 
