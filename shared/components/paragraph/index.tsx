@@ -11,7 +11,8 @@ interface Props {
 const Paragraph = (props: Props) => {
     return (
         <div>
-            <h1>{props.header}</h1>
+            <h1 className={style.title}>{props.header}</h1>
+            <a className={style.sub_title}>1.Introduction</a>
             <div className={style.paragraph_body}>
                 {props.content}
             </div>

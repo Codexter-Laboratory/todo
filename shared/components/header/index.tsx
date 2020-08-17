@@ -7,7 +7,6 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "../../../hooks/useTranslations";
 import NavLink from "../NavLink";
 import {linksStubs} from "shared/stubs/links.stubs";
-import Menu from "react-responsive-navbar-ts";
 
 interface Props {
 }
@@ -21,17 +20,6 @@ const Header = (props: Props) => {
         menuOpened: false,
         collapseClass: 'collapse',
     });
-
-    /*const Hamburger = () => (
-        <Menu
-            menuOpenButton={<div />}
-            menuCloseButton={<div />}
-            changeMenuOn="500px"
-            largeMenuClassName="large-menu-classname"
-            smallMenuClassName="small-menu-classname"
-            menu={<a>menu</a>}
-        />
-    );*/
 
     const handleMenuClick = () => {
         let {menuOpened} = state;
@@ -63,7 +51,9 @@ const Header = (props: Props) => {
     };
 
     return (
+
         <nav className={`navbar navbar-expand-lg navbar-light bg-light ${style.nav_bar_container}`}>
+
             <a className={`navbar-brand`} href="#">
                 <span className={style.Pot}>Pot</span>
                 <span className={style.Pay}>Pay</span>

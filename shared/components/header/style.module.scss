@@ -2,14 +2,12 @@
 }
 
 .nav_bar_container {
-    display: flex;
-    flex-direction: row;
     background: transparent !important;
 }
 
 .nav_links_list{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     list-style-type: none;
 }
 
