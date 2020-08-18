@@ -10,6 +10,7 @@ import Service from "shared/components/service";
 import CardDeck from "shared/components/card-deck";
 import Header from "../../shared/components/header";
 import Image from "../../shared/components/image";
+import style from "../styles/style.module.scss"
 
 interface Props {
     pageData: any;
@@ -19,25 +20,52 @@ const Home: NextPage<Props> = () => {
     const {locale} = useTranslation();
 
     return (
-        <div className= "page-wrapper"  dir={locale === 'ar' ? 'rtl' : 'ltr'} >
+        <div className="page__container"  dir={locale === 'ar' ? 'rtl' : 'ltr'} >
 
             <Header></Header>
 
-            <Image image="assets/desktop-2.png"/>
+            <div className={'row'}>
+                <div className="col-md-6 col-12">
+                    <Cards title="01." description="Say hello to Digital Receipts"
+                           sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
+                </div>
+                <div className="col-md-6 col-12">
+                     <Image image="assets/desktop-2.png"/>
+                </div>
+            </div>
 
-            <Footer></Footer>
+            <CardDeck>
+                <div className={'row'}>
+                <div className="col-md-3 col-12">
+                <Cards title="01." description="Install PotPay's application on your POS terminal"
+                       sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
+                </div>
+                <div className="col-md-3 col-12">
+                    <Cards title="01." description="Install PotPay's application on your POS terminal"
+                           sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
+                </div>
+                <div className="col-md-3 col-12">
+                    <Cards title="01." description="Install PotPay's application on your POS terminal"
+                           sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
+                </div>
+                <div className="col-md-3 col-12">
+                    <Cards title="01." description="Install PotPay's application on your POS terminal"
+                           sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>
+                </div>
+                </div>
+            </CardDeck>
 
             {/*<Paragraph header="Say Hello to Digital Receipts" content="Unlock the power of your in-store data by digitizing your customer's receipts" subContent="PotPay" children=""/>*/}
-            {/*<Footer/>*/}
 
             {/*<Service  icon="assets/pic.ico" title="Identify and analyze customers" description="get deep insights on customer profiles and purchasing behavior"/>*/}
-            {/*<Form/>*/}
-            {/*<CardDeck>*/}
-            {/*    <Cards title="01." description="Install PotPay's application on your POS terminal"*/}
-            {/*        sub_description="No need for a new hardware a new EPOS system or EPOS integration" icon="assets/ass.png"/>*/}
-            {/*</CardDeck>*/}
-
-
+            <div className="row">
+                <div className="col-md-6 col-12">
+                </div>
+                <div className="col-md-6 col-6">
+                    <Form/>
+                </div>
+            </div>
+            <Footer></Footer>
         </div>
 
 

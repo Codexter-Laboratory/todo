@@ -93,7 +93,7 @@ export const Form = () => {
     };
     return (
         <form noValidate={true} onSubmit={handleSubmit}>
-            <div>
+            <div className={style.form_container}>
 
             <div className={style.demo}>
                 <h1>
