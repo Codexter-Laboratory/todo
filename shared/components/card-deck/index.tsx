@@ -5,7 +5,7 @@ export interface Props{
 }
 const CardDeck = (props:Props) => {
     return (
-        <div>
+        <div >
             {props.children}
         </div>
     )

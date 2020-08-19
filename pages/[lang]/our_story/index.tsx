@@ -12,50 +12,41 @@ import useTranslation from "../../../hooks/useTranslations";
 
 interface Props {
     pageData: any;
-    paragraphs: ParagraphModel[];
-    services: CardDeckModel;
+    ourParagraph: ParagraphModel[];
+    members: CardDeckModel;
 }
 
 const OurStory: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.paragraphs, 'j')
-    console.log(props.services, 'k')
-
+    console.log(props.ourParagraph)
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <CardDeck>
-                {props.services.cards.map(item => {
+                {props.members.cards.map(item => {
                     return (
                         <Cards title={item.title[locale]} description={item.description[locale]}
-                               sub_description={item.subDescription[locale]}
-                               icon={item.image}/>
+                               sub_description={item.subDescription[locale]} icon={item.image}/>
                     )
                 })}
             </CardDeck>
-            <div>
-                {props.paragraphs.map(item => {
-                    return(
-                        <Paragraph>
-                            <h4>{item.title[locale]}</h4>
-                            <p>{item.description[locale]}</p>
-                            <p>{item.subDescription[locale]}</p>
-                        </Paragraph>
-                    )
-                })}
-            </div>
+            {props.ourParagraph.map(item => {
+                return (
+                    <Paragraph title={item.title[locale]} description={item.description[locale]}
+                               sub_description={item.subDescription[locale]}/>
+                )
+            })}
         </div>
     );
 }
-
 OurStory.getInitialProps = async (ctx) => {
     let res = await Fetcher('page_ourStory');
     let pageData = res.data.data.pages[0];
-    let paragraphs;
-    let services;
+    let ourParagraph;
+    let members;
     return {
         pageData,
-        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
-        services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0])
+        ourParagraph: pageData.ourParagraph.map(paragraph => new ParagraphModel(paragraph)),
+        members: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'members')[0])
     };
 }
 

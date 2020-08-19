@@ -32,7 +32,7 @@ const Home: NextPage<Props> = () => {
                 <Footer/>
 
                 <Service icon="assets/pic.ico" title="Identify and analyze customers"
-                         description="get deep insights on customer profiles and purchasing behavior"/>
+                         description="get deep insights on customer profiles and purchasing behavior" subDescription='bla bla bla'/>
                 <Form/>
                 <Header/>
                 <CardDeck>

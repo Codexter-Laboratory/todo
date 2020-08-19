@@ -8,13 +8,14 @@ import Cards from "../../../shared/components/card";
 import CardDeck from "../../../shared/components/card-deck";
 import Paragraph from "../../../shared/components/paragraph";
 import {ParagraphApiInterface, ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
+import Service from "../../../shared/components/service";
 
 
 interface Props {
     pageData: any;
     services: CardDeckModel;
     paragraphs: ParagraphModel[];
-
+    cards: CardDeckModel;
 }
 
 const Home: NextPage<Props> = (props: Props) => {
@@ -27,23 +28,26 @@ const Home: NextPage<Props> = (props: Props) => {
             <CardDeck>
                 {props.services.cards.map(item => {
                     return (
-                        <Cards title={item.title[locale]} description={item.description[locale]}
-                               sub_description={item.subDescription[locale]}
-                               icon={item.image}/>
+                        <Service icon={item.image} title={item.title[locale]}
+                                 description={item.description[locale]}
+                                 subDescription={item.subDescription[locale]}/>
                     )
                 })}
             </CardDeck>
-            <div>
-                {props.paragraphs.map(item => {
-                    return(
-                        <Paragraph>
-                            <h4>{item.title[locale]}</h4>
-                            <p>{item.description[locale]}</p>
-                            <p>{item.subDescription[locale]}</p>
-                        </Paragraph>
+            <CardDeck>
+                {props.cards.cards.map(item => {
+                    return (
+                        <Cards title={item.title[locale]} description={item.description[locale]}
+                               sub_description={item.subDescription[locale]} icon={item.image}/>
                     )
                 })}
-            </div>
+            </CardDeck>
+            {props.paragraphs.map(item => {
+                return (
+                    <Paragraph title={item.title[locale]} description={item.description[locale]}
+                               sub_description={item.subDescription[locale]}/>
+                )
+            })}
         </div>
     );
 }
@@ -55,11 +59,13 @@ Home.getInitialProps = async (ctx) => {
     let pageData = res.data.data.pages[0];
     let services;
     let paragraphs;
+    let cards;
 
     return {
         pageData,
         paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
-        services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0])
+        services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0]),
+        cards: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'cards')[0])
 
     };
 }

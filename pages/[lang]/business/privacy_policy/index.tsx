@@ -8,7 +8,7 @@ import useTranslation from "../../../../hooks/useTranslations";
 
 interface Props {
     pageData: any;
-    paragraphs: ParagraphModel[];
+    pParagraphs: ParagraphModel[];
 
 }
 
@@ -17,13 +17,9 @@ const Privacy: NextPage<Props> = (props:Props) => {
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <div>
-                {props.paragraphs.map(item => {
+                {props.pParagraphs.map(item => {
                     return(
-                        <Paragraph>
-                            <h4>{item.title[locale]}</h4>
-                            <p>{item.description[locale]}</p>
-                            <p>{item.subDescription[locale]}</p>
-                        </Paragraph>
+                        <Paragraph title={item.title[locale]} description={item.description[locale]} sub_description={item.subDescription[locale]}/>
                     )
                 })}
             </div>
@@ -34,10 +30,10 @@ const Privacy: NextPage<Props> = (props:Props) => {
 Privacy.getInitialProps = async (ctx) => {
     let res = await Fetcher('page_privacy');
     let pageData = res.data.data.pages[0];
-    let paragraphs;
+    let pParagraphs;
     return {
         pageData,
-        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph))
+        pParagraphs: pageData.pParagraphs.map(paragraph => new ParagraphModel(paragraph))
     };
 }
 
