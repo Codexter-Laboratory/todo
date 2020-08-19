@@ -12,14 +12,15 @@ interface Props {
 
 }
 
-const Privacy: NextPage<Props> = (props:Props) => {
+const Privacy: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <div>
                 {props.pParagraphs.map(item => {
-                    return(
-                        <Paragraph title={item.title[locale]} description={item.description[locale]} sub_description={item.subDescription[locale]}/>
+                    return (
+                        <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                   sub_description={item.subDescription[locale]}/>
                     )
                 })}
             </div>

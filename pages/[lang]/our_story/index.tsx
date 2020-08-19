@@ -18,7 +18,7 @@ interface Props {
 
 const OurStory: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.ourParagraph)
+    console.log(props.ourParagraph, 'j')
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <CardDeck>
@@ -29,6 +29,7 @@ const OurStory: NextPage<Props> = (props: Props) => {
                     )
                 })}
             </CardDeck>
+
             {props.ourParagraph.map(item => {
                 return (
                     <Paragraph title={item.title[locale]} description={item.description[locale]}
