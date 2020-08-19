@@ -6,7 +6,7 @@ export interface Props{
     title: string;
     description: string;
     sub_description: string;
-    icon: string;
+    icon: any;
     children: any;
 }
 

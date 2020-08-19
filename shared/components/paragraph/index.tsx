@@ -1,9 +1,9 @@
 import React from 'react';
 
 interface Props {
-    // header: string;
-    // content: string;
-    // subContent:string;
+    // title: string;
+    // description: string;
+    // sub_description: string;
     children: any;
     
 }
@@ -11,13 +11,9 @@ interface Props {
 const Paragraph = (props: Props) => {
     return (
         <div>
-            {/*<h1>{props.header}</h1>*/}
-            {/*<div>*/}
-            {/*    {props.content}*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    {props.subContent}*/}
-            {/*</div>*/}
+            {/*<h4>{props.title}</h4>*/}
+            {/*<p>{props.description}</p>*/}
+            {/*<p>{props.sub_description}</p>*/}
             {props.children}
         </div>
     );
