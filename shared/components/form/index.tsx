@@ -93,33 +93,33 @@ export const Form = () => {
     };
     return (
         <form noValidate={true} onSubmit={handleSubmit}>
-            <div className={style.form_container}>
+            <div className= {style.form_container}>
 
             <div className={style.demo}>
-                <h1>
+                <p>
                     Request a Demo
-                </h1>
+                </p>
             </div>
 
-                <div className={style.firstName}>
+                <div className={style.form_sub_title}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="firstName">First Name</label>
                     <input style={{borderRadius: '100px', height:"30px"}} id="firstName" value={firstName} onChange={handleFirstNameChange} />
                     <span className="error">{firstNameError}</span>
                 </div>
 
-                <div className={style.lastName}>
+                <div className={style.form_sub_title}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="lastName">Last Name</label>
                     <input style={{borderRadius: '100px', height:"30px"}} id="lastName" value={lastName} onChange={handleLastNameChange} />
                     <span className="error">{lastNameError}</span>
                 </div>
 
-                <div className={style.company}>
+                <div className={style.form_sub_title}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="company">Company</label>
                     <input style={{borderRadius: '100px', width:"370px", height:"30px"}} id="company" value={company} onChange={handleCompanyChange}/>
                     <span className="error">{companyError}</span>
                 </div>
 
-                <div className={style.email}>
+                <div className={style.form_sub_title}>
                     <label style={{display: "block", padding:"8px"}} htmlFor="email">Email</label>
                     <input style={{ borderRadius: '100px', width:"370px", height:"30px"}} id="email" value={email} onChange={handleEmailChange}/>
                     <span className="error">{emailError}</span>
