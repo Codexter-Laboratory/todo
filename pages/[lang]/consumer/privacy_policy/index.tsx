@@ -32,7 +32,7 @@ const Privacy: NextPage<Props> = (props:Props) => {
 }
 
 Privacy.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_privacy');
+    let res = await Fetcher('page_consumer_privacy');
     let pageData = res.data.data.pages[0];
     let paragraphs;
     return {

@@ -25,27 +25,29 @@ const Home: NextPage<Props> = (props: Props) => {
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             {
-                props.services && props.services.cards ? <CardDeck>
-                    {
-                        props.services.cards.map(item => {
-                            return (
-                                <Service icon={item.image} title={item.title[locale]}
-                                         description={item.description[locale]}
-                                         subDescription={item.subDescription[locale]}/>
-                            )
-                        })
-                    }
-                </CardDeck> : null
+                props.services && props.services.cards ?
+                    <CardDeck>
+                        {
+                            props.services.cards.map(item => {
+                                return (
+                                    <Service icon={item.image} title={item.title[locale]}
+                                             description={item.description[locale]}
+                                             subDescription={item.subDescription[locale]}/>
+                                )
+                            })
+                        }
+                    </CardDeck> : null
             }
             {
-                props.cards && props.cards.cards ? <CardDeck>
-                    {props.cards.cards.map(item => {
-                        return (
-                            <Cards title={item.title[locale]} description={item.description[locale]}
-                                   sub_description={item.subDescription[locale]} icon={item.image}/>
-                        )
-                    })}
-                </CardDeck> : null
+                props.cards && props.cards.cards ?
+                    <CardDeck>
+                        {props.cards.cards.map(item => {
+                            return (
+                                <Cards title={item.title[locale]} description={item.description[locale]}
+                                       sub_description={item.subDescription[locale]} icon={item.image}/>
+                            )
+                        })}
+                    </CardDeck> : null
             }
             {
                 props.paragraphs ? props.paragraphs.map(item => {

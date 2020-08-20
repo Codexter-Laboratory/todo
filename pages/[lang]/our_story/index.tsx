@@ -12,7 +12,7 @@ import useTranslation from "../../../hooks/useTranslations";
 
 interface Props {
     pageData: any;
-    ourParagraph: ParagraphModel[];
+    paragraphs: ParagraphModel[];
     members: CardDeckModel;
 }
 
@@ -30,7 +30,7 @@ const OurStory: NextPage<Props> = (props: Props) => {
                 })}
             </CardDeck>
 
-            {props.ourParagraph.map(item => {
+            {props.paragraphs.map(item => {
                 return (
                     <Paragraph title={item.title[locale]} description={item.description[locale]}
                                sub_description={item.subDescription[locale]}/>
@@ -42,11 +42,11 @@ const OurStory: NextPage<Props> = (props: Props) => {
 OurStory.getInitialProps = async (ctx) => {
     let res = await Fetcher('page_ourStory');
     let pageData = res.data.data.pages[0];
-    let ourParagraph;
+    let paragraphs;
     let members;
     return {
         pageData,
-        ourParagraph: pageData.ourParagraph.map(paragraph => new ParagraphModel(paragraph)),
+        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
         members: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'members')[0])
     };
 }
