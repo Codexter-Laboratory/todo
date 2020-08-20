@@ -10,17 +10,17 @@ const Contact = () => {
 
             <li className={style.content}>
                 <img src='assets/mobile-icon.svg' alt="img" />
-                  +961 81 284 021</li>
+                &nbsp;&nbsp;&nbsp; +961 81 284 021</li>
             <li className={style.content}>
                 <img src='assets/email-icon.svg' alt="img" />
-                example@example.com</li>
+                &nbsp;&nbsp;&nbsp; example@example.com</li>
             <li className={style.content}>
                 <img src='assets/pin-icon.svg' alt="img" />
-                Bechara el Khoury, Beirut Digital District,1288 BDD,
+                &nbsp;&nbsp;&nbsp; Bechara el Khoury, Beirut Digital District,1288 BDD,
                 Beirut - Lebanon</li>
             <li className={style.content}>
-                <img src='assets/linkedin-icon.svg'/>
-                /PotPay</li>
+                <img className={style.icon_container} src='assets/linkedin-icon.svg'/>
+                &nbsp;&nbsp;&nbsp;/PotPay</li>
             </ul>
         </div>
     )

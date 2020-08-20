@@ -54,16 +54,16 @@ const Header = (props: Props) => {
 
         <nav className={`navbar navbar-expand-lg navbar-light bg-light ${style.nav_bar_container}`}>
 
-            <a className={`navbar-brand`} href="#">
-                <span className={style.Pot}>Pot</span>
-                <span className={style.Pay}>Pay</span>
-            </a>
-            <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
-                <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
-                    {
-                        linksStubs.map(renderListItem)
-                    }
-                </ul>
+                <a className={`navbar-brand`} href="#">
+                    <span className={style.Pot}>Pot</span>
+                    <span className={style.Pay}>Pay</span>
+                </a>
+                <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                    <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
+                        {
+                            linksStubs.map(renderListItem)
+                        }
+                    </ul>
                 <div className={style.nav_demo_btn_container}>
                     <button className={`btn btn-sm btn-outline-secondary ${style.nav_demo_btn} `}
                             type="submit">Request Demo

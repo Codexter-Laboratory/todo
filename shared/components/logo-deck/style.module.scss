@@ -1,49 +1,54 @@
-.logo_distribution{
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  position: center;
+.container{
+  width: 10%;
+  margin: 10px;
 }
 
-.component_distribution{
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-}
-
-.title{
-  font-family: Muli;
-  font-size: 22px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.68;
-  letter-spacing: normal;
-  text-align: left;
-  color: #000000;
-}
-
-.member_name{
-  font-family: Muli;
-  font-size: 26px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.42;
-  letter-spacing: normal;
-  text-align: left;
-  color: #2a2a73;
-}
-
-.line{
-  width: 40px;
-  height: 0;
-  border: solid 3px #191d62;
-}
-
-.round_image{
-  width: 186px;
-  height: 186px;
-  border-radius: 50%;
-  background-color: #efefef;
-}
+//.logo_distribution{
+//  display: flex;
+//  flex-direction: row;
+//  list-style-type: none;
+//  position: center;
+//}
+//
+//.component_distribution{
+//  display: flex;
+//  flex-direction: column;
+//  list-style-type: none;
+//}
+//
+//.title{
+//  font-family: Muli;
+//  font-size: 22px;
+//  font-weight: 500;
+//  font-stretch: normal;
+//  font-style: normal;
+//  line-height: 1.68;
+//  letter-spacing: normal;
+//  text-align: left;
+//  color: #000000;
+//}
+//
+//.member_name{
+//  font-family: Muli;
+//  font-size: 26px;
+//  font-weight: bold;
+//  font-stretch: normal;
+//  font-style: normal;
+//  line-height: 1.42;
+//  letter-spacing: normal;
+//  text-align: left;
+//  color: #2a2a73;
+//}
+//
+//.line{
+//  width: 40px;
+//  height: 0;
+//  border: solid 3px #191d62;
+//}
+//
+//.round_image{
+//  width: 186px;
+//  height: 186px;
+//  border-radius: 50%;
+//  background-color: #efefef;
+//}

@@ -1,22 +1,50 @@
-.CardStyle{
-  //position: absolute;
-  //top: 200px;
-  //left:40px;
-  //justify-content: center;
-  //display: inline-block;
-  //height: 400px;
-  //width: 270px;
-  //border: 1px solid #DDD;
-  //border-radius: 10px;
-  //overflow: hidden;
-  //vertical-align: top;
-  //margin: 5px;
-  //box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+.card_style{
+  left:40px;
+  display: inline-block;
+  height: 400px;
+  width: 270px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  vertical-align: top;
+  margin: 5px;
 }
 
-.CardContent{
-  //font-size: 0.8rem;
-  //justify-content: center;
-  //font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+.card_image{
+  width: 100%;
+  height: 40%;
+  border-radius: 8%;
 }
 
+.card_title{
+  width: 70px;
+  height: 59px;
+  font-style: italic;
+  font-family: HelveticaNeue;
+  font-size: 50px;
+  font-weight: lighter;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #2a2a73;
+}
+
+.card_description {
+  height: 2.5em;
+  font-family: Muli;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.27;
+  text-align: left;
+  color: #000000;
+}
+
+.card_sub_description{
+  height: 4em;
+  font-family: Muli;
+  font-size: 18px;
+  line-height: 1.28;
+  text-align: left;
+  color: #000000;
+}

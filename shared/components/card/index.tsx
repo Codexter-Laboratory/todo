@@ -13,13 +13,14 @@ export interface Props{
 const Cards = (props: Props) => {
     console.log(props);
         return (
-                <Card className={styles.CardStyle}>
-                    <Card.Title><h1>{props.title}</h1></Card.Title>
-                    <Card.Img variant="top" src={props.icon}/>
-                    <Card.Body>
-                        <Card.Subtitle className={styles.CardContent}><h2>{props.description}</h2></Card.Subtitle>
-                        <Card.Text  className={styles.CardContent}>{props.sub_description}</Card.Text>
-                    </Card.Body>
+                <Card className={styles.card_style}>
+                    <h1 className={styles.card_title}>{props.title}</h1>
+                     <img className={styles.card_image} src={props.icon}/>
+                         <div className={styles.card_description}>
+                             <h2>{props.description}</h2>
+                         </div>
+                    <div className={styles.card_sub_description}>{props.sub_description}</div>
+
                     {props.children}
                 </Card>
         );
