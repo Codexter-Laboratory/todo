@@ -27,6 +27,7 @@ export default (WrappedPage: NextPage<any>) => {
         // retrieve initial props of the wrapped component
         let pageProps = {};
 
+
         if(WrappedPage.getInitialProps) {
             pageProps = await WrappedPage.getInitialProps(ctx);
         }

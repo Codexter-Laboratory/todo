@@ -9,6 +9,7 @@ import CardDeck from "../../../shared/components/card-deck";
 import Paragraph from "../../../shared/components/paragraph";
 import {ParagraphApiInterface, ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
 import Service from "../../../shared/components/service";
+import Link from "next/link";
 
 
 interface Props {
@@ -20,8 +21,6 @@ interface Props {
 
 const Home: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.paragraphs, 'j')
-    console.log(props.services, 'k')
 
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
@@ -48,6 +47,7 @@ const Home: NextPage<Props> = (props: Props) => {
                                sub_description={item.subDescription[locale]}/>
                 )
             })}
+            <Link href='/en/business/privacy_policy'>Test</Link>
         </div>
     );
 }

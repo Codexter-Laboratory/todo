@@ -8,7 +8,7 @@ import {ParagraphModel} from "../../../../shared/interfaces/paragraph.interface"
 
 interface Props {
     pageData: any;
-    paragraphsz: ParagraphModel[];
+    paragraphs: ParagraphModel[];
 
 }
 
@@ -17,7 +17,7 @@ const Privacy: NextPage<Props> = (props:Props) => {
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <div>
-                {props.paragraphsz.map(item => {
+                {props.paragraphs.map(item => {
                     return(
                         <Paragraph>
                             <h4>{item.title[locale]}</h4>
@@ -37,7 +37,7 @@ Privacy.getInitialProps = async (ctx) => {
     let paragraphs;
     return {
         pageData,
-        paragraphsz: pageData.paragraphsz.map(paragraph => new ParagraphModel(paragraph))
+        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph))
     };
 }
 

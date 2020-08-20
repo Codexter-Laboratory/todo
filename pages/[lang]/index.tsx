@@ -21,27 +21,6 @@ const Home: NextPage<Props> = () => {
 
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-            <div className={style.div}>
-                <Header/>
-                <Paragraph>
-                    <h3 className={style.paragraph_h3_1}>Say hello to Digital Receipts</h3>
-                    <div>Unlock the power of your in-store data
-                        by digitizing your customer's receipts</div>
-
-                </Paragraph>
-                <Footer/>
-
-                <Service icon="assets/pic.ico" title="Identify and analyze customers"
-                         description="get deep insights on customer profiles and purchasing behavior" subDescription='bla bla bla'/>
-                <Form/>
-                <Header/>
-                <CardDeck>
-                    <Cards title="01." description="Install PotPay's application on your POS terminal"
-                           sub_description="No need for a new hardware a new EPOS system or EPOS integration"
-                           icon="assets/pic.ico">
-                    </Cards>
-                </CardDeck>
-            </div>
         </div>
 
 
@@ -49,8 +28,7 @@ const Home: NextPage<Props> = () => {
 };
 
 Home.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_home');
-    let pageData = res.data;
+    let pageData = {};
     return {
         pageData
     };

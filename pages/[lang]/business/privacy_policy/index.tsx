@@ -1,23 +1,24 @@
 import React from "react";
 import {NextPage} from "next";
-import withLocale from "../../../../hocs/withLocale";
-import {Fetcher} from "../../../../helpers/fetch";
-import {ParagraphModel} from "../../../../shared/interfaces/paragraph.interface";
-import Paragraph from "../../../../shared/components/paragraph";
-import useTranslation from "../../../../hooks/useTranslations";
+import withLocale from "hocs/withLocale";
+import {Fetcher} from "helpers/fetch";
+import {ParagraphModel} from "shared/interfaces/paragraph.interface";
+import Paragraph from "shared/components/paragraph";
+import useTranslation from "hooks/useTranslations";
 
 interface Props {
     pageData: any;
-    pParagraphs: ParagraphModel[];
+    paragraphs: ParagraphModel[];
 
 }
 
 const Privacy: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
+    console.log(props.pageData, 'pagi')
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <div>
-                {props.pParagraphs.map(item => {
+                {props.paragraphs.map(item => {
                     return (
                         <Paragraph title={item.title[locale]} description={item.description[locale]}
                                    sub_description={item.subDescription[locale]}/>
@@ -31,10 +32,10 @@ const Privacy: NextPage<Props> = (props: Props) => {
 Privacy.getInitialProps = async (ctx) => {
     let res = await Fetcher('page_privacy');
     let pageData = res.data.data.pages[0];
-    let pParagraphs;
+    let paragraphs;
     return {
         pageData,
-        pParagraphs: pageData.pParagraphs.map(paragraph => new ParagraphModel(paragraph))
+        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph))
     };
 }
 
