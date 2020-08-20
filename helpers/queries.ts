@@ -66,9 +66,8 @@ let teamMembersQuery = `team_members {
 }`;
 
 function getPageData(pageName: string) {
-    console.log(pageName, 'nmaste')
     return `query {
-        pages(where: {name_en: ${pageName}}){
+        pages(where: {name_en: "${pageName}"}){
             name_en,
             name_ar,
             description_en,

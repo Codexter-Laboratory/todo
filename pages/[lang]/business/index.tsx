@@ -7,16 +7,16 @@ import {CardDeckModel, CardDeckApiInterface} from "../../../shared/interfaces/ca
 import Cards from "../../../shared/components/card";
 import CardDeck from "../../../shared/components/card-deck";
 import Paragraph from "../../../shared/components/paragraph";
-import {ParagraphApiInterface, ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
+import {ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
 import Service from "../../../shared/components/service";
 import Link from "next/link";
 
 
 interface Props {
     pageData: any;
-    services: CardDeckModel;
+    services: CardDeckModel[];
     paragraphs: ParagraphModel[];
-    cards: CardDeckModel;
+    cards: CardDeckModel[];
 }
 
 const Home: NextPage<Props> = (props: Props) => {
@@ -24,49 +24,53 @@ const Home: NextPage<Props> = (props: Props) => {
 
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-            <CardDeck>
-                {props.services.cards.map(item => {
+            {
+                props.services && props.services.cards ? <CardDeck>
+                    {
+                        props.services.cards.map(item => {
+                            return (
+                                <Service icon={item.image} title={item.title[locale]}
+                                         description={item.description[locale]}
+                                         subDescription={item.subDescription[locale]}/>
+                            )
+                        })
+                    }
+                </CardDeck> : null
+            }
+            {
+                props.cards && props.cards.cards ? <CardDeck>
+                    {props.cards.cards.map(item => {
+                        return (
+                            <Cards title={item.title[locale]} description={item.description[locale]}
+                                   sub_description={item.subDescription[locale]} icon={item.image}/>
+                        )
+                    })}
+                </CardDeck> : null
+            }
+            {
+                props.paragraphs ? props.paragraphs.map(item => {
                     return (
-                        <Service icon={item.image} title={item.title[locale]}
-                                 description={item.description[locale]}
-                                 subDescription={item.subDescription[locale]}/>
+                        <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                   sub_description={item.subDescription[locale]}/>
                     )
-                })}
-            </CardDeck>
-            <CardDeck>
-                {props.cards.cards.map(item => {
-                    return (
-                        <Cards title={item.title[locale]} description={item.description[locale]}
-                               sub_description={item.subDescription[locale]} icon={item.image}/>
-                    )
-                })}
-            </CardDeck>
-            {props.paragraphs.map(item => {
-                return (
-                    <Paragraph title={item.title[locale]} description={item.description[locale]}
-                               sub_description={item.subDescription[locale]}/>
-                )
-            })}
+                }) : null
+            }
             <Link href='/en/business/privacy_policy'>Test</Link>
         </div>
     );
 }
 
 Home.getInitialProps = async (ctx) => {
-
     let res = await Fetcher('page_home');
 
-    let pageData = res.data.data.pages[0];
-    let services;
-    let paragraphs;
-    let cards;
+    let pageData;
+    pageData = res.data.data.pages[0];
 
     return {
         pageData,
-        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
         services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0]),
-        cards: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'cards')[0])
-
+        cards: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'cards')[0]),
+        paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
     };
 }
 

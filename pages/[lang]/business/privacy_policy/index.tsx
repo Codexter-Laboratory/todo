@@ -14,16 +14,17 @@ interface Props {
 
 const Privacy: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.pageData, 'pagi')
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <div>
-                {props.paragraphs.map(item => {
-                    return (
-                        <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                   sub_description={item.subDescription[locale]}/>
-                    )
-                })}
+                {
+                    props.paragraphs ? props.paragraphs.map(item => {
+                        return (
+                            <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                       sub_description={item.subDescription[locale]}/>
+                        )
+                    }) : null
+                }
             </div>
         </div>
     );
@@ -31,7 +32,10 @@ const Privacy: NextPage<Props> = (props: Props) => {
 
 Privacy.getInitialProps = async (ctx) => {
     let res = await Fetcher('page_privacy');
-    let pageData = res.data.data.pages[0];
+
+    let pageData;
+    pageData = res.data.data.pages[0];
+
     let paragraphs;
     return {
         pageData,

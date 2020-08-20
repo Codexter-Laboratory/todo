@@ -22,8 +22,6 @@ const Home: NextPage<Props> = () => {
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
         </div>
-
-
     );
 };
 
