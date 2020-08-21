@@ -1,48 +1,73 @@
-.demo{
-  position: absolute;
-  bottom: 430px;
-  left: 900px
+.form_container{
+  background: #2a2a73;
+  width: 100%;
+  height: 100%;
 }
 
-.firstName{
-  position: absolute;
-  bottom: 345px;
-  left: 900px;
-  padding: 10px
+.demo{
+  font-family: Muli;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 2.88;
+  text-align: left;
+  color: #ffffff;
+}
+
+.form_sub_title{
+
+  font-family: Muli;
+  font-size: 13px;
+  line-height: 3;
+  text-align: left;
+  color: #ffffff;
 }
 
 .lastName{
-  position: absolute;
   bottom: 345px;
   right: 245px;
   padding: 10px
 }
 
 .company{
-  position: absolute;
   bottom: 270px;
   left: 900px;
   padding: 10px
 }
 
 .email{
-  position: absolute;
   bottom: 200px;
   left: 900px;
   padding: 10px
 }
 
+.button_container{
+  padding-left: 69%;
+}
+
 .button{
-  background-color: gold;
+
+  width: 130px;
+  height: 45px;
+  border-radius: 32px;
+  background-color: #f7a502;
+  margin: 30px 10px 25px 25px;
+  border: 1em #f7a502;
   font-weight: bold;
   font-size: 16px;
-  color: #fff;
-  border: 0em;
-  font-family:btn-icon !important;
-  border-radius: 20px;
-  margin: 30px 10px 25px 25px;
-  position: absolute;
-  padding:0.7em 1.5em;
-  bottom: 125px;
-  right: 235px
+  color: #ffffff;
+  font-family:btn-icon;
+}
+
+.input_field{
+  border-radius: 100px;
+  height: 2rem;
+  width: 100%;
+  border: none;
+  padding: 16px;
+  font-size: 12px;
+}
+
+.label {
+  margin-bottom: 0;
+  font-weight: 100;
 }

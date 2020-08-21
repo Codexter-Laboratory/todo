@@ -1,62 +1,30 @@
-.Customer{
-  position:absolute;
-  bottom: 25px;
-  left:10px
+.link{
+  list-style-type: none;
 }
 
-.dash1
-{
-  position:absolute;
-  bottom: 25px;
-  left:100px
-}
-.Story{
-  position:absolute;
-  bottom: 25px;
-  left:130px
+.link>a{
+  text-decoration:none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  font-style: normal;
+  text-align: left;
+  margin: 0 1rem;
 }
 
-.dash2
-{
-  position:absolute;
-  bottom: 25px;
-  left:230px
+
+.listLinks {
+  padding-top: 6%;
 }
 
-.Press{
-  position:absolute;
-  bottom: 25px;
-  left:280px
-}
-
-.dash3
-{
-  position:absolute;
-  bottom: 25px;
-  left:360px
-}
-
-.Privacy{
-  position:absolute;
-  bottom: 25px;
-  left:410px
-}
-
-.dash4
-{
-  position:absolute;
-  bottom: 25px;
-  left:550px
-}
-
-.Careers{
-  position:absolute;
-  bottom: 25px;
-  left:600px
+.footer_container{
+  width: 100%;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, #2a2a73, #1e1e6a);
 }
 
 .PP{
-  position:absolute;
-  bottom: 15px;
-  left:10px
+  font-size: 12px;
+  color: #dbdbdb !important;
+  padding-left: 3%;
 }
