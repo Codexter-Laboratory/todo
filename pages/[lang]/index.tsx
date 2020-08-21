@@ -21,7 +21,7 @@ const Home: NextPage<Props> = () => {
     const {locale} = useTranslation();
 
     return (
-        <div className="page__container"  dir={locale === 'ar' ? 'rtl' : 'ltr'} >
+        <div className={style.page_container}  dir={locale === 'ar' ? 'rtl' : 'ltr'} >
 
             <Header></Header>
 
@@ -53,56 +53,60 @@ const Home: NextPage<Props> = () => {
 
             <CardDeck>
                 <div className="row">
-                     <div className="col-md-4 col 4">
+                     <div className="col-md-4 col-12">
                         <Cards title={"01."} description={"Hello Im a card"} sub_description={"and you can fill me"} icon="/assets/card-test.png"></Cards>
                      </div>
-                    <div className={`col-md-4 col 4 ${style.card_padding}`}>
+                    <div className={`col-md-4 col-12 ${style.card_padding}`}>
                         <Cards title={"02."} description={"Hello Im a card"} sub_description={"and you can fill me"} icon="/assets/card-test.png"></Cards>
                     </div>
-                    <div className="col-md-4 col 4">
+                    <div className="col-md-4 col-12">
                         <Cards title={"03."} description={"Hello Im a card"} sub_description={"and you can fill me"} icon="/assets/card-test.png"></Cards>
                      </div>
                 </div>
                 <div className={"row"}>
-                    <div className={"col-md-6 col-6"}/>
-                    <div className={"col-md-6 col-6"}>
+                    <div className={"col-md-6 col-12"}/>
+                    <div className={"col-md-6 col-12"}>
                         <Paragraph header="Say Hello to Digital Receipts" content="Unlock the power of your in-store data by digitizing your customer's receipts" subContent="PotPay" children=""/>
                     </div>
                 </div>
             </CardDeck>
             <div className={"row"}>
-                <CardDeck>
-                    <div  className={"row col-md-6 col-6"}>
-                        <div className={"col-md-6 col-6"}>
+                <div  className={"col-md-6 col-12"}>
+
+                        <CardDeck>
+                            <div className={"row"}>
+                        <div className={"col-md-6 col-12"}>
                             <Cards  title={"Hey"} description={"Im here"} sub_description={"talk to the world"} icon={"#"}/>
                         </div>
-                        <div className={"col-md-6 col-6"}>
+                        <div className={"col-md-6 col-12"}>
                             <Cards  title={"hello"} description={"world"} sub_description={"sup"} icon={"#"}/>
                         </div>
-                    </div>
-                </CardDeck>
-                <div className={"col-md-6 col-6"}>
+                            </div>
+                        </CardDeck>
+
+                </div>
+                <div className={"col-md-6 col-12"}>
                      <Paragraph header="Say Hello to Digital Receipts" content="Unlock the power of your in-store data by digitizing your customer's receipts" subContent="PotPay" children=""/>
                 </div>
             </div>
             <div className={`row ${style.logo_deck_container}`}>
-                <div className="col-mid-6 col-6">
-                  <LogoDeck Logo_1="/assets/500-logo.jpg" Logo_2 = "/assets/flat6labs-logo.png" Title={"Funded by"}/>
-                </div>
+                  <LogoDeck Logo_1="/assets/500-logo.jpg" Logo_2="/assets/flat6labs-logo.png" Title={"Funded by"}/>
                 <div className="col-md-6 col-12">
-                   <LogoDeck Logo_1="assets/arabnet-logo.png" Logo_2="assets/berytech-logo.png" Title={"Featured in"}/>
+                    <div className={"row"}>
+                             <LogoDeck Logo_1="assets/arabnet-logo.png" Logo_2="assets/berytech-logo.png" Title={"Featured in"}/>
+                        </div>
                 </div>
             </div>
 
                 <div className={`row ${style.lets_talk_container}`}>
-                    <div className="col-md-6 col-6">
+                    <div className="col-md-6 col-12">
                         <Contact/>
                     </div>
                     <div className="col-md-6 col-12">
                         <Form/>
                     </div>
+                    <Footer></Footer>
                 </div>
-            <Footer></Footer>
         </div>
 
 

@@ -1,14 +1,28 @@
-.container{
-  width: 10%;
+.container_logo_1{
+  width: 20%;
   margin: 10px;
 }
 
-//.logo_distribution{
-//  display: flex;
-//  flex-direction: row;
-//  list-style-type: none;
+.container_logo_2{
+  width: 20%;
+  margin: 10px;
+}
+
+.title{
+  font-family: Muli;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 2.88;
+  letter-spacing: normal;
+  color: #000000;
+  margin-left: 1rem;
+}
+
+.logo_distribution{
+  display: flex;
+  flex-direction: row;
 //  position: center;
-//}
+}
 //
 //.component_distribution{
 //  display: flex;

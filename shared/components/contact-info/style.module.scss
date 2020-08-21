@@ -1,11 +1,12 @@
 .contact_container{
   background: #2a2a73;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  //width: 100%;
+  //display: flex;
+}
 
+.container{
+  //display: flex;
+  //flex-direction: column;
 }
 
 .contact_list {
@@ -13,26 +14,24 @@
 }
 
 .title{
-  margin-left: 24px;
-  font-family: Muli;
-  font-size: 26px;
+  //font-size: 26px;
   font-weight: 600;
-  line-height: 2.88;
-  text-align: left;
+  //text-align: left;
   color: #ffffff;
 }
 
 .content{
-  margin-left: 24px;
-  font-family: Muli;
-  font-size: 18px;
-  line-height: 2.22;
-  letter-spacing: normal;
-  text-align: left;
+  //font-size: 18px;
+  //letter-spacing: normal;
+  //text-align: left;
   color: #ffffff;
 }
 
+.icon{
+  padding-bottom: 1%;
+}
+
 .icon_container{
-  width: 5%;
+  width: 1.5rem;
   padding-bottom: 2.5%;
 }

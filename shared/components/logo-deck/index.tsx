@@ -10,11 +10,11 @@ const LogoDeck = (props:Props) => {
     return (
         <div>
         <div>
-            {props.Title}
+            <h1 className={style.title}>{props.Title}</h1>
         </div>
         <div>
-            <img className={style.container} src={props.Logo_1}/>
-            <img className={style.container} src={props.Logo_2}/>
+            <img className={style.container_logo_1} src={props.Logo_1}/>
+            <img className={style.container_logo_2} src={props.Logo_2}/>
         </div>
         </div>
     )
