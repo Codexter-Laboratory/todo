@@ -1,27 +1,29 @@
 import React from 'react';
-import Card from "react-bootstrap/cjs/Card";
-import styles from 'shared/components/card/style.module.scss';
+import styles from './style.module.scss';
 
 export interface Props{
     title: string;
     description: string;
     sub_description: string;
-    icon: any;
-    children: any;
+    icon: string;
+    children?: any;
+    number?: string;
 }
 
 const Cards = (props: Props) => {
     console.log(props);
         return (
-                <Card className={styles.CardStyle}>
-                    <Card.Title><h1>{props.title}</h1></Card.Title>
-                    <Card.Img variant="top" src={props.icon}/>
-                    <Card.Body>
-                        <Card.Subtitle className={styles.CardContent}><h2>{props.description}</h2></Card.Subtitle>
-                        <Card.Text  className={styles.CardContent}>{props.sub_description}</Card.Text>
-                    </Card.Body>
+                <div className={styles.card_style}>
+                    <h5>{props.number}</h5>
+                     <img className={styles.card_image} src={props.icon}/>
+                     <h1 className={styles.card_title}>{props.title}</h1>
+                         <div className={styles.card_description}>
+                             <h2>{props.description}</h2>
+                         </div>
+                    <div className={styles.card_sub_description}>{props.sub_description}</div>
+
                     {props.children}
-                </Card>
+                </div>
         );
 };
 

@@ -1,34 +1,30 @@
-.link>a{
-  font-weight: 400;
-  font-size: 18px;
-  color: #ffffff;
-  text-decoration:none;
-  font-style: normal;
-  text-align: left;
-  margin: 0 15px;
-  left: 80px;
-}
-
-.listLinks {
-  display: flex;
-  flex-direction: row;
+.link{
   list-style-type: none;
 }
 
-.footerDiv{
-  position:fixed;
-  bottom: 0;
-  height: 86.5px;
-  left: 0%;
-  background-color: #1e1e6a;
+.link>a{
+  text-decoration:none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  font-style: normal;
+  text-align: left;
+  margin: 0 1rem;
+}
+
+
+.listLinks {
+  padding-top: 6%;
+}
+
+.footer_container{
   width: 100%;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, #2a2a73, #1e1e6a);
 }
 
 .PP{
-  position:absolute;
-  bottom: 15px;
   font-size: 12px;
-  color: #ffffff;
-  text-align: left;
-  left: 80px;
+  color: #dbdbdb !important;
+  padding-left: 3%;
 }

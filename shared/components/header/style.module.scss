@@ -1,0 +1,62 @@
+.nav_demo_btn_container {
+}
+
+.nav_bar_container {
+    background: transparent !important;
+}
+
+.nav_links_list{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.nav_demo_btn{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 100px;
+    border-width: 10px;
+    border-color: #373c95;
+    background-color: #373c95;
+    font-family: Muli;
+    font-size: 10px;
+    line-height: 0.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+
+.Pot {
+    font-size: 2.5em;
+    font-family: HelveticaNeue;
+    font-weight: 700;
+    text-align: left;
+    color: #f7a502;
+}
+
+.Pay {
+    font-size: 2.5em;
+    font-family: HelveticaNeue;
+    font-weight: 700;
+    text-align: left;
+    color: #ecec;
+}
+
+.nav_bar {
+}
+
+.nav_bar>a {
+    font-size: 16px;
+    text-align: left;
+    color: #ecec !important;
+}
+
+.Header_container {
+    width: 90%;
+    height: 75%;
+    border-radius: 35%;
+    background-color: #191d62;
+}
+
+
+

@@ -11,6 +11,10 @@
     "release:develop": "standard-version && git push --follow-tags origin develop"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "bootstrap": "^4.5.2",
     "axios": "^0.19.2",
     "next": "latest",
     "next-page-transitions": "^1.0.0-beta.2",

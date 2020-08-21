@@ -1,5 +1,4 @@
-import {LabelsInterface} from "../interfaces/labels.interface";
-
+import {LabelsInterface} from "shared/interfaces/labels.interface";
 export const businessFooterStubs: LabelsInterface [] = [
     {
         name: {
@@ -37,7 +36,6 @@ export const businessFooterStubs: LabelsInterface [] = [
         route: '/consumer/careers'
     },
 ];
-
 export const consumerFooterStubs: LabelsInterface [] = [
     {
         name: {
@@ -75,6 +73,3 @@ export const consumerFooterStubs: LabelsInterface [] = [
         route: '/consumer/careers'
     },
 ]
-
-
-
