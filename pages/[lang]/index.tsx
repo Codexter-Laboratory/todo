@@ -7,7 +7,6 @@ import LogoDeck from "shared/components/logo-deck";
 import CardDeck from "shared/components/card-deck";
 import Contact from "shared/components/contact-info";
 import Form from "shared/components/form";
-import Footer from "shared/components/footer";
 import Paragraph from "shared/components/paragraph";
 
 interface Props {
