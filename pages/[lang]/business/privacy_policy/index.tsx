@@ -5,6 +5,7 @@ import {Fetcher} from "helpers/fetch";
 import {ParagraphModel} from "shared/interfaces/paragraph.interface";
 import Paragraph from "shared/components/paragraph";
 import useTranslation from "hooks/useTranslations";
+import {PageNames} from "../../../../shared/enums/page-names.enum";
 
 interface Props {
     pageData: any;
@@ -31,7 +32,7 @@ const Privacy: NextPage<Props> = (props: Props) => {
 }
 
 Privacy.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_business_privacy');
+    let res = await Fetcher(PageNames.page_business_privacy);
 
     let pageData;
     pageData = res.data.data.pages[0];

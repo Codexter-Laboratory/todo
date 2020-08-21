@@ -8,6 +8,7 @@ import Paragraph from "shared/components/paragraph";
 import CardDeck from "shared/components/card-deck";
 import Cards from "shared/components/card";
 import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
+import {PageNames} from "../../../shared/enums/page-names.enum";
 
 interface Props {
     pageData: any;
@@ -46,7 +47,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
 
 ConsumerHome.getInitialProps = async (ctx) => {
 
-    let res = await Fetcher('page_consumer_home');
+    let res = await Fetcher(PageNames.page_consumer_home);
 
     let pageData = res.data.data.pages[0];
     let paragraphs;

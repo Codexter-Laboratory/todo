@@ -24,6 +24,7 @@ export const Form = () => {
     const [emailError, setEmailError] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [submitResult, setSubmitResult] = useState();
+
     const validateFirstName = (value: string):string => {
         const error = value ? "" : "You must enter your first name";
         setFirstNameError(error);

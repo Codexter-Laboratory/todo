@@ -6,6 +6,7 @@ import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.i
 import CardDeck from "shared/components/card-deck";
 import Cards from "shared/components/card";
 import useTranslation from "hooks/useTranslations";
+import {PageNames} from "../../../shared/enums/page-names.enum";
 
 interface Props {
     pageData: any;
@@ -32,7 +33,7 @@ const Press: NextPage<Props> = (props: Props) => {
 }
 
 Press.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_press');
+    let res = await Fetcher(PageNames.page_press);
     let pageData = res.data.data.pages[0];
     let services;
     return {

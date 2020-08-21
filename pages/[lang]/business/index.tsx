@@ -3,7 +3,7 @@ import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
 import useTranslation from "hooks/useTranslations";
-import {CardDeckModel, CardDeckApiInterface} from "shared/interfaces/card-deck.interface";
+import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
 import Cards from "shared/components/card";
 import CardDeck from "shared/components/card-deck";
 import Paragraph from "shared/components/paragraph";
@@ -62,7 +62,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
 }
 
 BusinessHome.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_business_home');
+    let res = await Fetcher(PageNames.page_business_home);
 
     let pageData;
     pageData = res.data.data.pages[0];

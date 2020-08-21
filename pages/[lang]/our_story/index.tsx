@@ -8,6 +8,7 @@ import CardDeck from "shared/components/card-deck";
 import Cards from "shared/components/card";
 import Paragraph from "shared/components/paragraph";
 import useTranslation from "hooks/useTranslations";
+import {PageNames} from "../../../shared/enums/page-names.enum";
 
 interface Props {
     pageData: any;
@@ -39,7 +40,7 @@ const OurStory: NextPage<Props> = (props: Props) => {
     );
 }
 OurStory.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_our_story');
+    let res = await Fetcher(PageNames.page_our_story);
     let pageData = res.data.data.pages[0];
     let paragraphs;
     let members;
