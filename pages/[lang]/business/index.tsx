@@ -2,15 +2,14 @@ import React from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
-import useTranslation from "../../../hooks/useTranslations";
-import {CardDeckModel, CardDeckApiInterface} from "../../../shared/interfaces/card-deck.interface";
-import Cards from "../../../shared/components/card";
-import CardDeck from "../../../shared/components/card-deck";
-import Paragraph from "../../../shared/components/paragraph";
-import {ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
-import Service from "../../../shared/components/service";
-import Link from "next/link";
-
+import useTranslation from "hooks/useTranslations";
+import {CardDeckModel, CardDeckApiInterface} from "shared/interfaces/card-deck.interface";
+import Cards from "shared/components/card";
+import CardDeck from "shared/components/card-deck";
+import Paragraph from "shared/components/paragraph";
+import {ParagraphModel} from "shared/interfaces/paragraph.interface";
+import Service from "shared/components/service";
+import {PageNames} from 'shared/enums/page-names.enum'
 
 interface Props {
     pageData: any;
@@ -19,7 +18,8 @@ interface Props {
     cards: CardDeckModel[];
 }
 
-const Home: NextPage<Props> = (props: Props) => {
+
+const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
 
     return (
@@ -57,13 +57,12 @@ const Home: NextPage<Props> = (props: Props) => {
                     )
                 }) : null
             }
-            <Link href='/en/business/privacy_policy'>Test</Link>
         </div>
     );
 }
 
-Home.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_home');
+BusinessHome.getInitialProps = async (ctx) => {
+    let res = await Fetcher('page_business_home');
 
     let pageData;
     pageData = res.data.data.pages[0];
@@ -76,4 +75,4 @@ Home.getInitialProps = async (ctx) => {
     };
 }
 
-export default withLocale(Home);
+export default withLocale(BusinessHome);

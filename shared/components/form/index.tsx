@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-import style from './style.module.scss'
+import style from 'style.module.scss'
 
 export interface FormData{
     firstName: string;
@@ -136,13 +136,3 @@ export const Form = () => {
 }
 
 export default Form;
-
-/*
-const handleOnSubmit(data: FormData) {
-    console.info("FormData", data);
-    return {
-        message: "Your request has been successfully sent!",
-        success: true
-    };
-}
-*/

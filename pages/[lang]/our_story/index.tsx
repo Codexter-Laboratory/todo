@@ -1,14 +1,13 @@
 import React from "react";
 import {NextPage} from "next";
-import withLocale from "../../../hocs/withLocale";
-import {Fetcher} from "../../../helpers/fetch";
-import {ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
-import {CardDeckApiInterface, CardDeckModel} from "../../../shared/interfaces/card-deck.interface";
-import CardDeck from "../../../shared/components/card-deck";
-import Cards from "../../../shared/components/card";
-import Paragraph from "../../../shared/components/paragraph";
-import useTranslations from "../../../hooks/useTranslations";
-import useTranslation from "../../../hooks/useTranslations";
+import withLocale from "hocs/withLocale";
+import {Fetcher} from "helpers/fetch";
+import {ParagraphModel} from "shared/interfaces/paragraph.interface";
+import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
+import CardDeck from "shared/components/card-deck";
+import Cards from "shared/components/card";
+import Paragraph from "shared/components/paragraph";
+import useTranslation from "hooks/useTranslations";
 
 interface Props {
     pageData: any;
@@ -40,7 +39,7 @@ const OurStory: NextPage<Props> = (props: Props) => {
     );
 }
 OurStory.getInitialProps = async (ctx) => {
-    let res = await Fetcher('page_ourStory');
+    let res = await Fetcher('page_our_story');
     let pageData = res.data.data.pages[0];
     let paragraphs;
     let members;

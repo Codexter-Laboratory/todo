@@ -4,6 +4,14 @@
  */
 
 export enum PageNames {
+    page_business_home = 'page_home',
+    page_consumer_home = 'page_home',
+    page_our_story = 'page_our_story',
+    page_press = 'page_press',
+    page_business_privacy = 'page_business_privacy',
+    page_consumer_privacy = 'page_consumer_privacy',
+    page_careers = 'page_careers',
+
 
 }
 

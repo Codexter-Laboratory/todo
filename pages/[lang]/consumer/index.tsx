@@ -1,13 +1,13 @@
 import React from "react";
 import {NextPage} from "next";
-import withLocale from "../../../hocs/withLocale";
-import {Fetcher} from "../../../helpers/fetch";
-import {ParagraphModel} from "../../../shared/interfaces/paragraph.interface";
-import useTranslation from "../../../hooks/useTranslations";
-import Paragraph from "../../../shared/components/paragraph";
-import CardDeck from "../../../shared/components/card-deck";
-import Cards from "../../../shared/components/card";
-import {CardDeckApiInterface, CardDeckModel} from "../../../shared/interfaces/card-deck.interface";
+import withLocale from "hocs/withLocale";
+import {Fetcher} from "helpers/fetch";
+import {ParagraphModel} from "shared/interfaces/paragraph.interface";
+import useTranslation from "hooks/useTranslations";
+import Paragraph from "shared/components/paragraph";
+import CardDeck from "shared/components/card-deck";
+import Cards from "shared/components/card";
+import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
 
 interface Props {
     pageData: any;
@@ -16,7 +16,7 @@ interface Props {
 }
 
 
-const Home: NextPage<Props> = (props: Props) => {
+const ConsumerHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
 
     return (
@@ -44,7 +44,7 @@ const Home: NextPage<Props> = (props: Props) => {
     );
 }
 
-Home.getInitialProps = async (ctx) => {
+ConsumerHome.getInitialProps = async (ctx) => {
 
     let res = await Fetcher('page_consumer_home');
 
@@ -60,4 +60,4 @@ Home.getInitialProps = async (ctx) => {
     };
 }
 
-export default withLocale(Home);
+export default withLocale(ConsumerHome);

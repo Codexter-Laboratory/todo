@@ -1,10 +1,10 @@
 import React from "react";
 import {NextPage} from "next";
-import withLocale from "../../../../hocs/withLocale";
-import {Fetcher} from "../../../../helpers/fetch";
-import useTranslation from "../../../../hooks/useTranslations";
-import Paragraph from "../../../../shared/components/paragraph";
-import {ParagraphModel} from "../../../../shared/interfaces/paragraph.interface";
+import withLocale from "hocs/withLocale";
+import {Fetcher} from "helpers/fetch";
+import useTranslation from "hooks/useTranslations";
+import Paragraph from "shared/components/paragraph";
+import {ParagraphModel} from "shared/interfaces/paragraph.interface";
 
 interface Props {
     pageData: any;

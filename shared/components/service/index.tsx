@@ -1,5 +1,6 @@
 import React from 'react';
-import style from './style.module.scss'
+import style from './style.module.scss';
+
 export interface serviceProps{
     icon: string;
     title: string;

@@ -1,19 +1,12 @@
 import {LabelsInterface} from "../interfaces/labels.interface";
 
-export const businessStubs: LabelsInterface [] = [
+export const businessFooterStubs: LabelsInterface [] = [
     {
         name: {
             ar: 'الزبائن',
             en: 'Customer'
         },
         route: '/ar/consumer'
-    },
-    {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
     },
     {
         name: {
@@ -23,13 +16,6 @@ export const businessStubs: LabelsInterface [] = [
         route: '/our_story'
     },
     {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
-    },
-    {
         name: {
             ar: '',
             en: 'Press'
@@ -37,25 +23,11 @@ export const businessStubs: LabelsInterface [] = [
         route: '/press'
     },
     {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
-    },
-    {
         name: {
             ar: '',
             en: 'Privacy Policy'
         },
         route: '/business/privacy_policy'
-    },
-    {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
     },
     {
         name: {
@@ -66,20 +38,13 @@ export const businessStubs: LabelsInterface [] = [
     },
 ];
 
-export const consumerStubs: LabelsInterface [] = [
+export const consumerFooterStubs: LabelsInterface [] = [
     {
         name: {
             ar: '',
             en: 'Retailers'
         },
         route: '/business'
-    },
-    {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
     },
     {
         name: {
@@ -89,13 +54,6 @@ export const consumerStubs: LabelsInterface [] = [
         route: '/our_story'
     },
     {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
-    },
-    {
         name: {
             ar: '',
             en: 'Press'
@@ -103,25 +61,11 @@ export const consumerStubs: LabelsInterface [] = [
         route: '/press'
     },
     {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
-    },
-    {
         name: {
             ar: '',
             en: 'Privacy Policy'
         },
         route: '/consumer/privacy_policy'
-    },
-    {
-        name:{
-            ar: '|',
-            en: '|'
-        },
-        route: null
     },
     {
         name: {

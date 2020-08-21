@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "react-bootstrap/cjs/Card";
-import styles from './style.module.scss';
+import styles from 'shared/components/card/style.module.scss';
 
 export interface Props{
     title: string;

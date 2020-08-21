@@ -1,11 +1,11 @@
 import React from "react";
 import {NextPage} from "next";
-import withLocale from "../../../hocs/withLocale";
-import {Fetcher} from "../../../helpers/fetch";
-import {CardDeckApiInterface, CardDeckModel} from "../../../shared/interfaces/card-deck.interface";
-import CardDeck from "../../../shared/components/card-deck";
-import Cards from "../../../shared/components/card";
-import useTranslation from "../../../hooks/useTranslations";
+import withLocale from "hocs/withLocale";
+import {Fetcher} from "helpers/fetch";
+import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
+import CardDeck from "shared/components/card-deck";
+import Cards from "shared/components/card";
+import useTranslation from "hooks/useTranslations";
 
 interface Props {
     pageData: any;
