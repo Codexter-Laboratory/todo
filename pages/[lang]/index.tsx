@@ -103,11 +103,11 @@ const Home: NextPage<Props> = () => {
                 </div>
             </div>
             <div className={`row`}>
-                <LogoDeck Logo_1="/assets/500-logo.jpg" Logo_2="/assets/flat6labs-logo.png" Title={"Funded by"}/>
+                <LogoDeck logo_1="/assets/500-logo.jpg" logo_2="/assets/flat6labs-logo.png" title={"Funded by"}/>
                 <div className="col-md-6 col-12">
                     <div className={"row"}>
-                        <LogoDeck Logo_1="assets/arabnet-logo.png" Logo_2="assets/berytech-logo.png"
-                                  Title={"Featured in"}/>
+                        <LogoDeck logo_1="assets/arabnet-logo.png" logo_2="assets/berytech-logo.png"
+                                  title={"Featured in"}/>
                     </div>
                 </div>
             </div>

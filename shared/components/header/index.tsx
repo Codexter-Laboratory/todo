@@ -7,7 +7,7 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "hooks/useTranslations";
 import NavLink from "../NavLink";
 import {linksStubs} from "shared/stubs/links.stubs";
-import {NavLinksInterface} from "../../stubs/nav-links-interface";
+import {NavLinksInterface} from "shared/stubs/nav-links-interface";
 
 interface Props {
 }

@@ -1,7 +1,12 @@
 import React from "react";
 import useTranslation from "hooks/useTranslations";
 import Link from "next/link";
-import {Props} from "@fortawesome/react-fontawesome";
+
+interface Props {
+    route: string;
+    label:string;
+    as:string;
+}
 
 const NavLink = (props: Props) => {
     const { locale } = useTranslation();
