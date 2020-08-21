@@ -9,20 +9,20 @@ const Contact = () => {
                 <li className={style.title}>Get in Touch</li>
                 <li className={style.content}>
                     <img className={style.icon} src='assets/mobile-icon.svg' alt="img"/>
-                    +961 81 284 021
+                    <p>+961 81 284 021</p>
                 </li>
                 <li className={style.content}>
                     <img className={style.icon} src='assets/email-icon.svg' alt="img"/>
-                    example@example.com
+                    <p>example@example.com</p>
                 </li>
                 <li className={style.content}>
                     <img className={style.icon} src='assets/pin-icon.svg' alt="img"/>
-                    Bechara el Khoury, Beirut Digital District,1288 BDD,
-                    Beirut - Lebanon
+                    <p>Bechara el Khoury, Beirut Digital District,1288 BDD,
+                    Beirut - Lebanon</p>
                 </li>
                 <li className={style.content}>
                     <img className={style.icon_container} src='assets/linkedin-icon.svg'/>
-                    /PotPay
+                    <p>/PotPay</p>
                 </li>
             </ul>
         </div>

@@ -100,7 +100,7 @@ export const Form = () => {
                         Request a Demo
                     </p>
                 </div>
-                <div className={"row"}>
+                <div className={`row`}>
                     <div className={`col-md-6 col-6 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="firstName">First Name*</label>
                         <input className={style.input_field} id="firstName" value={firstName}
@@ -115,7 +115,7 @@ export const Form = () => {
                         <span className="error">{lastNameError}</span>
                     </div>
                 </div>
-                <div className={"row"}>
+                <div className={`row`}>
                     <div className={`col-md-12 col-12 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="company">Company*</label>
                         <input className={style.input_field} id="company" value={company}
@@ -123,7 +123,7 @@ export const Form = () => {
                         <span className="error">{companyError}</span>
                     </div>
                 </div>
-                <div className={"row"}>
+                <div className={`row`}>
                     <div className={`col-md-12 col-12 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="email">Email*</label>
                         <input className={style.input_field}
@@ -146,12 +146,11 @@ export const Form = () => {
 
 export default Form;
 
-/*
-const handleOnSubmit(data: FormData) {
-    console.info("FormData", data);
-    return {
-        message: "Your request has been successfully sent!",
-        success: true
-    };
-}
-*/
+
+// const handleOnSubmit(data: FormData) {
+//     console.info("FormData", data);
+//     return {
+//         message: "Your request has been successfully sent!",
+//         success: true
+//     };
+// }

@@ -1,5 +1,5 @@
 import React from "react";
-import useTranslation from "../../../hooks/useTranslations";
+import useTranslation from "hooks/useTranslations";
 import Link from "next/link";
 import {Props} from "@fortawesome/react-fontawesome";
 

@@ -4,9 +4,10 @@ import Link from "next/link";
 import style from './style.module.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from "@fortawesome/free-solid-svg-icons";
-import useTranslation from "../../../hooks/useTranslations";
+import useTranslation from "hooks/useTranslations";
 import NavLink from "../NavLink";
 import {linksStubs} from "shared/stubs/links.stubs";
+import {NavLinksInterface} from "../../stubs/nav-links-interface";
 
 interface Props {
 }
@@ -37,7 +38,7 @@ const Header = (props: Props) => {
             });
         }
     };
-    const renderListItem = (item: { route: string | number | undefined; title: { [x: string]: any; }; }) => (
+    const renderListItem = (item: NavLinksInterface) => (
         <li className={style.nav_bar} key={item.route} dir={dir}>
             <NavLink route={item.route} as={item.route} label={item.title[locale]}/>
         </li>
@@ -82,34 +83,4 @@ const Header = (props: Props) => {
 };
 
 export default Header;
-
-/*<div>
-        <nav className={`navbar navbar-expand-lg ${style.navbar}`} role="navigation">
-            <Link href={`/${locale}/`}>
-                <a className={style.navbar__logoContainer}>
-                    <img className={style.navbar__logo} src="/favicon.png" alt="dimensions-logo"/>
-                </a>
-            </Link>
-            <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
-                <ul className="navbar-nav mr-auto">
-                    {
-                        linksStubs.map(renderListItem)
-                    }
-                </ul>
-            </div>
-            <button
-                type="button" onClick={handleMenuClick} className="navbar-toggler"
-                data-toggle="collapse" data-target="#navlinks"
-                aria-controls="navlinks" aria-expanded="false" aria-label="Toggle navigation">
-                <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="2x"/>
-            </button>
-        </nav>
-    </div>*/
-
-
-/*<form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>*/
-
 

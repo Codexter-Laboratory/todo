@@ -8,7 +8,7 @@ export interface serviceProps{
 
 const Service = (props: serviceProps) => {
     return (
-        <div className={`container-fluid ${style.service_container}`}>
+        <div className= {style.service_container}>
             <div>
                 <img src={props.icon} alt="Service Card" />
             </div>

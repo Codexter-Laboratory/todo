@@ -1,13 +1,19 @@
 import React from 'react';
 import style from './style.module.scss';
-import {businessStubs} from '../../stubs/footerLabels.stubs'
+import {businessStubs} from 'shared/stubs/footerLabels.stubs'
 import useTranslation from "hooks/useTranslations";
+import Link from "next/link";
+import {LabelsInterface} from "shared/interfaces/labels.interface";
 
 const Footer = () => {
     const {locale} = useTranslation();
-    let renderLinks = (item: { route: string | undefined; name: { [x: string]: React.ReactNode; }; }) => {
+    let renderLinks = (item: LabelsInterface) => {
         return (
-            <li className={`col-md-2 ${style.link}`}><a href={item.route}>{item.name[locale]}</a></li>
+            <li className={`col-md-2 ${style.link}`}>
+                <Link href={`/[lang]${item.route}`} as={`/${locale + item.route}`}>
+                    <a href={item.route}>{item.name[locale]}</a>
+                </Link>
+            </li>
         )
     }
     return (
@@ -17,7 +23,7 @@ const Footer = () => {
                     businessStubs.map(renderLinks)
                 }
             </ul>
-            <div className="col-md-12">
+            <div className="row">
                 <a className={style.PP}>
                     @ 2020 PotPay
                 </a>

@@ -8,14 +8,14 @@ export interface Props{
 }
 const LogoDeck = (props:Props) => {
     return (
-        <div>
-        <div>
-            <h1 className={style.title}>{props.Title}</h1>
-        </div>
-        <div>
-            <img className={style.container_logo_1} src={props.Logo_1}/>
-            <img className={style.container_logo_2} src={props.Logo_2}/>
-        </div>
+        <div className={style.logo_deck_container}>
+            <div>
+                <h1 className={style.title}>{props.Title}</h1>
+            </div>
+            <div>
+                <img className={style.container_logo_1} src={props.Logo_1}/>
+                <img className={style.container_logo_2} src={props.Logo_2}/>
+            </div>
         </div>
     )
 }
