@@ -21,7 +21,6 @@ interface Props {
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             {
@@ -44,7 +43,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         {props.cards.cards.map(item => {
                             return (
                                 <Cards title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image}/>
+                                       sub_description={item.subDescription[locale]} icon={item.image[0].file}/>
                             )
                         })}
                     </CardDeck> : null

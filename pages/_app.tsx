@@ -1,12 +1,15 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import 'framework/framework.scss';
 import {LocaleProvider} from "../context/LocaleContext";
 import useTranslation from "../hooks/useTranslations";
 import {PageTransition} from 'next-page-transitions';
 import {useRouter} from "next/router";
+import Header from "shared/components/header";
+import Footer from "../shared/components/footer";
 
 const PotPayApp = ({Component, pageProps}) => {
     const {locale} = useTranslation();
+    const [loading, setLoading] = useState(false);
 
     const router = useRouter();
     useEffect(() => {
@@ -24,9 +27,13 @@ const PotPayApp = ({Component, pageProps}) => {
 
     return (
         <LocaleProvider lang={locale}>
-            <PageTransition timeout={300} classNames="page-transition">
-                <Component {...pageProps} />
-            </PageTransition>
+            <div className={loading ? 'app-container--loading' : ''}>
+                <Header/>
+                <PageTransition timeout={300} classNames="page-transition">
+                    <Component {...pageProps} />
+                </PageTransition>
+                <Footer/>
+            </div>
         </LocaleProvider>
     );
 }
@@ -40,7 +47,6 @@ PotPayApp.getInitialProps = async ({Component, ctx}) => {
 
     return {pageProps};
 };
-
 
 
 export default PotPayApp;

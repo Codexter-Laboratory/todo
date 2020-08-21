@@ -18,7 +18,6 @@ interface Props {
 
 const OurStory: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.ourParagraph, 'j')
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <CardDeck>

@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import {useRouter} from 'next/router';
-import Link from "next/link";
 import style from './style.module.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +11,6 @@ interface Props {
 }
 
 const Header = (props: Props) => {
-    const router = useRouter();
     const {locale} = useTranslation();
 
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
