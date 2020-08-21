@@ -1,7 +1,8 @@
-import axios from 'axios'
+import axios from 'axios';
 import {getPageData} from './queries';
+import {PageNames} from "../shared/enums/page-names.enum";
 
-function Fetcher (pageName: string) {
+function Fetcher (pageName: PageNames) {
     return axios({
         url: 'http://localhost:1337/graphql',
         method: 'POST',
@@ -13,4 +14,5 @@ function Fetcher (pageName: string) {
         })
     });
 }
+
 export {Fetcher};

@@ -2,16 +2,6 @@ import React from 'react';
 import {NextPage} from "next";
 import useTranslation from 'hooks/useTranslations';
 import withLocale from "hocs/withLocale";
-import Form from "shared/components/form";
-import Cards from "shared/components/card";
-import Footer from "shared/components/footer";
-import Paragraph from "shared/components/paragraph";
-import Service from "shared/components/service";
-import CardDeck from "shared/components/card-deck";
-import Header from "../../shared/components/header";
-import Image from "../../shared/components/image";
-import Contact from "../../shared/components/contact-info";
-import LogoDeck from "../../shared/components/logo-deck";
 
 interface Props {
     pageData: any;
@@ -21,8 +11,7 @@ const Home: NextPage<Props> = () => {
     const {locale} = useTranslation();
 
     return (
-        <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-
+        <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <Header></Header>
 
             <div className={'row'}>
@@ -35,51 +24,6 @@ const Home: NextPage<Props> = () => {
                     <img src={"assets/desktop-2.png"}/>
                 </div>
             </div>
-            <CardDeck>
-                <div className={'row'}>
-                    <div className="col-md-3 col-12">
-                        <Service icon="assets/pic.ico" title="Identify and analyze customers"
-                                 description="get deep insights on customer profiles and purchasing behavior"/></div>
-                    <div className="col-md-3 col-12">
-                        <Service icon="assets/pic.ico" title="Identify and analyze customers"
-                                 description="get deep insights on customer profiles and purchasing behavior"/>
-                    </div>
-                    <div className="col-md-3 col-12">
-                        <Service icon="assets/pic.ico" title="Identify and analyze customers"
-                                 description="get deep insights on customer profiles and purchasing behavior"/>
-                    </div>
-                    <div className="col-md-3 col-12">
-                        <Service icon="assets/pic.ico" title="Identify and analyze customers"
-                                 description="get deep insights on customer profiles and purchasing behavior"/>
-                    </div>
-                </div>
-            </CardDeck>
-
-            <CardDeck>
-                <div className="row">
-                    <div className="col-md-4 col-12">
-                        <Cards number={".01"}  title={"Hello"} description={"Hello Im a card"} sub_description={"and you can fill me"}
-                               icon="/assets/card-test.png"></Cards>
-                    </div>
-                    <div className={`col-md-4 col-12`}>
-                        <Cards number={".01"} title={"Hello"} description={"Hello Im a card"} sub_description={"and you can fill me"}
-                               icon="/assets/card-test.png"></Cards>
-                    </div>
-                    <div className="col-md-4 col-12">
-                        <Cards number={".01"} title={"Hello"} description={"Hello Im a card"} sub_description={"and you can fill me"}
-                               icon="/assets/card-test.png"></Cards>
-                    </div>
-                </div>
-                <div className={"row"}>
-                    <div className={"col-md-6 col-12"}/>
-                    <div className={"col-md-6 col-12"}>
-                        <Paragraph header="Say Hello to Digital Receipts"
-                                   content="Unlock the power of your in-store data by digitizing your customer's receipts"
-                                   subContent="PotPay" children=""/>
-                    </div>
-                </div>
-            </CardDeck>
-
             <div className={`row`}>
                 <div className={"col-md-6 col-12"}>
 
@@ -123,10 +67,15 @@ const Home: NextPage<Props> = () => {
                 <Footer />
             </div>
         </div>
-
-
     );
 };
+
+Home.getInitialProps = async (ctx) => {
+    let pageData = {};
+    return {
+        pageData
+    };
+}
 
 
 export default withLocale(Home);

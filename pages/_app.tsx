@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'framework/framework.scss';
 import {LocaleProvider} from "../context/LocaleContext";
 import useTranslation from "../hooks/useTranslations";
 import {PageTransition} from 'next-page-transitions';
+import {useRouter} from "next/router";
 
 const PotPayApp = ({Component, pageProps}) => {
     const {locale} = useTranslation();
+
+    const router = useRouter();
+    useEffect(() => {
+        const handleStart = (url) => (url !== router.pathname);
+        const handleComplete = (url) => (url !== router.pathname);
+        router.events.on('routeChangeStart', handleStart);
+        router.events.on('routeChangeComplete', handleComplete);
+        router.events.on('routeChangeError', handleComplete);
+        return () => {
+            router.events.off('routeChangeStart', handleStart);
+            router.events.off('routeChangeComplete', handleComplete);
+            router.events.off('routeChangeError', handleComplete);
+        }
+    });
 
     return (
         <LocaleProvider lang={locale}>

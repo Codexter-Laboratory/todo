@@ -61,13 +61,13 @@ let teamMembersQuery = `team_members {
     title_en,
     title_ar,
     name_en,
-    name_ar
+    name_ar,
     ${imagesQuery}
 }`;
 
 function getPageData(pageName: string) {
     return `query {
-        pages(where: {name_en: ${pageName}}){
+        pages(where: {name_en: "${pageName}"}){
             name_en,
             name_ar,
             description_en,

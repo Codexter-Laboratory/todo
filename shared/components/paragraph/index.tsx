@@ -1,24 +1,22 @@
 import React from 'react';
+import Markdown from 'react-markdown';
 import style from './style.module.scss';
+
 interface Props {
-    header: string;
-    content: string;
-    subContent:string;
+    title: string;
+    description: string;
+    sub_description: string;
     children: any;
     
 }
 
+
 const Paragraph = (props: Props) => {
     return (
         <div>
-            <h1 className={style.title}>{props.header}</h1>
-            <p className={style.sub_title}>1.Introduction</p>
-            <div className={style.paragraph_body}>
-                {props.content}
-            </div>
-            <div>
-                {props.subContent}
-            </div>
+            <h4>{props.title}</h4>
+            <Markdown escapeHtml={false} source={props.description}/>
+            <Markdown escapeHtml={false} source={props.sub_description}/>
             {props.children}
         </div>
     );

@@ -94,7 +94,6 @@ export const Form = () => {
     return (
         <form noValidate={true} onSubmit={handleSubmit}>
             <div className={style.form_container}>
-
                 <div className={style.demo}>
                     <p>
                         Request a Demo
@@ -145,12 +144,3 @@ export const Form = () => {
 }
 
 export default Form;
-
-
-// const handleOnSubmit(data: FormData) {
-//     console.info("FormData", data);
-//     return {
-//         message: "Your request has been successfully sent!",
-//         success: true
-//     };
-// }

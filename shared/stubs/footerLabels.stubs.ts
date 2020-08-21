@@ -1,5 +1,5 @@
 import {LabelsInterface} from "shared/interfaces/labels.interface";
-export const businessStubs: LabelsInterface [] = [
+export const businessFooterStubs: LabelsInterface [] = [
     {
         name: {
             ar: 'الزبائن',
@@ -14,7 +14,6 @@ export const businessStubs: LabelsInterface [] = [
         },
         route: '/our_story'
     },
-
     {
         name: {
             ar: '',
@@ -22,7 +21,6 @@ export const businessStubs: LabelsInterface [] = [
         },
         route: '/press'
     },
-
     {
         name: {
             ar: '',
@@ -30,7 +28,6 @@ export const businessStubs: LabelsInterface [] = [
         },
         route: '/business/privacy_policy'
     },
-
     {
         name: {
             ar: '',
@@ -39,7 +36,7 @@ export const businessStubs: LabelsInterface [] = [
         route: '/consumer/careers'
     },
 ];
-export const consumerStubs: LabelsInterface [] = [
+export const consumerFooterStubs: LabelsInterface [] = [
     {
         name: {
             ar: '',
@@ -47,7 +44,6 @@ export const consumerStubs: LabelsInterface [] = [
         },
         route: '/business'
     },
-
     {
         name: {
             ar: 'من نحن',
@@ -55,7 +51,6 @@ export const consumerStubs: LabelsInterface [] = [
         },
         route: '/our_story'
     },
-
     {
         name: {
             ar: '',
@@ -63,7 +58,6 @@ export const consumerStubs: LabelsInterface [] = [
         },
         route: '/press'
     },
-
     {
         name: {
             ar: '',
@@ -71,7 +65,6 @@ export const consumerStubs: LabelsInterface [] = [
         },
         route: '/consumer/privacy_policy'
     },
-
     {
         name: {
             ar: '',
