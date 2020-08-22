@@ -1,3 +1,14 @@
-.card_container{
-  align-items: center;
- }
+.cardDeck {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem;
+}
+
+.cardDeck__cardHolder {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardDeck__title {
+
+}

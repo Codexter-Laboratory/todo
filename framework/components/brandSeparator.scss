@@ -1,0 +1,9 @@
+.brand-separator {
+  margin: 2rem auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .brand-separator {
+    width: 100%;
+  }
+}

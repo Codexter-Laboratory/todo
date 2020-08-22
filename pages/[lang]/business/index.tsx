@@ -21,11 +21,12 @@ interface Props {
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
+    console.log(props.services, 'ss')
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             {
                 props.services && props.services.cards ?
-                    <CardDeck>
+                    <CardDeck title='Why PotPay?'>
                         {
                             props.services.cards.map(item => {
                                 return (
@@ -39,23 +40,23 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
             }
             {
                 props.cards && props.cards.cards ?
-                    <CardDeck>
+                    <CardDeck title='How It Works?'>
                         {props.cards.cards.map(item => {
                             return (
                                 <Cards title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image[0].file}/>
+                                       sub_description={item.subDescription[locale]} icon={item.image}/>
                             )
                         })}
                     </CardDeck> : null
             }
-            {
-                props.paragraphs ? props.paragraphs.map(item => {
-                    return (
-                        <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                   sub_description={item.subDescription[locale]}/>
-                    )
-                }) : null
-            }
+            {/*{*/}
+            {/*    props.paragraphs ? props.paragraphs.map(item => {*/}
+            {/*        return (*/}
+            {/*            <Paragraph title={item.title[locale]} description={item.description[locale]}*/}
+            {/*                       sub_description={item.subDescription[locale]}/>*/}
+            {/*        )*/}
+            {/*    }) : null*/}
+            {/*}*/}
         </div>
     );
 }
@@ -64,7 +65,11 @@ BusinessHome.getInitialProps = async (ctx) => {
     let res = await Fetcher(PageNames.page_business_home);
 
     let pageData;
+
     pageData = res.data.data.pages[0];
+
+    if (pageData){
+    }
 
     return {
         pageData,

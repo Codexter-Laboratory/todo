@@ -11,3 +11,16 @@
   --z-index-menus: 3;
   --z-index-cover: 100;
 }
+
+p, .body-text {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+button, btn-txt {
+  font-size: 22px !important;
+  font-weight: bold !important;
+  color: var(--color-secondary);
+}
+
+

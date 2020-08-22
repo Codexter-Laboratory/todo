@@ -1,15 +1,12 @@
 import React from 'react';
 import styles from './style.module.scss';
+import {ImageInterface} from "shared/interfaces/image.interface";
 
 export interface Props {
     title: string;
     description: string;
     sub_description: string;
-    icon: {
-        url: string;
-        name: string;
-        alt: string;
-    };
+    icon: ImageInterface;
     children?: any;
     number?: string;
 }
@@ -18,7 +15,7 @@ const Cards = (props: Props) => {
     return (
         <div className={styles.card_style}>
             <h5>{props.number}</h5>
-            <img className={styles.card_image} src={`${process.env.CMS_URL}${props.icon.url}`} alt={props.icon.alt}/>
+            <img className={styles.card_image} src={`${process.env.CMS_URL}${props.icon.url}`} alt={props.icon.name}/>
             <h1 className={styles.card_title}>{props.title}</h1>
             <div className={styles.card_description}>
                 <h2>{props.description}</h2>

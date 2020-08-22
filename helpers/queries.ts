@@ -6,12 +6,7 @@ let tagsQuery = `tags {
 let imagesQuery = `image {
       url,
       name,
-      file{
-      url,
-      name,
-      alternativeText,
-      previewUrl
-      }
+      alternativeText
 }`;
 
 let articlesQuery = `articles {
@@ -54,7 +49,6 @@ let paragraphsQuery = `paragraphs {
     sub_description_ar,
     date
 }`;
-
 
 
 let teamMembersQuery = `team_members {

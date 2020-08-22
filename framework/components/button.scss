@@ -1,0 +1,18 @@
+.button {
+
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  &:focus {
+
+  }
+}
+
+.button-secondary {
+  background-color: var(--color-tertiary) !important;
+}
+
+.button-lg {
+  font-size: 16px !important;
+}
