@@ -13,15 +13,17 @@ export interface Props {
 
 const Cards = (props: Props) => {
     return (
-        <div className={styles.card_style}>
-            <h5>{props.number}</h5>
-            <img className={styles.card_image} src={`${process.env.CMS_URL}${props.icon.url}`} alt={props.icon.name}/>
-            <h1 className={styles.card_title}>{props.title}</h1>
-            <div className={styles.card_description}>
-                <h2>{props.description}</h2>
+        <div className={styles.card__container}>
+            <h1>{props.number}</h1>
+            <img className={styles.card__image} src={`${process.env.CMS_URL}${props.icon.url}`} alt={props.icon.name}/>
+            <div className={styles.card__inside_container}>
+                <h2 className={styles.card__title}>{props.title}</h2>
+                <div className={styles.card__description}>
+                    <p>{props.description}</p>
+                </div>
+                <div className={styles.card__sub_description}>{props.sub_description}</div>
+                {props.children}
             </div>
-            <div className={styles.card_sub_description}>{props.sub_description}</div>
-            {props.children}
         </div>
     );
 };

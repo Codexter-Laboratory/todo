@@ -1,14 +1,17 @@
-.cardDeck {
+.cardDeck__container {
   display: flex;
   flex-direction: column;
   margin: 5rem;
 }
 
-.cardDeck__cardHolder {
+.cardDeck__top_container {
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.cardDeck__card_holder {
   display: flex;
   flex-direction: row;
 }
 
-.cardDeck__title {
 
-}

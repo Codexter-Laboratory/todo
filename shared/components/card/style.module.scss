@@ -1,21 +1,22 @@
-
-.card_style{
+.card__container{
   display: flex;
   flex-direction: column;
+  margin: 1rem 0.5rem;
 }
 
-.card_image{
-  width: 100%;
+.card__image{
+  width: 80%;
   border-radius: 8%;
+  object-fit: cover;
+  margin-bottom: 10%;
 }
 
-.card_title{
+.card__title{
+  width: 80%;
+  margin-bottom: 5%;
+  line-height: 1;
 }
 
-.card_description {
-  height: 2.5em;
-}
-
-.card_sub_description{
+.card__sub_description{
   text-align: left;
 }

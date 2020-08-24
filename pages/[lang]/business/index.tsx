@@ -45,10 +45,15 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
             {
                 props.cards && props.cards.cards ?
                     <CardDeck title='How It Works?'>
-                        {props.cards.cards.map(item => {
+                        {props.cards.cards.map((item, i) => {
                             return (
+                                i !== 1?
                                 <Cards title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image}/>
+                                       sub_description={item.subDescription[locale]} icon={item.image} number={`0${i+1}.`} key={i}/>:
+                                    <div style={{'margin-top': '2%'}}>
+                                        <Cards title={item.title[locale]} description={item.description[locale]}
+                                               sub_description={item.subDescription[locale]} icon={item.image} number={`0${i+1}.`} key={i}/>
+                                    </div>
                             )
                         })}
                     </CardDeck> : null
