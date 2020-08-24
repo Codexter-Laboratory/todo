@@ -10,6 +10,7 @@ import Paragraph from "shared/components/paragraph";
 import {ParagraphModel} from "shared/interfaces/paragraph.interface";
 import Service from "shared/components/service";
 import {PageNames} from 'shared/enums/page-names.enum'
+import {ServicePageLayout} from "shared/components/pageLayout";
 
 interface Props {
     pageData: any;
@@ -21,23 +22,26 @@ interface Props {
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.services, 'ss')
+
     return (
-        <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-            {
-                props.services && props.services.cards ?
-                    <CardDeck title='Why PotPay?'>
-                        {
-                            props.services.cards.map(item => {
-                                return (
-                                    <Service icon={item.image} title={item.title[locale]}
-                                             description={item.description[locale]}
-                                             subDescription={item.subDescription[locale]}/>
-                                )
-                            })
-                        }
-                    </CardDeck> : null
-            }
+        <ServicePageLayout pageData={props.pageData}>
+            <section id='why'>
+                {
+                    props.services && props.services.cards ?
+                        <CardDeck title='Why PotPay?'>
+                            {
+                                props.services.cards.map(item => {
+                                    return (
+                                        <Service icon={item.image} title={item.title[locale]}
+                                                 description={item.description[locale]}
+                                                 subDescription={item.subDescription[locale]}/>
+                                    )
+                                })
+                            }
+                        </CardDeck> : null
+                }
+            </section>
+            <section id='how'>
             {
                 props.cards && props.cards.cards ?
                     <CardDeck title='How It Works?'>
@@ -49,6 +53,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         })}
                     </CardDeck> : null
             }
+            </section>
             {/*{*/}
             {/*    props.paragraphs ? props.paragraphs.map(item => {*/}
             {/*        return (*/}
@@ -57,7 +62,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
             {/*        )*/}
             {/*    }) : null*/}
             {/*}*/}
-        </div>
+        </ServicePageLayout>
     );
 }
 
@@ -68,7 +73,7 @@ BusinessHome.getInitialProps = async (ctx) => {
 
     pageData = res.data.data.pages[0];
 
-    if (pageData){
+    if (pageData) {
     }
 
     return {

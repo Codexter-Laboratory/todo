@@ -11,7 +11,7 @@ interface Props {
 const NavLink = (props: Props) => {
     const { locale } = useTranslation();
     return (
-        <Link href={`/[lang]${props.route}`} as={`/${locale + props.as}`}>
+        <Link href={`/[lang]${props.route}`} as={`/${locale + props.as}`} scroll={false}>
             <a className='nav-link'>{props.label}</a>
         </Link>
     );

@@ -1,9 +1,24 @@
 .button {
 
+  //width: 7rem;
+  //height: 2rem;
+  //border-radius: 100px;
+  //border-width: 10px;
+  //border-color: #373c95;
+  //font-family: Muli;
+  //font-size: 10px;
+  //line-height: 0.6;
+  //letter-spacing: normal;
+  //text-align: center;
 }
 
 .button-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-button);
+  color: var(--color-secondary);
+  height: 50px;
+  padding: 5px 45px;
+  border: none;
+  border-radius: 25px;
   &:focus {
 
   }
@@ -15,4 +30,10 @@
 
 .button-lg {
   font-size: 16px !important;
+}
+
+button {
+  font-size: 22px !important;
+  font-weight: bold !important;
+  color: var(--color-secondary);
 }

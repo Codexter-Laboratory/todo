@@ -66,7 +66,8 @@ function getPageData(pageName: string) {
             name_ar,
             description_en,
             description_ar,
-            ${articlesQuery}
+            ${imagesQuery},
+            ${articlesQuery},
             ${cardGroupsQuery},
             ${paragraphsQuery},
             ${teamMembersQuery}

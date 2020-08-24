@@ -1,62 +1,34 @@
-.nav_demo_btn_container {
-}
-
 .nav_bar_container {
-    background: transparent !important;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 0 5%;
 }
 
 .nav_links_list{
     display: flex;
+    padding-left: 5%;
     flex-direction: column;
     list-style-type: none;
 }
 
-.nav_demo_btn{
-    width: 7rem;
-    height: 2rem;
-    border-radius: 100px;
-    border-width: 10px;
-    border-color: #373c95;
-    background-color: #373c95;
-    font-family: Muli;
-    font-size: 10px;
-    line-height: 0.6;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-}
-
 .Pot {
     font-size: 2.5em;
-    font-family: HelveticaNeue;
     font-weight: 700;
-    text-align: left;
-    color: #f7a502;
+    color: var(--color-secondary-button);
 }
 
 .Pay {
     font-size: 2.5em;
-    font-family: HelveticaNeue;
     font-weight: 700;
-    text-align: left;
-    color: #ecec;
-}
-
-.nav_bar {
+    color: var(--color-secondary);
 }
 
 .nav_bar>a {
-    font-size: 16px;
-    text-align: left;
-    color: #ecec !important;
+    color: var(--color-secondary);
 }
 
-.Header_container {
-    width: 90%;
-    height: 75%;
-    border-radius: 35%;
-    background-color: #191d62;
+.nav_demo_btn_container {
+    float: right;
 }
-
-
 

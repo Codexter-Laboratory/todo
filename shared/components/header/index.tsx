@@ -4,13 +4,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "hooks/useTranslations";
 import NavLink from "../NavLink";
-import {linksStubs} from "shared/stubs/links.stubs";
+import {BusinessLinksStubs} from "shared/stubs/links.stubs";
 import {NavLinksInterface} from "shared/stubs/nav-links-interface";
+import Link from "next/dist/client/link";
 
-interface Props {
-}
-
-const Header = (props: Props) => {
+const Header = () => {
     const {locale} = useTranslation();
 
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
@@ -41,37 +39,28 @@ const Header = (props: Props) => {
         </li>
 
     );
-    const renderLabel = (name) => {
-        const arr = linksStubs.filter(l => l.name === name);
-        const label = arr[0];
-        return label[locale];
-
-    };
 
     return (
-
-        <nav className={`navbar navbar-expand-lg navbar-light bg-light ${style.nav_bar_container}`}>
-
-                <a className={`navbar-brand`} href="#">
-                    <span className={style.Pot}>Pot</span>
-                    <span className={style.Pay}>Pay</span>
+        <nav className={`navbar navbar-expand-lg ${style.nav_bar_container}`}>
+            <Link href={`${locale}/`}>
+                <a className={`navbar-brand`}>
+                    <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                    <span className={`${style.Pay} font-family--logo`}>Pay</span>
                 </a>
-                <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
-                    <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
-                        {
-                            linksStubs.map(renderListItem)
-                        }
-                    </ul>
+            </Link>
+            <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
+                    {
+                        BusinessLinksStubs.map(renderListItem)
+                    }
+                </ul>
                 <div className={style.nav_demo_btn_container}>
-                    <button className={`btn btn-sm btn-outline-secondary ${style.nav_demo_btn} `}
-                            type="submit">Request Demo
+                    <button className={`button-primary`} type="submit">
+                        Request Demo
                     </button>
                 </div>
             </div>
-            <button
-                type="button" onClick={handleMenuClick} className="navbar-toggler"
-                data-toggle="collapse" data-target="#navlinks"
-                aria-controls="navlinks" aria-expanded="false" aria-label="Toggle navigation">
+            <button onClick={handleMenuClick} className="navbar-toggler">
                 <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
             </button>
         </nav>
