@@ -23,7 +23,7 @@ const Service = (props: serviceProps) => {
                 ) : null
             }
             <p className={`paragraph ${style.service__description}`}>{props.description}</p>
-            <p className={style.sub_description}>{props.subDescription}</p>
+            <p className={`paragraph ${style.sub_description}`}>{props.subDescription}</p>
         </div>
     )
 }

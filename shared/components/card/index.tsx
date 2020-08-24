@@ -18,10 +18,10 @@ const Cards = (props: Props) => {
             <img className={styles.card__image} src={`${process.env.CMS_URL}${props.icon.url}`} alt={props.icon.name}/>
             <div className={styles.card__inside_container}>
                 <h2 className={styles.card__title}>{props.title}</h2>
-                <div className={styles.card__description}>
+                <div className={`paragraph ${styles.card__description}`}>
                     <p>{props.description}</p>
                 </div>
-                <div className={styles.card__sub_description}>{props.sub_description}</div>
+                <div className={`paragraph ${styles.card__sub_description}`}>{props.sub_description}</div>
                 {props.children}
             </div>
         </div>
