@@ -1,9 +1,13 @@
 .brand-separator {
-  margin: 2rem auto;
+  width: 50px;
+  border: solid 1.5px var(--color-primary-secondary-button);
+  border-radius: 25px;
+  margin: 3rem;
 }
 
 @media only screen and (max-width: 600px) {
   .brand-separator {
-    width: 100%;
+    width: 20px;
+    background: var(--color-primary);
   }
 }
