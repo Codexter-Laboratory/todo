@@ -1,5 +1,5 @@
 .service__container{
-  width: 100%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -7,15 +7,30 @@
 }
 
 .service__top_image {
-  width: 200px;
-  height: 200px;
+  width: 12rem;
+  height: 12rem;
   overflow: hidden;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15%;
+  margin-bottom: 10%;
 }
 
 .service__title {
   width: 15rem;
   height: 5rem;
+}
+
+@media (max-width: 768px) {
+  .service__container {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .service__top_image {
+    width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10%;
+  }
 }

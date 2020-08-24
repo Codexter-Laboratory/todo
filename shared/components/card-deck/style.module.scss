@@ -1,7 +1,7 @@
 .cardDeck__container {
   display: flex;
   flex-direction: column;
-  margin: 5rem;
+  margin: 5rem auto;
 }
 
 .cardDeck__top_container {
@@ -11,8 +11,6 @@
 
 .cardDeck__card_holder {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
-
-

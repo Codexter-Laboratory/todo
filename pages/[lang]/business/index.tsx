@@ -28,7 +28,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
             <section id='why'>
                 {
                     props.services && props.services.cards ?
-                        <CardDeck title='Why PotPay?'>
+                        <CardDeck title='whyPotPay'>
                             {
                                 props.services.cards.map(item => {
                                     return (
@@ -42,22 +42,22 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 }
             </section>
             <section id='how'>
-            {
-                props.cards && props.cards.cards ?
-                    <CardDeck title='How It Works?'>
-                        {props.cards.cards.map((item, i) => {
-                            return (
-                                i !== 1?
-                                <Cards title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image} number={`0${i+1}.`} key={i}/>:
-                                    <div style={{'margin-top': '2%'}}>
+                {
+                    props.cards && props.cards.cards ?
+                        <CardDeck title='howItWorks'>
+                            {props.cards.cards.map((item, i) => {
+                                return (
+                                    i !== 1 ?
                                         <Cards title={item.title[locale]} description={item.description[locale]}
-                                               sub_description={item.subDescription[locale]} icon={item.image} number={`0${i+1}.`} key={i}/>
-                                    </div>
-                            )
-                        })}
-                    </CardDeck> : null
-            }
+                                               sub_description={item.subDescription[locale]} icon={item.image}
+                                               number={`0${i + 1}.`} key={i}/> :
+                                        <Cards title={item.title[locale]} description={item.description[locale]}
+                                               sub_description={item.subDescription[locale]} icon={item.image}
+                                               number={`0${i + 1}.`} key={i}/>
+                                )
+                            })}
+                        </CardDeck> : null
+                }
             </section>
             {/*{*/}
             {/*    props.paragraphs ? props.paragraphs.map(item => {*/}

@@ -2,12 +2,11 @@
   width: 50px;
   border: solid 1.5px var(--color-primary-secondary-button);
   border-radius: 25px;
-  margin: 3rem;
+  margin: 2rem;
 }
 
 @media only screen and (max-width: 600px) {
   .brand-separator {
-    width: 20px;
-    background: var(--color-primary);
+    width: 10%;
   }
 }

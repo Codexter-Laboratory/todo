@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.module.scss';
 import {ImageInterface} from "shared/interfaces/image.interface";
+import useTranslation from "hooks/useTranslations";
 
 export interface serviceProps {
     icon: ImageInterface
@@ -10,8 +11,11 @@ export interface serviceProps {
 }
 
 const Service = (props: serviceProps) => {
+    const {locale} = useTranslation();
+    const dir = locale === 'ar' ? 'rtl' : 'ltr';
+
     return (
-        <div className={style.service__container}>
+        <div className={style.service__container} dir={dir}>
             {
                 props.title ? (
                     <React.Fragment>
@@ -23,7 +27,7 @@ const Service = (props: serviceProps) => {
                 ) : null
             }
             <p className={`paragraph ${style.service__description}`}>{props.description}</p>
-            <p className={`paragraph ${style.sub_description}`}>{props.subDescription}</p>
+            <p className={`paragraph ${style.service__sub_description}`}>{props.subDescription}</p>
         </div>
     )
 }
