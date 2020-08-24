@@ -1,4 +1,4 @@
-import {NavLinksInterface} from './nav-links-interface';
+import {NavLinksInterface} from 'shared/interfaces/NavLinkInterface';
 
 export const BusinessLinksStubs: NavLinksInterface[] = [
     {

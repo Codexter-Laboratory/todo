@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "hooks/useTranslations";
 import NavLink from "../NavLink";
-import {BusinessLinksStubs} from "shared/stubs/links.stubs";
+import {BusinessLinksStubs} from "shared/stubs/header.links.stubs";
 import {NavLinksInterface} from "shared/stubs/nav-links-interface";
 import Link from "next/dist/client/link";
 
