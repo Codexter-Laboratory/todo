@@ -8,40 +8,65 @@ import Paragraph from "shared/components/paragraph";
 import CardDeck from "shared/components/card-deck";
 import Cards from "shared/components/card";
 import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
-import {PageNames} from "../../../shared/enums/page-names.enum";
+import {PageNames} from "shared/enums/page-names.enum";
+import Service from "shared/components/service";
+import {ServicePageLayout} from "shared/components/pageLayout";
+import img from "public/assets";
 
 interface Props {
     pageData: any;
+    services: CardDeckModel[];
     paragraphs: ParagraphModel[];
-    consumers: CardDeckModel[];
+    cards: CardDeckModel[];
 }
-
 
 const ConsumerHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
 
     return (
-        <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-            {
-                props.paragraphs ? props.paragraphs.map(item => {
-                    return (
-                        <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                   sub_description={item.subDescription[locale]}/>
-                    )
-                }) : null
-            }
-            {
-                props.consumers && props.consumers.cards ?
-                    <CardDeck>
-                        {props.consumers.cards.map(item => {
-                            return (
-                                <Cards title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image}/>
-                            )
-                        })}
-                    </CardDeck> : null
-            }
-        </div>
+        <ServicePageLayout pageData={props.pageData}>
+            <section id='why'>
+                {
+                    props.services && props.services.cards ?
+                        <CardDeck title='whyPotPay'>
+                            {
+                                props.services.cards.map(item => {
+                                    return (
+                                        <Service icon={item.image} title={item.title[locale]}
+                                                 description={item.description[locale]}
+                                                 subDescription={item.subDescription[locale]}/>
+                                    )
+                                })
+                            }
+                        </CardDeck> : null
+                }
+            </section>
+            <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                {
+                    props.paragraphs ? props.paragraphs.map(item => {
+                        return (
+                            <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                       sub_description={item.subDescription[locale]}/>
+                        )
+                    }) : null
+                }
+                <img src="500-logo.jpg"/>
+                {
+
+                }
+                {/*{*/}
+                {/*    props.cards && props.cards.cards ?*/}
+                {/*        <CardDeck>*/}
+                {/*            {props.cards.cards.map(item => {*/}
+                {/*                return (*/}
+                {/*                    <Cards title={item.title[locale]} description={item.description[locale]}*/}
+                {/*                           sub_description={item.subDescription[locale]} icon={item.image}/>*/}
+                {/*                )*/}
+                {/*            })}*/}
+                {/*        </CardDeck> : null*/}
+                {/*}*/}
+            </div>
+        </ServicePageLayout>
     );
 }
 
@@ -56,8 +81,8 @@ ConsumerHome.getInitialProps = async (ctx) => {
     return {
         pageData,
         paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
-        consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
-
+        services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services_consumer')[0]),
+        //consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
     };
 }
 

@@ -4,20 +4,18 @@
 
 $color-primary: #000000;
 $color-primary-button: #373C95;
-$color-primary-background: #191D62;
+$color-primary-background: #191d62;
 $color-primary-secondary-button: #070A34;
 
 $color-danger: #AF0000;
 $color-labeled: #6E6E6E;
-$color-secondary: #F9F9F9;
-$color-white: #FFFFFF;
+$color-secondary: #f9f9f9;
 
 $color-secondary-links: #3A9EFD;
 $color-secondary-hover: #F8B52E;
 $color-secondary-button: #F7A502;
 $color-secondary-minimal: #FEEED0;
 
-$color-shadow: rgba(0,0,0,0.24);
 
 :root {
   --color-primary: #{$color-primary};
@@ -27,8 +25,6 @@ $color-shadow: rgba(0,0,0,0.24);
   --color-primary-secondary-button: #{$color-primary-secondary-button};
   --color-labeled: #{$color-labeled};
   --color-danger: #{$color-danger};
-  --color-white: #{$color-white};
-  --color-shadow: #{$color-shadow};
   --color-secondary: #{$color-secondary};
   --color-secondary-rgb: #{hexToRGB($color-secondary)};
   --color-secondary-links: #{$color-secondary-links};
