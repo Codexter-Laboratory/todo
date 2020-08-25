@@ -6,6 +6,7 @@ $color-primary: #000000;
 $color-primary-button: #373C95;
 $color-primary-background: #191d62;
 $color-primary-secondary-button: #070A34;
+$color-primary-gradient: linear-gradient(to bottom, #2a2a73, #1e1e6a);
 
 $color-danger: #AF0000;
 $color-labeled: #6E6E6E;
@@ -15,6 +16,7 @@ $color-secondary-links: #3A9EFD;
 $color-secondary-hover: #F8B52E;
 $color-secondary-button: #F7A502;
 $color-secondary-minimal: #FEEED0;
+
 
 
 :root {
@@ -31,4 +33,5 @@ $color-secondary-minimal: #FEEED0;
   --color-secondary-hover: #{$color-secondary-hover};
   --color-secondary-button: #{$color-secondary-button};
   --color-secondary-minimal: #{$color-secondary-minimal};
+  --color-primary-gradient: #{$color-primary-gradient};
 }

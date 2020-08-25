@@ -36,6 +36,27 @@
   margin-top: 10%;
 }
 
+.page__two_col_section_contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
+
+.page__two_col_section_grey {
+  background: var(--color-secondary);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.page__two_col_section_contact_container {
+  background: var(--color-primary-background);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .page__first_section {
 
 }
