@@ -12,7 +12,7 @@ const CardDeck = (props: Props) => {
     const {locale} = useTranslation();
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
-    const renderLabel = (title) => {
+    const renderLabel = (title: string) => {
         const arr = LabelsStubs.filter(l => l.title === title);
         const label = arr[0];
         return label[locale];

@@ -11,21 +11,48 @@ import {ParagraphModel} from "shared/interfaces/paragraph.interface";
 import Service from "shared/components/service";
 import {PageNames} from 'shared/enums/page-names.enum'
 import {ServicePageLayout} from "shared/components/pageLayout";
+import {LabelsStubs} from "shared/stubs/labels.stubs";
+import style from './style.module.scss';
 
 interface Props {
     pageData: any;
     services: CardDeckModel[];
     paragraphs: ParagraphModel[];
     cards: CardDeckModel[];
+    measurements: any;
 }
 
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
+    console.log(props.measurements, 'sdsd')
+
+    const renderLabel = (title: string) => {
+        const arr = LabelsStubs.filter(l => l.title === title);
+        const label = arr[0];
+        return label[locale];
+    };
 
     return (
         <ServicePageLayout pageData={props.pageData}>
-            <section id='why'>
+            <section className='page__intro_section'>
+                <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                    <h2 className={style.page__intro_section_h2}>
+                        Say Hello to
+                    </h2>
+                    <h1 className={style.page__intro_section_h1}>Digital Receipts</h1>
+                    <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by
+                        digitizing
+                        your customers receipts.</p>
+                    <button className={`button-secondary`}>Request Demo</button>
+                    <button className={`button-thirdly ${style.page__intro_section_button}`}>How It Works?</button>
+                </div>
+                <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
+                         alt='PotPay Main Image'/>
+                </div>
+            </section>
+            <section className={`page__first_section ${style.page__services_section}`} id='why'>
                 {
                     props.services && props.services.cards ?
                         <CardDeck title='whyPotPay'>
@@ -50,23 +77,75 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                     i !== 1 ?
                                         <Cards title={item.title[locale]} description={item.description[locale]}
                                                sub_description={item.subDescription[locale]} icon={item.image}
-                                               number={`0${i + 1}.`} key={i}/> :
-                                        <Cards title={item.title[locale]} description={item.description[locale]}
+                                               number={renderLabel(`0${i + 1}.`)} key={i}/> :
+                                        <Cards padding title={item.title[locale]} description={item.description[locale]}
                                                sub_description={item.subDescription[locale]} icon={item.image}
-                                               number={`0${i + 1}.`} key={i}/>
+                                               number={renderLabel(`0${i + 1}.`)} key={i}/>
                                 )
                             })}
                         </CardDeck> : null
                 }
             </section>
-            {/*{*/}
-            {/*    props.paragraphs ? props.paragraphs.map(item => {*/}
-            {/*        return (*/}
-            {/*            <Paragraph title={item.title[locale]} description={item.description[locale]}*/}
-            {/*                       sub_description={item.subDescription[locale]}/>*/}
-            {/*        )*/}
-            {/*    }) : null*/}
-            {/*}*/}
+            <section className='page__one_col_section'>
+                <button className='button-primary'>Book a Demo</button>
+            </section>
+            <section className='page__two_col_section'>
+                <div className={`col-6 col-md-6`}>
+                    {
+                        props.paragraphs ?
+                            props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Data Privacy and Security').map(item => {
+                                return (
+                                    <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                               sub_description={item.subDescription[locale]}>
+
+                                    </Paragraph>
+                                )
+                            })
+                            : null
+                    }
+                </div>
+                <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    {
+                        props.paragraphs ?
+                            props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Data Privacy and Security').map(item => {
+                                return (
+                                    <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                               sub_description={item.subDescription[locale]} />
+                                )
+                            })
+                            : null
+                    }
+                    <button className='button-primary'>Get In Touch</button>
+                </div>
+            </section>
+            <section className='page__two_col_section'>
+                <div className={`col-6 col-md-6`}>
+                    {
+                        props.measurements ? props.measurements.cards.map(card => {
+                                return (
+                                    <div>
+                                        <h1>{card.title[locale]}</h1>
+                                        <p>{card.description[locale]}</p>
+                                    </div>
+                                )
+                            })
+                            : null
+                    }
+                </div>
+                <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    {
+                        props.paragraphs ?
+                            props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Did you know?').map(item => {
+                                console.log('res')
+                                return (
+                                    <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                               sub_description={item.subDescription[locale]} />
+                                )
+                            })
+                            : null
+                    }
+                </div>
+            </section>
         </ServicePageLayout>
     );
 }
@@ -85,6 +164,7 @@ BusinessHome.getInitialProps = async (ctx) => {
         pageData,
         services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0]),
         cards: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'cards')[0]),
+        measurements: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'measurements')[0]),
         paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
     };
 }

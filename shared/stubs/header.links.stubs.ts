@@ -11,7 +11,7 @@ export const BusinessLinksStubs: NavLinksInterface[] = [
     {
         title: {
             ar: 'الرئيسية',
-            en: 'Why PoyPay?'
+            en: 'Why PotPay?'
         },
         route: '/business#why'
     },

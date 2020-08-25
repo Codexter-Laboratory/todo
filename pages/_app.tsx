@@ -28,11 +28,11 @@ const PotPayApp = ({Component, pageProps}) => {
     return (
         <LocaleProvider lang={locale}>
             <div className={loading ? 'app-container--loading' : ''}>
-                {/*<Header/>*/}
+                <Header/>
                 <PageTransition timeout={300} classNames="page-transition">
                     <Component {...pageProps} />
                 </PageTransition>
-                {/*<Footer/>*/}
+                <Footer/>
             </div>
         </LocaleProvider>
     );
