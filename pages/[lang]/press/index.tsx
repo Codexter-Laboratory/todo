@@ -43,3 +43,4 @@ Press.getInitialProps = async (ctx) => {
 }
 
 export default withLocale(Press);
+
