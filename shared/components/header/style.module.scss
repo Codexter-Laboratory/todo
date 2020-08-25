@@ -1,5 +1,5 @@
 .nav_bar_container {
-    z-index: 1000;
+    z-index: 1;
     position: fixed;
     width: 100%;
     padding: 0 5%;
@@ -24,9 +24,20 @@
     color: var(--color-secondary);
 }
 
-.nav_bar>a {
-    color: var(--color-secondary);
+.pay_consumer{
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-primary-background);
 }
+
+.nav_bar>a {
+    color: var(--white);
+}
+
+.nav_bar_consumer>a{
+    color: var(--color-primary)
+}
+
 
 .nav_demo_btn_container {
     float: right;

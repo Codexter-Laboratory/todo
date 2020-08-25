@@ -7,10 +7,9 @@ import {useRouter} from "next/router";
 import Header from "shared/components/header";
 import Footer from "../shared/components/footer";
 
-const PotPayApp = ({Component, pageProps}) => {
+const PotPayApp = ({Component, pageProps, pageName}) => {
     const {locale} = useTranslation();
     const [loading, setLoading] = useState(false);
-
     const router = useRouter();
     useEffect(() => {
         const handleStart = (url) => (url !== router.pathname);
@@ -25,14 +24,15 @@ const PotPayApp = ({Component, pageProps}) => {
         }
     });
 
+
     return (
         <LocaleProvider lang={locale}>
             <div className={loading ? 'app-container--loading' : ''}>
-                <Header/>
+                <Header pageName={pageName}/>
                 <PageTransition timeout={300} classNames="page-transition">
                     <Component {...pageProps} />
                 </PageTransition>
-                <Footer/>
+                <Footer pageName={pageName}/>
             </div>
         </LocaleProvider>
     );
@@ -40,13 +40,14 @@ const PotPayApp = ({Component, pageProps}) => {
 
 PotPayApp.getInitialProps = async ({Component, ctx}) => {
     let pageProps = {};
+    let pageName = '';
 
     if (Component.getInitialProps) {
         pageProps = await Component.getInitialProps(ctx);
+        pageName = pageProps.pageData.name_en;
     }
 
-    return {pageProps};
+    return {pageProps, pageName};
 };
-
 
 export default PotPayApp;

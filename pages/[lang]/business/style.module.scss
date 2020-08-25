@@ -19,7 +19,7 @@
   float: right;
 }
 
-.page__left_section {
+.page__left_section, .page__right_section_margin {
   margin-top: 5%;
 }
 
@@ -27,4 +27,32 @@
   content: url("../../../public/illustrations/gray-bckg.svg");
   position: absolute;
   width: 100%;
+}
+
+.page__small_cards_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.page__small_cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 10%;
+  width: 12rem;
+  height: 15rem;
+  text-align: center;
+  margin: auto;
+  padding: 2rem 0 0 0;
+  align-items: center;
+  background: var(--color-white);
+  -webkit-box-shadow: 0px 0px 52px 0px var(--color-shadow);
+  -moz-box-shadow: 0px 0px 52px 0px var(--color-shadow);
+  box-shadow: 0px 0px 52px 0px var(--color-shadow);
+}
+
+.page_contact_let {
+  color: var(--color-white);
+  margin: 5rem 0 -10rem 3rem;
 }

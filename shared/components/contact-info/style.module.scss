@@ -1,28 +1,38 @@
-.contact_container{
-  background: #2a2a73;
+.contact_container {
 }
 
-.container{
+.container {
+
 }
 
 .contact_list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   list-style-type: none;
 }
 
-.title{
+.title {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
-.content{
-  color: #ffffff;
+.content {
+  display: flex;
+  flex-direction: row;
+  color: var(--color-white);
 }
 
-.icon{
-  padding-bottom: 1%;
+.icon {
 }
 
-.icon_container{
+.icon_container {
   width: 1.5rem;
   padding-bottom: 2.5%;
+}
+
+.form_list_text {
+  margin: 0.5rem 0.5rem .5rem .5rem;
+  float: left;
+  padding-bottom: 0.5rem;
 }

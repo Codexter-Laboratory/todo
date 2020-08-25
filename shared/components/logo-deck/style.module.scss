@@ -1,25 +1,23 @@
 .logo_deck_container{
-  background-color: #f9f9f9;
+  margin-left: 3rem;
+  margin-bottom: 10%;
 }
 
-.container_logo_1{
-  width: 20%;
-  margin: 10px;
+.container__logo_container {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: row;
 }
 
-.container_logo_2{
-  width: 20%;
-  margin: 10px;
+.container__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding-left: 1rem;
 }
 
-.title{
-  //font-family: Muli;
-  //font-size: 26px;
-  //font-weight: 600;
-  //line-height: 2.88;
-  //letter-spacing: normal;
-  //color: #000000;
-  //margin-left: 1rem;
+.title {
 }
 
 .logo_distribution{

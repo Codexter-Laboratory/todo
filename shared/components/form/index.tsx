@@ -95,23 +95,23 @@ export const Form = () => {
         <form noValidate={true} onSubmit={handleSubmit}>
             <div className={style.form_container}>
                 <div className={style.demo}>
-                    <p>
+                    <h5>
                         Request a Demo
-                    </p>
+                    </h5>
                 </div>
                 <div className={`row`}>
                     <div className={`col-md-6 col-6 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="firstName">First Name*</label>
                         <input className={style.input_field} id="firstName" value={firstName}
                                onChange={handleFirstNameChange} placeholder='Your First Name'/>
-                        <span className="error">{firstNameError}</span>
+                        <span className={style.error}>{firstNameError}</span>
                     </div>
 
                     <div className={`col-md-6 col-6 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="lastName">Last Name*</label>
                         <input className={style.input_field} id="lastName" value={lastName}
                                onChange={handleLastNameChange} placeholder='Your Last Name'/>
-                        <span className="error">{lastNameError}</span>
+                        <span className={style.error}>{lastNameError}</span>
                     </div>
                 </div>
                 <div className={`row`}>
@@ -119,7 +119,7 @@ export const Form = () => {
                         <label className={style.label} htmlFor="company">Company*</label>
                         <input className={style.input_field} id="company" value={company}
                                onChange={handleCompanyChange} placeholder='Name of your company'/>
-                        <span className="error">{companyError}</span>
+                        <span className={style.error}>{companyError}</span>
                     </div>
                 </div>
                 <div className={`row`}>
@@ -129,7 +129,7 @@ export const Form = () => {
                                id="email" value={email} onChange={handleEmailChange}
                                placeholder='Your Email'
                         />
-                        <span className="error">{emailError}</span>
+                        <span className={style.error}>{emailError}</span>
                     </div>
                 </div>
 
