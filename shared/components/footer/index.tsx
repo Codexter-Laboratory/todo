@@ -18,7 +18,7 @@ const Footer = () => {
     }
     return (
         <footer className={style.footer_container}>
-            <ul className={`row ${style.listLinks}`}>
+            <ul className={style.listLinks}>
                 {
                     businessFooterStubs.map(renderLinks)
                 }
