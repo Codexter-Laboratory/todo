@@ -11,6 +11,7 @@ $color-primary-gradient: linear-gradient(to bottom, #2a2a73, #1e1e6a);
 $color-danger: #AF0000;
 $color-labeled: #6E6E6E;
 $color-secondary: #f9f9f9;
+$color-white: #FFFFFF;
 
 $color-secondary-links: #3A9EFD;
 $color-secondary-hover: #F8B52E;
@@ -25,8 +26,9 @@ $color-secondary-minimal: #FEEED0;
   --color-primary-button: #{$color-primary-button};
   --color-primary-background: #{$color-primary-background};
   --color-primary-secondary-button: #{$color-primary-secondary-button};
-  --color-labeled: #{$color-labeled};
+  --color-white: #{$color-white};
   --color-danger: #{$color-danger};
+  --color-labeled: #{$color-labeled};
   --color-secondary: #{$color-secondary};
   --color-secondary-rgb: #{hexToRGB($color-secondary)};
   --color-secondary-links: #{$color-secondary-links};
