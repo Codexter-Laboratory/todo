@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './style.module.scss';
-import {businessFooterStubs} from 'shared/stubs/footerLabels.stubs'
+import {businessFooterStubs} from 'shared/stubs/footer.labels.stubs'
 import useTranslation from "hooks/useTranslations";
 import Link from "next/link";
-import {FooterLabelsInterface} from "shared/interfaces/labels.interface";
+import {FooterLabelsInterface} from "shared/interfaces/footerLabels.interface";
 
 const Footer = () => {
     const {locale} = useTranslation();

@@ -25,7 +25,21 @@
 }
 
 .button-secondary {
-  background-color: var(--color-tertiary) !important;
+  background-color: var(--color-secondary-button) !important;
+  color: var(--color-secondary);
+  height: 50px;
+  padding: 5px 45px;
+  border: none;
+  border-radius: 25px;
+}
+
+.button-thirdly {
+  background-color: var(--color-primary-secondary-button) !important;
+  color: var(--color-secondary);
+  height: 50px;
+  padding: 5px 45px;
+  border: none;
+  border-radius: 25px;
 }
 
 .button-lg {

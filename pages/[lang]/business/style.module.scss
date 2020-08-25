@@ -1,0 +1,30 @@
+.page__intro_section_h1, .page__intro_section_h2, .page__intro_section_paragraph {
+  color: var(--color-secondary);
+}
+
+.page__intro_section_h1 {
+  padding-bottom: 1%;
+}
+
+.page__intro_section_paragraph {
+  width: 30rem;
+}
+
+.page__intro_section_button {
+  margin-left: 1%;
+}
+
+.page__right_section_image {
+  width: 45rem;
+  float: right;
+}
+
+.page__left_section {
+  margin-top: 5%;
+}
+
+.page__services_section:before {
+  content: url("../../../public/illustrations/gray-bckg.svg");
+  position: absolute;
+  width: 100%;
+}

@@ -10,14 +10,16 @@ export interface Props {
     icon: ImageInterface;
     children?: any;
     number?: string;
+    padding?: boolean;
 }
 
 const Cards = (props: Props) => {
     const {locale} = useTranslation();
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
+    const layout = props.padding? `${styles.card__container} ${styles.card__container_padding}` : styles.card__container;
     return (
-        <div className={styles.card__container} dir={dir}>
-            <h1>{props.number}</h1>
+        <div className={layout} dir={dir}>
+            <h1 className={styles.card__number}>{props.number}</h1>
             <div className={styles.card__image_container}>
             <img className={styles.card__image} src={`${process.env.CMS_URL}${props.icon.url}`} alt={props.icon.name}/>
             </div>
