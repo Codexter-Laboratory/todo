@@ -1,30 +1,58 @@
 .link{
   list-style-type: none;
+  padding: 10px 0 0 20px;
 }
 
 .link>a{
+  //padding-left: 50px;
+  //border-left: 1.5px solid white;
   text-decoration:none;
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
   font-style: normal;
   text-align: left;
-  margin: 0 1rem;
 }
 
-
 .listLinks {
-  padding-top: 6%;
+  display: flex;
+  width: 55%;
 }
 
 .footer_container{
   width: 100%;
-  bottom: 0;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-image: linear-gradient(to bottom, #2a2a73, #1e1e6a);
 }
 
 .PP{
+  padding: 0 0 0 45px;
   font-size: 12px;
   color: #dbdbdb !important;
-  padding-left: 3%;
+}
+
+@media screen and (max-width: 480px) and (min-width: 0) {
+  .footer_container {
+    padding-bottom: 0;
+    //align-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .footer_container {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .footer_container {
+    padding-bottom: 0;
+  }
+  .listLinks {
+    display: flex;
+    width: 100%;
+  }
 }

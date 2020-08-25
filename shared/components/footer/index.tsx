@@ -3,11 +3,11 @@ import style from './style.module.scss';
 import {businessFooterStubs} from 'shared/stubs/footer.labels.stubs'
 import useTranslation from "hooks/useTranslations";
 import Link from "next/link";
-import {FooterLabelsInterface} from "shared/interfaces/footerLabels.interface";
+import {LabelsInterface} from "shared/interfaces/labels.interface";
 
 const Footer = () => {
     const {locale} = useTranslation();
-    let renderLinks = (item: FooterLabelsInterface) => {
+    let renderLinks = (item: LabelsInterface) => {
         return (
             <li className={`col-md-2 ${style.link}`}>
                 <Link href={`/[lang]${item.route}`} as={`/${locale + item.route}`}>
@@ -17,18 +17,17 @@ const Footer = () => {
         )
     }
     return (
-         <footer className={style.footer_container}>
+        <footer className={style.footer_container}>
             <ul className={`row ${style.listLinks}`}>
                 {
                     businessFooterStubs.map(renderLinks)
-
                 }
-              <div className="row">
-                <div className={style.PP}>
-                    @ 2020 PotPay
-                </div>
-              </div>
             </ul>
+            <div>
+                <div className={style.PP}>
+                    © 2020 PotPay
+                </div>
+            </div>
         </footer>
     );
 }
