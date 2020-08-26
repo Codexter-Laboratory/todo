@@ -27,7 +27,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
     return (
         <ServicePageLayout pageData={props.pageData}>
             <section className='page__intro_section'>
-                <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                     <h2 className={style.page__intro_section_h2}>
                         Join the 1,000,000+
                     </h2>
@@ -36,13 +36,13 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                     <p className={style.page__intro_section_paragraph}> Available for iOS & Android</p>
 
                     <button className={style.page__intro_section_button}>
-                        <img src="/icons/app-store-2.svg"/>
+                        <img className={style.btn_image} src="/icons/app-store.png"/>
                     </button>
                     <button className={style.page__intro_section_button}>
-                        <img src="/icons/google-store.svg"/>
+                        <img className={style.btn_image} src="/icons/google-store.png"/>
                     </button>
                 </div>
-                <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                     <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
                          alt='PotPay Main Image'/>
                 </div>

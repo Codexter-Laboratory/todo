@@ -24,13 +24,23 @@
 }
 
 .page__intro_section_button {
-  margin-left: 1%;
-  width: 5rem;
-  height: 2rem;
+  background-color: transparent;
+  object-fit: contain;
+  width: 10rem;
+  height: 3rem;
+  border: solid transparent;
+}
+
+.btn_image{
+  width: 9rem;
+  height: 9rem;
 }
 
 .page__right_section_image {
-  width: 45rem;
+  @media only screen and (max-width: 750px) {
+    width: 100%;
+  }
+  width: 150%;
   float: right;
 }
 

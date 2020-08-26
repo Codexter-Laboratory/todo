@@ -40,7 +40,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
         <>
             <ServicePageLayout pageData={props.pageData}>
                 <section className='page__intro_section'>
-                    <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                    <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <h2 className={style.page__intro_section_h2}>
                             Say Hello to
                         </h2>
@@ -51,7 +51,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         <button className={`button-secondary`}>Request Demo</button>
                         <button className={`button-thirdly ${style.page__intro_section_button}`}>How It Works?</button>
                     </div>
-                    <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
                              alt='PotPay Main Image'/>
                     </div>
@@ -95,7 +95,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <button className='button-primary'>Book a Demo</button>
                 </section>
                 <section className='page__two_col_section'>
-                    <div className={`col-6 col-md-6`}>
+                    <div className={`col-12 col-md-6`}>
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Data Privacy and Security').map(item => {
@@ -109,7 +109,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 : null
                         }
                     </div>
-                    <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Data Privacy and Security').map(item => {
@@ -124,7 +124,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     </div>
                 </section>
                 <section className='page__two_col_section'>
-                    <div className={`col-6 col-md-6 ${style.page__small_cards_container}`}>
+                    <div className={`col-12 col-md-6 ${style.page__small_cards_container}`}>
                         {
                             props.measurements ? props.measurements.cards.map(card => {
                                     return (
@@ -137,7 +137,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 : null
                         }
                     </div>
-                    <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Did you know?').map(item => {
@@ -153,10 +153,10 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 </section>
             </ServicePageLayout>
             <section className='page__two_col_section_grey'>
-                <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                     <LogoDeck logo_1="/assets/500-logo.jpg" logo_2="/assets/flat6labs-logo.png" title={"Funded by"}/>
                 </div>
-                <div className={`col-6 col-md-6 ${style.page__right_section_margin}`}>
+                <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
                     <LogoDeck logo_1="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
                               title={"Featured in"}/>
                 </div>
@@ -165,10 +165,10 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
             <section className='page__two_col_section_contact_container'>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
                 <section className='page__two_col_section_contact'>
-                    <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                    <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <Contact/>
                     </div>
-                    <div className={`col-6 col-md-6 ${style.page__right_section_margin}`}>
+                    <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
                         <Form/>
                     </div>
                 </section>

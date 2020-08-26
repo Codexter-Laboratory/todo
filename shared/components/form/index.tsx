@@ -100,14 +100,14 @@ export const Form = () => {
                     </h5>
                 </div>
                 <div className={`row`}>
-                    <div className={`col-md-6 col-6 ${style.form_sub_title}`}>
+                    <div className={`col-md-6 col-12 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="firstName">First Name*</label>
                         <input className={style.input_field} id="firstName" value={firstName}
                                onChange={handleFirstNameChange} placeholder='Your First Name'/>
                         <span className={style.error}>{firstNameError}</span>
                     </div>
 
-                    <div className={`col-md-6 col-6 ${style.form_sub_title}`}>
+                    <div className={`col-md-6 col-12 ${style.form_sub_title}`}>
                         <label className={style.label} htmlFor="lastName">Last Name*</label>
                         <input className={style.input_field} id="lastName" value={lastName}
                                onChange={handleLastNameChange} placeholder='Your Last Name'/>

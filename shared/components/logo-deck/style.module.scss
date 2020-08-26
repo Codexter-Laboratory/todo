@@ -1,4 +1,8 @@
 .logo_deck_container{
+  @media only screen and (max-width: 750px)
+  {
+    margin-left: 0;
+  }
   margin-left: 3rem;
   margin-bottom: 10%;
 }
@@ -18,6 +22,7 @@
 }
 
 .title {
+  padding-left: 1rem;
 }
 
 .logo_distribution{

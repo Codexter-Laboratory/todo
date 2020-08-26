@@ -56,7 +56,7 @@ const Header = (props: Props) => {
                 props.pageName === 'page_consumer_home' ? <>
                     <Link href={`${locale}/`}>
                         <a className={`navbar-brand`}>
-                            <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                            <span className={`${style.Pot} font-family--logo`} >Pot</span>
                             <span className={`${style.pay_consumer} font-family--logo`}>Pay</span>
                         </a>
                     </Link>

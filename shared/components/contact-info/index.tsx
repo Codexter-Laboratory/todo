@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div className={style.contact_container}>
             <ul className={style.contact_list}>
-                <li className={style.title}>Get in Touch</li>
+                <h5 className={style.title}>Get in Touch</h5>
                 <li className={style.content}>
                     <img className={style.icon} src='/icons/mobile-icon.svg' alt='mobile'/>
                     <p className={style.form_list_text}>+961 81 284 021</p>

@@ -7,7 +7,6 @@
 }
 
 .page__intro_section_paragraph {
-  width: 30rem;
 }
 
 .page__intro_section_button {
@@ -15,7 +14,10 @@
 }
 
 .page__right_section_image {
-  width: 45rem;
+  @media only screen and (max-width: 750px) {
+    width: 100%;
+  }
+  width: 150%;
   float: right;
 }
 
@@ -24,7 +26,7 @@
 }
 
 .page__services_section:before {
-  content: url("../../../public/illustrations/gray-bckg.svg");
+  //content: url("../../../public/illustrations/gray-bckg.svg");
   position: absolute;
   width: 100%;
 }
@@ -54,5 +56,5 @@
 
 .page_contact_let {
   color: var(--color-white);
-  margin: 5rem 0 -10rem 3rem;
+  margin: 3rem 0 0 1rem;
 }
