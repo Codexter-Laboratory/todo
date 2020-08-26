@@ -11,7 +11,8 @@ import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.i
 import {PageNames} from "shared/enums/page-names.enum";
 import Service from "shared/components/service";
 import {ServicePageLayout} from "shared/components/pageLayout";
-import img from "public/assets";
+import file from "public/assets";
+import style from "./style.module.scss";
 
 interface Props {
     pageData: any;
@@ -25,6 +26,27 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
 
     return (
         <ServicePageLayout pageData={props.pageData}>
+            <section className='page__intro_section'>
+                <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                    <h2 className={style.page__intro_section_h2}>
+                        Join the 1,000,000+
+                    </h2>
+                    <h1 className={style.page__intro_section_h1}>Who digitized<br/> their paper receipts</h1>
+                    <p className={style.page__intro_section_paragraph}><br/><br/><br/><br/>Get started by downloading the app!</p>
+                    <p className={style.page__intro_section_paragraph}> Available for iOS & Android</p>
+
+                    <button className={style.page__intro_section_button}>
+                        <img src="/icons/app-store-2.svg"/>
+                    </button>
+                    <button className={style.page__intro_section_button}>
+                        <img src="/icons/google-store.svg"/>
+                    </button>
+                </div>
+                <div className={`col-6 col-md-6 ${style.page__right_section}`}>
+                    <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
+                         alt='PotPay Main Image'/>
+                </div>
+            </section>
             <section id='why'>
                 {
                     props.services && props.services.cards ?
@@ -41,19 +63,24 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         </CardDeck> : null
                 }
             </section>
-            <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            <section>
+                <h1 className={style.section_title}>Key Features</h1>
+            <section className={style.section_container}>
+            <div className="col-12 col-md-6" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                 {
-                    props.paragraphs ? props.paragraphs.map(item => {
+                    props.paragraphs ?
+                        props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Your receipts automatically stored in one place').map(item => {
                         return (
                             <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]}/>
+                                       sub_description={item.subDescription[locale]} children={""}/>
                         )
                     }) : null
                 }
-                <img src="500-logo.jpg"/>
-                {
+            </div>
+                <div className='col-md-6 col-12'>
+                   <img src="500-logo.jpg"/>
+                </div>
 
-                }
                 {/*{*/}
                 {/*    props.cards && props.cards.cards ?*/}
                 {/*        <CardDeck>*/}
@@ -65,7 +92,60 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 {/*            })}*/}
                 {/*        </CardDeck> : null*/}
                 {/*}*/}
-            </div>
+            </section>
+            <section className={style.section_container}>
+                <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                    <img className={style.page__left_section} src="500-logo.jpg"/>
+                </div>
+                    <div className={`col-md-6 col-12 ${style.page__right_section}`}>
+
+                    {
+                        props.paragraphs ?
+                            props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Track your budget').map(item =>{
+                            return (
+                                <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                           sub_description={item.subDescription[locale]}/>
+                            )
+                        }) : null
+                    }
+                    </div>
+            </section>
+            <section className={style.section_container}>
+                <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                    {
+                        props.paragraphs ?
+                            props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Identify & monitor your spending habits').map(item =>{
+                                return (
+                                    <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                               sub_description={item.subDescription[locale]}/>
+                                )
+                            }) : null
+                    }
+                </div>
+                <div className='col-md-6 col-12'>
+                    <img src="500-logo.jpg"/>
+                </div>
+            </section>
+            </section>
+            <section>
+                <h1 className={style.section_title}>PotPay Retailers</h1>
+            </section>
+                <section className={style.section_container}>
+                    <div className='col-md-6 col-12'>
+                        <img src="500-logo.jpg"/>
+                    </div>
+                    <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                        {
+                            props.paragraphs ?
+                                props.paragraphs.filter(paragraph => paragraph.title['en'] === "Data privacy & security").map(item =>{
+                                    return (
+                                        <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                                   sub_description={item.subDescription[locale]}/>
+                                    )
+                                }) : null
+                        }
+                    </div>
+                </section>
         </ServicePageLayout>
     );
 }

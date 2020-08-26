@@ -9,11 +9,11 @@ import {NavLinksInterface} from "shared/interfaces/NavLinkInterface";
 import Link from "next/dist/client/link";
 import {ConsumerLinksStubs} from "shared/stubs/header.links.stubs.2";
 
-interface Porps {
+interface Props {
     pageName: string;
 }
 
-const Header = (props: Porps) => {
+const Header = (props: Props) => {
     const {locale} = useTranslation();
 
     const dir = locale === 'ar' ? 'rtl' : 'ltr';

@@ -4,8 +4,13 @@ import {businessFooterStubs} from 'shared/stubs/footer.labels.stubs'
 import useTranslation from "hooks/useTranslations";
 import Link from "next/link";
 import {LabelsInterface} from "shared/interfaces/labels.interface";
+import {ConsumerFooterStubs} from "shared/stubs/footer.labels.stubs.2";
 
-const Footer = () => {
+interface Props {
+    pageName: string;
+}
+
+const Footer = (props: Props) => {
     const {locale} = useTranslation();
     let renderLinks = (item: LabelsInterface) => {
         return (
@@ -18,16 +23,31 @@ const Footer = () => {
     }
     return (
         <footer className={style.footer_container}>
-            <ul className={style.listLinks}>
-                {
-                    businessFooterStubs.map(renderLinks)
-                }
-            </ul>
-            <div>
-                <div className={style.PP}>
-                    © 2020 PotPay
-                </div>
-            </div>
+            {
+                props.pageName === 'page_consumer_home' ? <>
+                    <ul className={`row ${style.listLinks}`}>
+                        {
+                            ConsumerFooterStubs.map(renderLinks)
+                        }
+                    </ul>
+                    <div>
+                        <div className={style.PP}>
+                            © 2020 PotPay
+                        </div>
+                    </div>
+                </> : <>
+                    <ul className={`row ${style.listLinks}`}>
+                        {
+                            businessFooterStubs.map(renderLinks)
+                        }
+                    </ul>
+                    <div>
+                        <div className={style.PP}>
+                            © 2020 PotPay
+                        </div>
+                    </div>
+                </>
+            }
         </footer>
     );
 }
