@@ -9,20 +9,17 @@
 .service__top_image_container {
   width: 12rem;
   height: 12rem;
-  border-radius: 50%;
-  background: var(--color-white);
-  -webkit-box-shadow: 0px 0px 52px 0px var(--color-shadow);
-  -moz-box-shadow: 0px 0px 52px 0px var(--color-shadow);
-  box-shadow: 0px 0px 52px 0px var(--color-shadow);
+  border-radius: 100%;
+  background: var(--white);
+  box-shadow: 6px 17px 20px 0px rgba(0, 0, 0, 0.2), 8px 17px 20px 0px rgba(0, 0, 0, 0.19);
   margin-bottom: 5rem;
 }
 
 .service__top_image {
   overflow: hidden;
-  object-fit: cover;
-  max-width:100%;
-  max-height:100%;
-  padding: 5%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0%;
 }
 
 .service__title {

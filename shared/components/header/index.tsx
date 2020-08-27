@@ -50,13 +50,13 @@ const Header = (props: Props) => {
 
     );
 
-    return (
-        <nav className={`navbar navbar-expand-lg ${style.nav_bar_container}`}>
+        return(
+        <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${style.nav_bar_container}`}>
             {
                 props.pageName === 'page_consumer_home' ? <>
                     <Link href={`${locale}/`}>
                         <a className={`navbar-brand`}>
-                            <span className={`${style.Pot} font-family--logo`} >Pot</span>
+                            <span className={`${style.Pot} font-family--logo`}>Pot</span>
                             <span className={`${style.pay_consumer} font-family--logo`}>Pay</span>
                         </a>
                     </Link>
@@ -72,11 +72,11 @@ const Header = (props: Props) => {
                     </button>
                 </> : <>
                     <Link href={`${locale}/`}>
-                    <a className={`navbar-brand`}>
-                        <span className={`${style.Pot} font-family--logo`}>Pot</span>
-                        <span className={`${style.Pay} font-family--logo`}>Pay</span>
-                    </a>
-                </Link>
+                        <a className={`navbar-brand`}>
+                            <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                            <span className={`${style.Pay} font-family--logo`}>Pay</span>
+                        </a>
+                    </Link>
                     <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
                         <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
                             {
@@ -98,6 +98,7 @@ const Header = (props: Props) => {
         </nav>
 
     );
+
 };
 
 export default Header;

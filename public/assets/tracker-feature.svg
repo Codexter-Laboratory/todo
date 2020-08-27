@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="740" height="804" viewBox="0 0 740 804">
+  <defs>
+    <filter id="Rectangle_338" x="0" y="0" width="740" height="804" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_539" data-name="Group 539" transform="translate(-132 -3430)">
+    <g transform="matrix(1, 0, 0, 1, 132, 3430)" filter="url(#Rectangle_338)">
+      <rect id="Rectangle_338-2" data-name="Rectangle 338" width="590" height="654" rx="24" transform="translate(75 65)" fill="#fff"/>
+    </g>
+    <path id="Rectangle_339" data-name="Rectangle 339" d="M24,0H566a24,24,0,0,1,24,24V173a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V24A24,24,0,0,1,24,0Z" transform="translate(207 3495)" fill="#373c95"/>
+    <circle id="Ellipse_16" data-name="Ellipse 16" cx="31" cy="31" r="31" transform="translate(329 3583)" fill="#fdb23a"/>
+    <text id="Sun" transform="translate(264 3558)" fill="#fff" font-size="21" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Sun</tspan></text>
+    <text id="Mon" transform="translate(339 3559)" fill="#fff" font-size="22" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Mon</tspan></text>
+    <text id="_20" data-name="20" transform="translate(347 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">20</tspan></text>
+    <text id="_20-2" data-name="20" transform="translate(268 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">20</tspan></text>
+    <text id="_21" data-name="21" transform="translate(428 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">21</tspan></text>
+    <text id="_22" data-name="22" transform="translate(497 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">22</tspan></text>
+    <text id="_23" data-name="23" transform="translate(573 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">23</tspan></text>
+    <text id="_24" data-name="24" transform="translate(644 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">24</tspan></text>
+    <text id="_25" data-name="25" transform="translate(714 3622)" fill="#fff" font-size="23" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">25</tspan></text>
+    <text id="Tue" transform="translate(420 3560)" fill="#fff" font-size="23" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Tue</tspan></text>
+    <text id="Wed" transform="translate(489 3560)" fill="#fff" font-size="23" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Wed</tspan></text>
+    <text id="Thu" transform="translate(566 3558)" fill="#fff" font-size="21" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Thu</tspan></text>
+    <text id="Fri" transform="translate(645 3560)" fill="#fff" font-size="23" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Fri</tspan></text>
+    <text id="Sat" transform="translate(710 3559)" fill="#fff" font-size="22" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">Sat</tspan></text>
+    <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="118.5" cy="119.5" rx="118.5" ry="119.5" transform="translate(391 3714)" fill="#373c95" opacity="0.997"/>
+    <path id="Path_527" data-name="Path 527" d="M699.5,4697.607l.071-118.589a111.311,111.311,0,0,1,37.261,6.738Z" transform="translate(-186.646 -865.105)" fill="#f0f0f0"/>
+    <text id="You_are_on_a_healthy_spending_rate" data-name="You are on a healthy spending rate" transform="translate(508 3989)" fill="#5d5d5d" font-size="19" font-family="Muli-Light, Muli" font-weight="300" letter-spacing="0.004em"><tspan x="-151.021" y="0">You are on a healthy spending rate</tspan></text>
+    <text id="Spending_avg:_33_day" data-name="Spending avg: $33 / day" transform="translate(507 4020)" fill="#171717" font-size="22" font-family="Muli-SemiBold, Muli" font-weight="600" letter-spacing="0.004em"><tspan x="-125.906" y="0">Spending avg: $33 / day</tspan></text>
+    <rect id="Rectangle_340" data-name="Rectangle 340" width="164" height="57" rx="28.5" transform="translate(428 4049)" fill="#fdb23a"/>
+    <text id="Add_budget" data-name="Add budget" transform="translate(510 4083)" fill="#fff" font-size="17" font-family="Muli-SemiBold, Muli" font-weight="600" letter-spacing="0.004em"><tspan x="-47.447" y="0">Add budget</tspan></text>
+    <path id="Path_533" data-name="Path 533" d="M699.5,4697.607l.107-118.064a139.875,139.875,0,0,1,37.758,7,108.856,108.856,0,0,1,31.71,17.576Z" transform="translate(1379.475 -836.959) rotate(19)" fill="#3a9efd"/>
+    <ellipse id="Ellipse_4" data-name="Ellipse 4" cx="101.5" cy="102" rx="101.5" ry="102" transform="translate(408 3732)" fill="#fff"/>
+    <text id="Remaining_" data-name="Remaining " transform="translate(513 3874)" fill="#5d5d5d" font-size="17" font-family="Muli-Medium, Muli" font-weight="500" letter-spacing="0.004em"><tspan x="-45.05" y="0">Remaining </tspan></text>
+    <text id="_week" data-name="/week" transform="translate(511 3894)" fill="#5d5d5d" font-size="17" font-family="Muli-Medium, Muli" font-weight="500" letter-spacing="0.004em"><tspan x="-23.434" y="0">/week</tspan></text>
+    <text id="USD" transform="translate(492 3794)" fill="#5d5d5d" font-size="17" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">USD</tspan></text>
+    <text id="_200" data-name="200" transform="translate(462 3846)" fill="#101010" font-size="51" font-family="SFProDisplay-Medium, SF Pro Display" font-weight="500" letter-spacing="0.004em"><tspan x="0" y="0">200</tspan></text>
+    <text id="_.00" data-name=".00" transform="translate(557 3828)" fill="#101010" font-size="23" font-family="SFProDisplay-Light, SF Pro Display" font-weight="300" letter-spacing="0.004em"><tspan x="0" y="0">.00</tspan></text>
+  </g>
+</svg>
