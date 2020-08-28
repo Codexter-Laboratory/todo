@@ -3,15 +3,15 @@ import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
 import useTranslation from "hooks/useTranslations";
-import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
 import Cards from "shared/components/card";
+import Service from "shared/components/service";
 import CardDeck from "shared/components/card-deck";
 import Paragraph from "shared/components/paragraph";
-import {ParagraphModel} from "shared/interfaces/paragraph.interface";
-import Service from "shared/components/service";
+import {LabelsStubs} from "shared/stubs/labels.stubs";
 import {PageNames} from 'shared/enums/page-names.enum'
 import {ServicePageLayout} from "shared/components/pageLayout";
-import {LabelsStubs} from "shared/stubs/labels.stubs";
+import {ParagraphModel} from "shared/interfaces/paragraph.interface";
+import {CardDeckApiInterface, CardDeckModel} from "shared/interfaces/card-deck.interface";
 import style from './style.module.scss';
 import Contact from "shared/components/contact-info";
 import Form from "shared/components/form";
@@ -22,9 +22,9 @@ interface Props {
     services: CardDeckModel[];
     paragraphs: ParagraphModel[];
     cards: CardDeckModel[];
-    measurements: any;
+    otherCards: CardDeckModel[];
+    measurements: CardDeckModel[];
 }
-
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
@@ -34,6 +34,19 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
         const label = arr[0];
         return label[locale];
     };
+
+    let renderOtherCard = (item, i: number) => <Cards title={item.title[locale]} description={item.description[locale]}
+                                           sub_description={item.subDescription[locale]} icon={item.image}
+                                           number={renderLabel(`0${i + 1}.`)} key={i} />
+
+    let renderOtherCardDecks = (item: CardDeckModel) => {
+        return <CardDeck>
+            {
+                item.cards.map(renderOtherCard)
+            }
+        </CardDeck>
+    }
+
 
     return (
         <>
@@ -128,7 +141,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                             props.measurements ?
                                 props.measurements.cards.map(card => {
                                     return (
-                                        <div className={style.page__small_cards}>
+                                        <div className={`${style.page__small_cards}`}>
                                             <h1>{card.title[locale]}</h1>
                                             <p>{card.description[locale]}</p>
                                         </div>
@@ -141,7 +154,6 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Did you know?').map(item => {
-                                    console.log('res')
                                     return (
                                         <Paragraph title={item.title[locale]} description={item.description[locale]}
                                                    sub_description={item.subDescription[locale]}/>
@@ -152,6 +164,11 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         <button className='button-primary'>Get In Touch</button>
                     </div>
                 </section>
+                <section>
+                    {
+                        props.otherCards.map(renderOtherCardDecks)
+                    }
+                </section>
             </ServicePageLayout>
             <section className='page__two_col_section_grey'>
                 <div className={`col-12 col-md-6 ${style.page__left_section}`}>
@@ -161,42 +178,6 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <LogoDeck logo_1="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
                               title={"Featured in"}/>
                 </div>
-            </section>
-            <section>
-                <CardDeck>
-                    {props.cards.cards.map((item, i) => {
-                        return (
-                            i !== 1 ?
-                                <Cards title={item.title[locale]} description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image}
-                                       number={renderLabel(`0${i + 1}.`)} key={i}/> :
-                                <Cards padding title={item.title[locale]}
-                                       description={item.description[locale]}
-                                       sub_description={item.subDescription[locale]} icon={item.image}
-                                       number={renderLabel(`0${i + 1}.`)} key={i}/>
-                        )
-                    })}
-                    {
-                        props.services.cards.map(item => {
-                            return (
-                                <Service icon={item.image} title={item.title[locale]}
-                                         description={item.description[locale]}
-                                         subDescription={item.subDescription[locale]}/>
-                            )
-                        })
-                    }
-                    {
-                        props.measurements ? props.measurements.cards.map(card => {
-                                return (
-                                    <div className={style.page__small_cards}>
-                                        <h1>{card.title[locale]}</h1>
-                                        <p>{card.description[locale]}</p>
-                                    </div>
-                                )
-                            })
-                            : null
-                    }
-                </CardDeck>
             </section>
             <section className='page__two_col_section_contact_container'>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
@@ -215,16 +196,17 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
 
 BusinessHome.getInitialProps = async (ctx) => {
     let res = await Fetcher(PageNames.page_business_home);
-
-    let pageData;
-
-    pageData = res.data.data.pages[0];
-
-    if (pageData) {
-    }
+    let pageData = res.data.data.pages[0];
 
     return {
         pageData,
+        otherCards: pageData.card_groups.filter((c: CardDeckApiInterface) =>
+            c.name !== 'services'
+            &&
+            c.name !== 'measurements'
+            &&
+            c.name !== 'cards'
+        ).map(item => new CardDeckModel(item)),
         services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0]),
         cards: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'cards')[0]),
         measurements: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'measurements')[0]),

@@ -19,15 +19,15 @@ const CardDeck = (props: Props) => {
     };
     return (
         <div className={`${style.cardDeck__container}`} dir={dir}>
-            <div className={`${style.cardDeck__top_container}`}>
-                {
-                    props.title ? (
-                        <Fragment>
-                            <h1 className={`text-center ${style.cardDeck__title}`}>{renderLabel(props.title)}</h1>
-                        </Fragment>
-                    ) : null
-                }
-            </div>
+            {
+                props.title ? (<div className={`${style.cardDeck__top_container}`}>
+
+                    <Fragment>
+                        <h1 className={`text-center ${style.cardDeck__title}`}>{renderLabel(props.title)}</h1>
+                    </Fragment>
+
+                </div>) : null
+            }
             <div className={style.cardDeck__card_holder}>
                 {props.children}
             </div>

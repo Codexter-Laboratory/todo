@@ -1,10 +1,9 @@
 import React from 'react';
-import style from './style.module.scss';
-import {businessFooterStubs} from 'shared/stubs/footer.labels.stubs'
-import useTranslation from "hooks/useTranslations";
 import Link from "next/link";
-import {LabelsInterface} from "shared/interfaces/labels.interface";
-import {ConsumerFooterStubs} from "shared/stubs/footer.labels.stubs.2";
+import style from './style.module.scss';
+import useTranslation from "hooks/useTranslations";
+import {BusinessFooterStubs, ConsumerFooterStubs} from 'shared/stubs/footer.labels.stubs'
+import {FooterLabelsInterface} from "shared/interfaces/footerLabels.interface";
 
 interface Props {
     pageName: string;
@@ -12,7 +11,7 @@ interface Props {
 
 const Footer = (props: Props) => {
     const {locale} = useTranslation();
-    let renderLinks = (item: LabelsInterface) => {
+    let renderLinks = (item: FooterLabelsInterface) => {
         return (
             <li className={`col-md-2 ${style.link}`}>
                 <Link href={`/[lang]${item.route}`} as={`/${locale + item.route}`}>
@@ -38,7 +37,7 @@ const Footer = (props: Props) => {
                 </> : <>
                     <ul className={`row ${style.listLinks}`}>
                         {
-                            businessFooterStubs.map(renderLinks)
+                            BusinessFooterStubs.map(renderLinks)
                         }
                     </ul>
                     <div>

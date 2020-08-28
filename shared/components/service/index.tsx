@@ -6,7 +6,7 @@ import useTranslation from "hooks/useTranslations";
 export interface serviceProps {
     icon: ImageInterface
     title: string;
-    description: string;
+    description?: string;
     subDescription?: string;
 }
 
