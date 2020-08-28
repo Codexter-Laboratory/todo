@@ -50,8 +50,8 @@ const Header = (props: Props) => {
 
     );
 
-    return (
-        <nav className={`navbar navbar-expand-lg ${style.nav_bar_container}`}>
+        return(
+        <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${style.nav_bar_container}`}>
             {
                 props.pageName === 'page_consumer_home' ? <>
                     <Link href={`/${locale}`}>

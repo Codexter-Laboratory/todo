@@ -14,6 +14,7 @@ import {ServicePageLayout} from "shared/components/pageLayout";
 import file from "public/assets";
 import style from "./style.module.scss";
 
+
 interface Props {
     pageData: any;
     services: CardDeckModel[];
@@ -28,7 +29,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
     return (
         <ServicePageLayout pageData={props.pageData}>
             <section className='page__intro_section'>
-                <div className={`col-6 col-md-6 ${style.page__left_section}`}>
+                <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                     <h2 className={style.page__intro_section_h2}>
                         Join the 1,000,000+
                     </h2>
@@ -37,24 +38,29 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                     <p className={style.page__intro_section_paragraph}> Available for iOS & Android</p>
 
                     <button className={style.page__intro_section_button}>
-                        <img src="/icons/app-store-2.svg"/>
+                        <img className={style.btn_image} src="/icons/app-store.png"/>
                     </button>
                     <button className={style.page__intro_section_button}>
-                        <img src="/icons/google-store.svg"/>
+                        <img className={style.btn_image} src="/icons/google-store.png"/>
                     </button>
                 </div>
-                <div className={`col-6 col-md-6 ${style.page__right_section}`}>
-                    <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
-                         alt='PotPay Main Image'/>
+                <div className={`col-12 col-md-6 ${style.page__right_section}`}>
+                    <div className={style.parent}>
+                        <img className={style.image1} src='/assets/b2c-back.svg' alt='PotPay Main Image'/>
+                        <img className={style.page__right_section_image} src='/assets/main-image-b2c.png' alt='PotPay Main Image'/>
+                    </div>
                 </div>
             </section>
-            <section id='why'>
+            <div className={style.parent}>
+                <img className={style.image2} src='/assets/whyPotPay-back.svg' alt='PotPay Main Image'/>
+            <section id='why' className={style.section_positioning}>
                 {
                     props.services && props.services.cards ?
                         <CardDeck title='whyPotPay'>
                             {
                                 props.services.cards.map(item => {
                                     return (
+
                                         <Service icon={item.image} title={item.title[locale]}
                                                  description={item.description[locale]}
                                                  subDescription={item.subDescription[locale]}/>
@@ -64,6 +70,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         </CardDeck> : null
                 }
             </section>
+            </div>
             <section>
                 <h1 className={style.section_title}>Key Features</h1>
             <section className={style.section_container}>
@@ -71,15 +78,19 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 {
                     props.paragraphs ?
                         props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Your receipts automatically stored in one place').map(item => {
-                        return (
+                            return (
+                                <div className={style.paragraph_container}>
                             <Paragraph title={item.title[locale]} description={item.description[locale]}
                                        sub_description={item.subDescription[locale]} children={""}/>
+                                </div>
                         )
                     }) : null
                 }
             </div>
-                <div className='col-md-6 col-12'>
-                   <img src="500-logo.jpg"/>
+                <div className={`col-md-6 col-12 ${style.parent}`}>
+                    <img className={style.feature_img3} src='/assets/feature1-background.svg'/>
+                    <img className={style.feature_img2} src='/assets/feature1-receipt.svg'/>
+                    <img className={style.feature_img1} src='/assets/feature1.svg'/>
                 </div>
 
                 {/*{*/}
@@ -96,17 +107,19 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
             </section>
             <section className={style.section_container}>
                 <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-                    <img className={style.page__left_section} src="500-logo.jpg"/>
+                    <img className={style.image3} src='/assets/whyPotPay-back.svg'/>
+                    <img className={style.image4} src='/assets/tracker-feature.svg'/>
                 </div>
                     <div className={`col-md-6 col-12 ${style.page__right_section}`}>
-
                     {
                         props.paragraphs ?
                             props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Track your budget').map(item =>{
-                            return (
-                                <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                           sub_description={item.subDescription[locale]}/>
-                            )
+                                return (
+                                    <div className={style.paragraph_container}>
+                                        <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                                   sub_description={item.subDescription[locale]} children={""}/>
+                                    </div>
+                                )
                         }) : null
                     }
                     </div>
@@ -117,14 +130,17 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         props.paragraphs ?
                             props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Identify & monitor your spending habits').map(item =>{
                                 return (
-                                    <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                               sub_description={item.subDescription[locale]}/>
+                                    <div className={style.paragraph_container}>
+                                        <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                                   sub_description={item.subDescription[locale]} children={""}/>
+                                    </div>
                                 )
                             }) : null
                     }
                 </div>
                 <div className='col-md-6 col-12'>
-                    <img src="500-logo.jpg"/>
+                    <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
+                    <img className={style.image4} src='/assets/spending-feature.svg'/>
                 </div>
             </section>
             </section>
@@ -132,16 +148,19 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 <h1 className={style.section_title}>PotPay Retailers</h1>
             </section>
                 <section className={style.section_container}>
-                    <div className='col-md-6 col-12'>
-                        <img src="500-logo.jpg"/>
+                    <div className={`col-md-6 col-12 ${style.parent}`}>
+                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
+                        <img className={style.image6} src='/assets/b2c-back.svg'/>
                     </div>
                     <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === "Data privacy & security").map(item =>{
                                     return (
-                                        <Paragraph title={item.title[locale]} description={item.description[locale]}
-                                                   sub_description={item.subDescription[locale]}/>
+                                        <div className={style.paragraph_container}>
+                                            <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                                       sub_description={item.subDescription[locale]} children={""}/>
+                                        </div>
                                     )
                                 }) : null
                         }

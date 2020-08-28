@@ -19,7 +19,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 5rem;
-  margin-left: -5rem;
+  //margin-left: -5rem;
 }
 
 .page__one_col_section {
@@ -40,7 +40,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 10%;
+  @media only screen and (max-width: 500px){
+    margin-top: 7%;
+  }
 }
 
 .page__two_col_section_grey {
@@ -68,4 +70,12 @@ p, .body-text {
 
 .page-content {
   padding: 5rem var(--layout-padding-X);
+}
+
+.page__first_noimage_section {
+  z-index: -2;
+  top: 0;
+  width: 70%;
+  position: absolute;
+  display: block;
 }
