@@ -7,7 +7,7 @@ export interface serviceProps {
     icon: ImageInterface
     title: string;
     description: string;
-    subDescription: string;
+    subDescription?: string;
 }
 
 const Service = (props: serviceProps) => {
@@ -29,7 +29,7 @@ const Service = (props: serviceProps) => {
                 ) : null
             }
             <p className={`paragraph ${style.service__description}`}>{props.description}</p>
-            <p className={`paragraph ${style.service__sub_description}`}>{props.subDescription}</p>
+            {props.subDescription? <p className={`paragraph ${style.service__sub_description}`}>{props.subDescription}</p>: null}
         </div>
     )
 }

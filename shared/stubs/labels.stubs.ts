@@ -2,9 +2,14 @@ import {LabelsInterface} from "../interfaces/labels.interface";
 
 export const LabelsStubs: LabelsInterface[] = [
     {
+        title: 'members',
+        ar: 'Members',
+        en: 'Members'
+    },
+    {
         title: 'whyPotPay',
         ar: 'لماذا نحن؟',
-        en: 'Why Pot Pay?'
+        en: 'Why PotPay?'
     },
     {
         title: 'howItWorks',

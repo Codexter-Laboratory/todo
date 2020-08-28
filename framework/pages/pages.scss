@@ -71,3 +71,11 @@ p, .body-text {
 .page-content {
   padding: 5rem var(--layout-padding-X);
 }
+
+.page__first_noimage_section {
+  z-index: -2;
+  top: 0;
+  width: 70%;
+  position: absolute;
+  display: block;
+}

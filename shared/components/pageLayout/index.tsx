@@ -18,7 +18,10 @@ export const ServicePageLayout = (props: Props) => {
                                  alt={props.pageData.image.name}/>
                         </div>
                     </>
-                    : <div className='page__first_section'></div>
+                    : <div className='page__first_noimage_section'>
+                        <img className='page__first_image' src='/illustrations/home-bgck.svg'
+                             alt='home-bgck'/>
+                    </div>
             }
             <div className='page-content'>
                 {props.children}

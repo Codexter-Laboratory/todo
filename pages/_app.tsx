@@ -24,7 +24,6 @@ const PotPayApp = ({Component, pageProps, pageName}) => {
         }
     });
 
-
     return (
         <LocaleProvider lang={locale}>
             <div className={loading ? 'app-container--loading' : ''}>

@@ -15,7 +15,7 @@ import {LabelsStubs} from "shared/stubs/labels.stubs";
 import style from './style.module.scss';
 import Contact from "shared/components/contact-info";
 import Form from "shared/components/form";
-import LogoDeck from "../../../shared/components/logo-deck";
+import LogoDeck from "shared/components/logo-deck";
 
 interface Props {
     pageData: any;
@@ -28,7 +28,6 @@ interface Props {
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-    console.log(props.measurements, 'sdsd')
 
     const renderLabel = (title: string) => {
         const arr = LabelsStubs.filter(l => l.title === title);
@@ -120,7 +119,6 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 })
                                 : null
                         }
-                        <button className='button-primary'>Get In Touch</button>
                     </div>
                 </section>
                 <section className='page__two_col_section'>
@@ -149,6 +147,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 })
                                 : null
                         }
+                        <button className='button-primary'>Get In Touch</button>
                     </div>
                 </section>
             </ServicePageLayout>
@@ -160,7 +159,6 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <LogoDeck logo_1="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
                               title={"Featured in"}/>
                 </div>
-
             </section>
             <section className='page__two_col_section_contact_container'>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
