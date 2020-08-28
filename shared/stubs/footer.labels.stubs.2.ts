@@ -1,11 +1,11 @@
 import {FooterLabelsInterface} from "shared/interfaces/footerLabels.interface";
-export const ConsumerFooterStubs: FooterLabelsInterface [] = [
+export const businessFooterStubs: FooterLabelsInterface [] = [
     {
         name: {
             ar: 'الزبائن',
-            en: 'Retailers'
+            en: 'Customers'
         },
-        route: '/business'
+        route: '/consumer'
     },
     {
         name: {
@@ -36,7 +36,7 @@ export const ConsumerFooterStubs: FooterLabelsInterface [] = [
         route: '/consumer/careers'
     },
 ];
-export const consumerFooterStubs: FooterLabelsInterface [] = [
+export const ConsumerFooterStubs: FooterLabelsInterface [] = [
     {
         name: {
             ar: '',

@@ -3,9 +3,9 @@ export const businessFooterStubs: FooterLabelsInterface [] = [
     {
         name: {
             ar: 'الزبائن',
-            en: 'Customer'
+            en: 'Customers'
         },
-        route: '/ar/consumer'
+        route: '/consumer'
     },
     {
         name: {

@@ -29,6 +29,7 @@ let cardsQuery = `card {
     description_en,
     description_ar,
     sub_description_en,
+    sub_description_ar,
     ${imagesQuery}
 }`;
 
