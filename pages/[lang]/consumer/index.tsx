@@ -19,6 +19,7 @@ interface Props {
     pageData: any;
     services: CardDeckModel[];
     paragraphs: ParagraphModel[];
+    consumers: CardDeckModel[];
     cards: CardDeckModel[];
 }
 
@@ -94,7 +95,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
 
                 {/*{*/}
                 {/*    props.cards && props.cards.cards ?*/}
-                {/*        <CardDeck>*/}
+                {/*        <CardDeck >*/}
                 {/*            {props.cards.cards.map(item => {*/}
                 {/*                return (*/}
                 {/*                    <Cards title={item.title[locale]} description={item.description[locale]}*/}
@@ -184,7 +185,7 @@ ConsumerHome.getInitialProps = async (ctx) => {
         pageData,
         paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
         services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services_consumer')[0]),
-        //consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
+        consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
     };
 }
 

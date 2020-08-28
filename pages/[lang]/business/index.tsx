@@ -121,10 +121,12 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         }
                     </div>
                 </section>
+
                 <section className='page__two_col_section'>
                     <div className={`col-12 col-md-6 ${style.page__small_cards_container}`}>
                         {
-                            props.measurements ? props.measurements.cards.map(card => {
+                            props.measurements ?
+                                props.measurements.cards.map(card => {
                                     return (
                                         <div className={style.page__small_cards}>
                                             <h1>{card.title[locale]}</h1>
@@ -159,6 +161,42 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <LogoDeck logo_1="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
                               title={"Featured in"}/>
                 </div>
+            </section>
+            <section>
+                <CardDeck>
+                    {props.cards.cards.map((item, i) => {
+                        return (
+                            i !== 1 ?
+                                <Cards title={item.title[locale]} description={item.description[locale]}
+                                       sub_description={item.subDescription[locale]} icon={item.image}
+                                       number={renderLabel(`0${i + 1}.`)} key={i}/> :
+                                <Cards padding title={item.title[locale]}
+                                       description={item.description[locale]}
+                                       sub_description={item.subDescription[locale]} icon={item.image}
+                                       number={renderLabel(`0${i + 1}.`)} key={i}/>
+                        )
+                    })}
+                    {
+                        props.services.cards.map(item => {
+                            return (
+                                <Service icon={item.image} title={item.title[locale]}
+                                         description={item.description[locale]}
+                                         subDescription={item.subDescription[locale]}/>
+                            )
+                        })
+                    }
+                    {
+                        props.measurements ? props.measurements.cards.map(card => {
+                                return (
+                                    <div className={style.page__small_cards}>
+                                        <h1>{card.title[locale]}</h1>
+                                        <p>{card.description[locale]}</p>
+                                    </div>
+                                )
+                            })
+                            : null
+                    }
+                </CardDeck>
             </section>
             <section className='page__two_col_section_contact_container'>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
