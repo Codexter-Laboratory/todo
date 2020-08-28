@@ -165,6 +165,9 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         }
                     </div>
                 </section>
+            <div className={style.side_crop}  >
+                 <img className={style.image8} src='/assets/b2c-back.svg'/>
+            </div>
         </ServicePageLayout>
     );
 }

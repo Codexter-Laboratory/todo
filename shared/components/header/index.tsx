@@ -94,7 +94,6 @@ const Header = (props: Props) => {
                     </button>
                 </>
             }
-
         </nav>
 
     );

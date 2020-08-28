@@ -5,6 +5,20 @@
     padding: 0 5%;
 }
 
+.navbar_fixed_top {
+    background-color: rgba(255,255,255, 1);
+    transition: background-color 2s ease 0s;
+}
+.navbar_fixed_top.opaque {background-color:rgba(41,128,185, 0.95);}
+
+.navbar_fixed_top .h2-style {
+    transition: color 2s ease 0s;
+}
+
+.navbar_fixed_top ul.navbar-nav li>a {
+    transition: color 2s ease 0s;
+}
+
 .nav_links_list{
     display: flex;
     padding-left: 5%;
