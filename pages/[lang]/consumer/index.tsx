@@ -13,18 +13,25 @@ import Service from "shared/components/service";
 import {ServicePageLayout} from "shared/components/pageLayout";
 import file from "public/assets";
 import style from "./style.module.scss";
+import {LabelsStubs} from "../../../shared/stubs/labels.stubs";
 
 
 interface Props {
+    measurements: CardDeckModel[];
     pageData: any;
     services: CardDeckModel[];
     paragraphs: ParagraphModel[];
     consumers: CardDeckModel[];
-    cards: CardDeckModel[];
 }
 
 const ConsumerHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
+
+    const renderLabel = (title: string) => {
+        const arr = LabelsStubs.filter(l => l.title === title);
+        const label = arr[0];
+        return label[locale];
+    };
 
     return (
         <ServicePageLayout pageData={props.pageData}>
@@ -92,18 +99,6 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                     <img className={style.feature_img2} src='/assets/feature1-receipt.svg'/>
                     <img className={style.feature_img1} src='/assets/feature1.svg'/>
                 </div>
-
-                {/*{*/}
-                {/*    props.cards && props.cards.cards ?*/}
-                {/*        <CardDeck >*/}
-                {/*            {props.cards.cards.map(item => {*/}
-                {/*                return (*/}
-                {/*                    <Cards title={item.title[locale]} description={item.description[locale]}*/}
-                {/*                           sub_description={item.subDescription[locale]} icon={item.image}/>*/}
-                {/*                )*/}
-                {/*            })}*/}
-                {/*        </CardDeck> : null*/}
-                {/*}*/}
             </section>
             <section className={style.section_container}>
                 <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
@@ -166,9 +161,24 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         }
                     </div>
                 </section>
-            <div className={style.side_crop}  >
+            <section className={`page__two_col_section ${style.page__small_cards_container}`}>
+                <CardDeck>
+                    {
+                        props.measurements ? props.measurements.cards.map(card => {
+                                return (
+                                    <div className={style.page__small_cards}>
+                                        <h1>{card.title[locale]}</h1>
+                                        <p>{card.description[locale]}</p>
+                                    </div>
+                                )
+                            })
+                            : null
+                    }
+                </CardDeck>
+            </section>
+            <section className={style.side_crop}>
                  <img className={style.image8} src='/assets/b2c-back.svg'/>
-            </div>
+            </section>
         </ServicePageLayout>
     );
 }
@@ -178,13 +188,14 @@ ConsumerHome.getInitialProps = async (ctx) => {
     let res = await Fetcher(PageNames.page_consumer_home);
 
     let pageData = res.data.data.pages[0];
-    let paragraphs;
-    let consumers;
+    // let paragraphs;
+    // let consumers;
 
     return {
         pageData,
         paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
         services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services_consumer')[0]),
+        measurements: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumer_measurements')[0]),
         //consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
     };
 }
