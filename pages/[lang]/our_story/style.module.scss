@@ -25,8 +25,9 @@
   color: #2a2a73;
 }
 
-.page__right_section_margin>p{
-.page__right_section_image {
-  width: 45rem;
-  float: right;
+.page__right_section_margin>p {
+  .page__right_section_image {
+    width: 45rem;
+    float: right;
+  }
 }

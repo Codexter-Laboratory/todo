@@ -185,7 +185,7 @@ ConsumerHome.getInitialProps = async (ctx) => {
         pageData,
         paragraphs: pageData.paragraphs.map(paragraph => new ParagraphModel(paragraph)),
         services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services_consumer')[0]),
-        consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
+        //consumers: new CardDeckModel(pageData.card_groups.filter((d: CardDeckApiInterface) => d.name === 'consumers')[0]),
     };
 }
 
