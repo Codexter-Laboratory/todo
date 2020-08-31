@@ -81,8 +81,10 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                         )
                                     })
                                 }
+                                <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
                             </CardDeck> : null
                     }
+
                 </section>
                 <section id='how'>
                     {
@@ -107,10 +109,14 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <button className='button-primary'>Book a Demo</button>
                 </section>
                 <section className='page__two_col_section'>
+                    <div className={`col-md-6 col-12 ${style.parent}`}>
+                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
+                        <img className={style.image6} src='/assets/b2c-back.svg'/>
+                    </div>
                     <div className={`col-12 col-md-6`}>
                         {
                             props.paragraphs ?
-                                props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Data Privacy and Security').map(item => {
+                                props.paragraphs.filter(paragraph => paragraph.title['en'] === "Data privacy & security").map(item => {
                                     return (
                                         <Paragraph title={item.title[locale]} description={item.description[locale]}
                                                    sub_description={item.subDescription[locale]}>

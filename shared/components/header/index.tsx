@@ -6,9 +6,8 @@ import useTranslation from "hooks/useTranslations";
 import NavLink from "../NavLink";
 import {BusinessLinksStubs} from "shared/stubs/header.links.stubs";
 import {NavLinksInterface} from "shared/interfaces/NavLinkInterface";
-import Link from "next/dist/client/link";
+import Link from "next/link";
 import {ConsumerLinksStubs} from "shared/stubs/header.links.stubs.2";
-import ReactDOM from "react-dom";
 
 interface Props {
     pageName: string;
