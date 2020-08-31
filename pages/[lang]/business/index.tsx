@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";

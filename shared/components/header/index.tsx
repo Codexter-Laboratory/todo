@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './style.module.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +8,7 @@ import {BusinessLinksStubs} from "shared/stubs/header.links.stubs";
 import {NavLinksInterface} from "shared/interfaces/NavLinkInterface";
 import Link from "next/dist/client/link";
 import {ConsumerLinksStubs} from "shared/stubs/header.links.stubs.2";
+import ReactDOM from "react-dom";
 
 interface Props {
     pageName: string;
@@ -15,6 +16,29 @@ interface Props {
 
 const Header = (props: Props) => {
     const {locale} = useTranslation();
+    const [navbarClass, setNavbarClass] = useState(style.nav_bar_container) ,
+        [navbarContent, setNavbarContent] = useState(style.nav_bar) ,
+        [navbarLogo, setNavbarLogo] = useState(style.Pay)
+
+    let handleScroll = () => {
+        if (window.scrollY < 30 ){
+            setNavbarClass(style.nav_bar_container)
+            setNavbarContent(style.nav_bar)
+            setNavbarLogo(style.Pay)
+        }
+        else {
+            setNavbarClass(style.nav_bar_container_scroll)
+            setNavbarContent(style.nav_bar_consumer)
+            setNavbarLogo(style.pay_consumer)
+        }
+    }
+
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll);
+    },[])
 
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
     const [state, setState] = useState({
@@ -39,11 +63,11 @@ const Header = (props: Props) => {
         }
     };
     const renderListItem = (item: NavLinksInterface) => (
-        props.pageName === 'page_consumer_home' ? <>
+        props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' || props.pageName === 'page_business_privacy' ? <>
         <li className={style.nav_bar_consumer} key={item.route} dir={dir}>
             <NavLink route={item.route} as={item.route} label={item.title[locale]}/>
         </li>
-        </> : <> <li className={style.nav_bar} key={item.route} dir={dir}>
+        </> : <> <li className={navbarContent} key={item.route} dir={dir}>
             <NavLink route={item.route} as={item.route} label={item.title[locale]}/>
         </li>
         </>
@@ -51,9 +75,10 @@ const Header = (props: Props) => {
     );
 
         return(
-        <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${style.nav_bar_container}`}>
+
+        <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${navbarClass}`}>
             {
-                props.pageName === 'page_consumer_home' ? <>
+                props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' || props.pageName === 'page_business_privacy' ? <>
                     <Link href={`/${locale}`}>
                         <a className={`navbar-brand`}>
                             <span className={`${style.Pot} font-family--logo`}>Pot</span>
@@ -74,7 +99,7 @@ const Header = (props: Props) => {
                     <Link href={`/${locale}`}>
                     <a className={`navbar-brand`}>
                         <span className={`${style.Pot} font-family--logo`}>Pot</span>
-                        <span className={`${style.Pay} font-family--logo`}>Pay</span>
+                        <span className={`${navbarLogo} font-family--logo`}>Pay</span>
                     </a>
                 </Link>
                     <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>

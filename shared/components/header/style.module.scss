@@ -1,15 +1,26 @@
 .nav_bar_container {
+    @media only screen and (max-width: 750px){
+        position: relative;
+        margin: 0rem 0rem -4rem 0rem;
+    }
     z-index: 1;
     position: fixed;
     width: 100%;
     padding: 0 5%;
 }
 
-.navbar_fixed_top {
-    background-color: rgba(255,255,255, 1);
-    transition: background-color 2s ease 0s;
+.nav_bar_container_scroll{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 0 5%;
+    background-color: var(--white);
 }
-.navbar_fixed_top.opaque {background-color:rgba(41,128,185, 0.95);}
+
+.navbar_fixed_top {
+
+}
+//.nav_bar_container>a {background-color:rgba(41,128,185, 0.95);}
 
 .navbar_fixed_top .h2-style {
     transition: color 2s ease 0s;
@@ -56,4 +67,6 @@
 .nav_demo_btn_container {
     float: right;
 }
+
+
 
