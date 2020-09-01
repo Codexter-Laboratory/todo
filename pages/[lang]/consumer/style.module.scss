@@ -4,13 +4,13 @@
   flex-wrap: wrap;
 }
 .section_positioning{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     padding: 22rem 0 0 0rem;
   }
 }
 
 .paragraph_container{
-  @media only screen and (max-width: 750px)
+  @media only screen and (max-width: 768px)
   {
     margin: 2rem 0rem 0rem 2rem;
   }
@@ -42,7 +42,7 @@
 }
 
 .feature_img3{
-  @media only screen and (max-width: 750px){
+  @media only screen and (max-width: 768px){
     margin: -2rem 0rem 0rem -3rem;
   }
   width: 100%;
@@ -84,7 +84,7 @@
 }
 
 .page__right_section_image {
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     padding-top: 3rem;
     margin: 0rem 0rem 0rem 1.4rem;
   }
@@ -97,7 +97,7 @@
 }
 
 .image1 {
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     padding-top: 3rem;
     margin: 0rem 0rem 0rem 1.4rem;
   }
@@ -108,7 +108,7 @@
 }
 
 .image2 {
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     padding-top: 3rem;
     margin: 0 0 0 0;
   }
@@ -120,7 +120,7 @@
 }
 
 .image3{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     margin: 0 0 0 -8rem;
   }
   width: 100%;
@@ -136,7 +136,7 @@
 }
 
 .image5{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     margin: -10rem 0rem 0rem -1rem;
   }
   width: 100%;
@@ -146,7 +146,7 @@
 }
 
 .image6{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     margin: -5rem 0 0 -20rem;
   }
   width: 100%;
@@ -157,7 +157,7 @@
 }
 
 .image7{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     margin: 3rem -3rem 2rem 7rem;
   }
   width: 60%;
@@ -166,7 +166,7 @@
 }
 
 .image8{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     height: 100%;
   }
   transform: scale(-1,-1);
@@ -176,7 +176,7 @@
 }
 
 .side_crop{
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 768px) {
     height: 40rem;
     width: auto;
     margin: -20rem 0rem -20rem -1rem;
