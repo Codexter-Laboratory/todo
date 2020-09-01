@@ -5,8 +5,20 @@
 
   background-color: var(--color-primary-button);
   color: var(--color-secondary);
-  height: 50px;
-  padding: 5px 45px;
+  height: 45px;
+  padding: 5px 30px;
+  border: none;
+  border-radius: 25px;
+  &:focus {
+
+  }
+}
+
+.button-request-demo{
+  background-color: var(--color-primary-button);
+  color: var(--color-secondary);
+  height: 45px;
+  padding: 5px 25px 0.5rem 25px;
   border: none;
   border-radius: 25px;
   &:focus {
@@ -37,7 +49,7 @@
 }
 
 button {
-  font-size: 22px !important;
+  font-size: 16px !important;
   font-weight: bold !important;
   color: var(--color-secondary);
 }

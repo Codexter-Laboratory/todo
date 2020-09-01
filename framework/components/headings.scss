@@ -1,15 +1,16 @@
 h1, .main-title {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
   color: var(--color-primary-background);
 }
 
 h2, .sub-title {
-  font-size: 26px !important;
-  font-weight: 600 !important;
+  font-size: 40px !important;
+  font-weight: 100 !important;
 }
 
 h4, .sub-title {
-  font-size: 24px !important;
+  font-size: 18px !important;
   font-weight: 600 !important;
+  line-height: 22px;
 }

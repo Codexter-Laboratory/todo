@@ -108,8 +108,10 @@ const Header = (props: Props) => {
                             }
                         </ul>
                         <div className={style.nav_demo_btn_container}>
-                            <button className={`button-primary`} type="submit">
-                                Request Demo
+                            <button className={`button-request-demo`} type="submit">
+                                <text className={style.button_text}>
+                                    Request Demo
+                                </text>
                             </button>
                         </div>
                     </div>
@@ -130,8 +132,10 @@ const Header = (props: Props) => {
                             }
                             </ul>
                         <div className={style.nav_demo_btn_container}>
-                            <button className={`button-primary`} type="submit">
-                            Request Demo
+                            <button className={`button-request-demo`} type="submit">
+                                <text className={style.button_text}>
+                                    Request Demo
+                                </text>
                             </button>
                         </div>
                     </div>

@@ -20,7 +20,11 @@
 .navbar_fixed_top {
 
 }
-//.nav_bar_container>a {background-color:rgba(41,128,185, 0.95);}
+
+.button_text{
+    font-size: 14px;
+    text-align: center;
+}
 
 .navbar_fixed_top .h2-style {
     transition: color 2s ease 0s;
@@ -32,31 +36,32 @@
 
 .nav_links_list{
     display: flex;
-    padding-left: 5%;
+    padding-left: 1%;
     flex-direction: column;
     list-style-type: none;
 }
 
 .Pot {
-    font-size: 2.5em;
+    font-size: 2.1em;
     font-weight: 700;
     color: var(--color-secondary-button);
 }
 
 .Pay {
-    font-size: 2.5em;
+    font-size: 2.1em;
     font-weight: 700;
     color: var(--color-secondary);
 }
 
 .pay_consumer{
-    font-size: 2.5em;
+    font-size: 2.1em;
     font-weight: 700;
     color: var(--color-primary-background);
 }
 
 .nav_bar>a {
     color: var(--white);
+    padding: 1rem 1rem;
 }
 
 .nav_bar_consumer>a{

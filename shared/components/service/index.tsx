@@ -28,8 +28,9 @@ const Service = (props: serviceProps) => {
                     </React.Fragment>
                 ) : null
             }
-            <p className={`paragraph ${style.service__description}`}>{props.description}</p>
-            {props.subDescription? <p className={`paragraph ${style.service__sub_description}`}>{props.subDescription}</p>: null}
+            <p className={`paragraph ${style.service_description}`}>{props.description}</p>
+            {props.subDescription? <p className={`paragraph ${style.service_description}`}>{props.subDescription}</p>: null}
+
         </div>
     )
 }

@@ -23,7 +23,7 @@ const CardDeck = (props: Props) => {
                 props.title ? (<div className={`${style.cardDeck__top_container}`}>
 
                     <Fragment>
-                        <h1 className={`text-center ${style.cardDeck__title}`}>{renderLabel(props.title)}</h1>
+                        <h1 className={`text-center ${style.cardDeck_title}`}>{renderLabel(props.title)}</h1>
                     </Fragment>
 
                 </div>) : null
