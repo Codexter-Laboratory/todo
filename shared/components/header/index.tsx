@@ -77,7 +77,7 @@ const Header = (props: Props) => {
 
         <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${navbarClass}`}>
             {
-                props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' || props.pageName === 'page_business_privacy' ? <>
+                props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' ? <>
                     <Link href={`/${locale}`}>
                         <a className={`navbar-brand`}>
                             <span className={`${style.Pot} font-family--logo`}>Pot</span>
@@ -94,13 +94,13 @@ const Header = (props: Props) => {
                     <button onClick={handleMenuClick} className="navbar-toggler">
                         <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
                     </button>
-                </> : <>
+                </> : props.pageName === 'page_business_privacy' ? <>
                     <Link href={`/${locale}`}>
-                    <a className={`navbar-brand`}>
-                        <span className={`${style.Pot} font-family--logo`}>Pot</span>
-                        <span className={`${navbarLogo} font-family--logo`}>Pay</span>
-                    </a>
-                </Link>
+                        <a className={`navbar-brand`}>
+                            <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                            <span className={`${style.pay_consumer} font-family--logo`}>Pay</span>
+                        </a>
+                    </Link>
                     <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
                         <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
                             {
@@ -116,12 +116,34 @@ const Header = (props: Props) => {
                     <button onClick={handleMenuClick} className="navbar-toggler">
                         <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
                     </button>
+                </> : <>
+                     <Link href={`/${locale}`}>
+                        <a className={`navbar-brand`}>
+                        <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                        <span className={`${navbarLogo} font-family--logo`}>Pay</span>
+                        </a>
+                    </Link>
+                    <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                            <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
+                            {
+                                BusinessLinksStubs.map(renderListItem)
+                            }
+                            </ul>
+                        <div className={style.nav_demo_btn_container}>
+                            <button className={`button-primary`} type="submit">
+                            Request Demo
+                            </button>
+                        </div>
+                    </div>
+                     <button onClick={handleMenuClick} className="navbar-toggler">
+                        <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
+                     </button>
                 </>
             }
         </nav>
 
     );
-};
+ };
 
 export default Header;
 

@@ -2,10 +2,11 @@ import React from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
-import useTranslation from "hooks/useTranslations";
-import Paragraph from "shared/components/paragraph";
 import {ParagraphModel} from "shared/interfaces/paragraph.interface";
-import {PageNames} from "../../../../shared/enums/page-names.enum";
+import Paragraph from "shared/components/paragraph";
+import useTranslation from "hooks/useTranslations";
+import {PageNames} from "shared/enums/page-names.enum";
+import {ServicePageLayout} from "shared/components/pageLayout";
 
 interface Props {
     pageData: any;
@@ -13,28 +14,32 @@ interface Props {
 
 }
 
-const Privacy: NextPage<Props> = (props:Props) => {
+const Privacy: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
     return (
-        <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-            <div>
-                {props.paragraphs.map(item => {
-                    return(
-                        <Paragraph>
-                            <h4>{item.title[locale]}</h4>
-                            <p>{item.description[locale]}</p>
-                            <p>{item.subDescription[locale]}</p>
-                        </Paragraph>
-                    )
-                })}
+        <ServicePageLayout pageData={props.pageData}>
+            <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                <div>
+                    {
+                        props.paragraphs ? props.paragraphs.map(item => {
+                            return (
+                                <Paragraph title={item.title[locale]} description={item.description[locale]}
+                                           sub_description={item.subDescription[locale]}/>
+                            )
+                        }) : null
+                    }
+                </div>
             </div>
-        </div>
+        </ServicePageLayout>
     );
 }
 
 Privacy.getInitialProps = async (ctx) => {
     let res = await Fetcher(PageNames.page_consumer_privacy);
-    let pageData = res.data.data.pages[0];
+
+    let pageData;
+    pageData = res.data.data.pages[0];
+
     let paragraphs;
     return {
         pageData,

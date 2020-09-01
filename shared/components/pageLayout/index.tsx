@@ -21,7 +21,7 @@ export const ServicePageLayout = (props: Props) => {
                          alt={props.pageData.image.name}/>
                 </div>
             </>
-        } else if (props.pageData.name_en === 'page_business_privacy' || props.pageData.name_en === 'page_consumer_home') {
+        } else if (props.pageData.name_en === 'page_business_privacy' || props.pageData.name_en === 'page_consumer_privacy') {
             return <>
                 <div/>
             </>
