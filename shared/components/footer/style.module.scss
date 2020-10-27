@@ -1,19 +1,37 @@
 .link{
   list-style-type: none;
-  padding: 10px 0 0 0;
+  padding: 10px 0px 0px 0px;
 }
-
-.link>a{
-  border-left: 1.5px solid white;
-  padding-left: 30px;
+.link>div{
+  border-right: 1px solid var(--color-white);
+  text-align: center;
+}
+.link>div>a{
   color: var(--color-white);
-  text-align: left;
 }
 
+.link2{
+  list-style-type: none;
+  padding: 10px 0px 0px 0px;
+}
+.link2>div{
+  text-align: center;
+}
+.link2>div>a{
+  color: var(--color-white);
+}
+.footerElementContainer{
+  width: 10rem;
+}
+.item{
+  color: var(--color-white);
+  text-align: center;
+}
 .listLinks {
   display: flex;
   flex-direction: row;
-  width: 68%;
+  width: 100%;
+  margin-left: -4rem;
 }
 
 
@@ -26,7 +44,7 @@
 }
 
 .PP{
-  padding: 0 0 0 45px;
+  padding: 0 0 0 1rem;
   font-size: 12px;
   color: #dbdbdb !important;
 }

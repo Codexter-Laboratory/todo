@@ -81,7 +81,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
             <section>
                 <h1 className={style.section_title}>Key Features</h1>
             <section className={style.section_container}>
-            <div className="col-12 col-md-6" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            <div className={`col-md-6 col-12 ${style.imagePar2}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                 {
                     props.paragraphs ?
                         props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Your receipts automatically stored in one place').map(item => {
@@ -105,7 +105,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                     <img className={style.image3} src='/assets/whyPotPay-back.svg'/>
                     <img className={style.image4} src='/assets/tracker-feature.svg'/>
                 </div>
-                    <div className={`col-md-6 col-12 ${style.page__right_section}`}>
+                    <div className={`col-md-6 col-12 ${style.imagePar1}`}>
                     {
                         props.paragraphs ?
                             props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Track your budget').map(item =>{
@@ -120,7 +120,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                     </div>
             </section>
             <section className={style.section_container}>
-                <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                <div className={`col-md-6 col-12 ${style.imagePar}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                     {
                         props.paragraphs ?
                             props.paragraphs.filter(paragraph => paragraph.title['en'] === 'Identify & monitor your spending habits').map(item =>{
@@ -143,11 +143,11 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 <h1 className={style.section_title}>PotPay Retailers</h1>
             </section>
                 <section className={style.section_container}>
-                    <div className={`col-md-6 col-12 ${style.parent}`}>
+                    <div className={`col-md-8 col-12 ${style.parent}`}>
                         <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                         <img className={style.image6} src='/assets/b2c-back.svg'/>
                     </div>
-                    <div className='col-md-6 col-12' dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                    <div className={`col-12 col-md-4 ${style.par}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === "Data privacy & security").map(item =>{

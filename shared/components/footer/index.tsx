@@ -13,11 +13,31 @@ const Footer = (props: Props) => {
     const {locale} = useTranslation();
     let renderLinks = (item: FooterLabelsInterface) => {
         return (
-            <li className={`col-md-2 ${style.link}`}>
-                <Link href={`/[lang]${item.route}`} as={`/${locale + item.route}`}>
-                    <a href={item.route}>{item.name[locale]}</a>
-                </Link>
-            </li>
+            <>
+                {
+                    item.name[locale] === "Careers" ?
+                    <>
+                        <li className={`${style.link2}`}>
+                            <div className={style.footerElementContainer}>
+                                <Link href={`/[lang]${item.route}`} as={`/${locale + item.route}`}>
+                                   <a href={item.route} className={style.item}>{item.name[locale]}</a>
+                                 </Link>
+                            </div>
+                        </li>
+                    </>
+                    :
+                    <>
+                        <li className={`${style.link}`}>
+                            <div className={style.footerElementContainer}>
+                                <Link href={`/[lang]${item.route}`} as={`/${locale + item.route}`}>
+                                    <a href={item.route} className={style.item}>{item.name[locale]}</a>
+                               </Link>
+                            </div>
+                        </li>
+                    </>
+                }
+
+            </>
         )
     }
     return (

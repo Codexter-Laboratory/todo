@@ -20,7 +20,7 @@ const Cards = (props: Props) => {
     return (
         <div className={layout} dir={dir}>
             {
-                props.number ? <h1 className={styles.card__number}>{props.number}</h1> : null
+                props.number ? <h1 className={` ${styles.card__number}`}>{props.number}</h1> : null
             }
             <div className={styles.card__image_container}>
                 {
@@ -30,7 +30,7 @@ const Cards = (props: Props) => {
                 }
             </div>
             <div className={styles.card__inside_container}>
-                <h2 className={styles.card__title}>{props.title}</h2>
+                <p className={styles.card__title}>{props.title}</p>
                 <div className={`paragraph ${styles.card__description}`}>
                     {
                         props.description? <p>{props.description}</p>: null

@@ -109,11 +109,11 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <button className='button-primary'>Book a Demo</button>
                 </section>
                 <section className='page__two_col_section'>
-                    <div className={`col-md-6 col-12 ${style.parent}`}>
+                    <div className={`col-md-8 col-12 ${style.parent}`}>
                         <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                         <img className={style.image6} src='/assets/b2c-back.svg'/>
                     </div>
-                    <div className={`col-12 col-md-6`}>
+                    <div className={`col-12 col-md-4 ${style.par}`}>
                         {
                             props.paragraphs ?
                                 props.paragraphs.filter(paragraph => paragraph.title['en'] === "Data privacy & security").map(item => {
@@ -178,10 +178,10 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
             </ServicePageLayout>
             <section className='page__two_col_section_grey'>
                 <div className={`col-12 col-md-6 ${style.page__left_section}`}>
-                    <LogoDeck logo_1="/assets/500-logo.jpg" logo_2="/assets/flat6labs-logo.png" title={"Funded by"}/>
+                    <LogoDeck logo_1="/assets/500-logo.jpg" logo_2="/assets/flat6labs-logo.png" logo_3={"null"} title={"Funded by"}/>
                 </div>
                 <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
-                    <LogoDeck logo_1="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
+                    <LogoDeck logo_3="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
                               title={"Featured in"}/>
                 </div>
             </section>
