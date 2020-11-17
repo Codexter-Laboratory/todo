@@ -1,61 +1,76 @@
-.nav_demo_btn_container {
+.nav_bar_container {
+    @media only screen and (max-width: 768px){
+        position: relative;
+        margin: 0rem 0rem -4rem 0rem;
+    }
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 0 5%;
 }
 
-.nav_bar_container {
-    background: transparent !important;
+.nav_bar_container_scroll{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    padding: 0 5%;
+    background-color: var(--white);
+}
+
+.navbar_fixed_top {
+
+}
+
+.button_text{
+    font-size: 14px;
+    text-align: center;
+}
+
+.navbar_fixed_top .h2-style {
+    transition: color 2s ease 0s;
+}
+
+.navbar_fixed_top ul.navbar-nav li>a {
+    transition: color 2s ease 0s;
 }
 
 .nav_links_list{
     display: flex;
+    padding-left: 1%;
     flex-direction: column;
     list-style-type: none;
 }
 
-.nav_demo_btn{
-    width: 7rem;
-    height: 2rem;
-    border-radius: 100px;
-    border-width: 10px;
-    border-color: #373c95;
-    background-color: #373c95;
-    font-family: Muli;
-    font-size: 10px;
-    line-height: 0.6;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
-}
-
 .Pot {
-    font-size: 2.5em;
-    font-family: HelveticaNeue;
+    font-size: 2.1em;
     font-weight: 700;
-    text-align: left;
-    color: #f7a502;
+    color: var(--color-secondary-button);
 }
 
 .Pay {
-    font-size: 2.5em;
-    font-family: HelveticaNeue;
+    font-size: 2.1em;
     font-weight: 700;
-    text-align: left;
-    color: #ecec;
+    color: var(--color-secondary);
 }
 
-.nav_bar {
+.pay_consumer{
+    font-size: 2.1em;
+    font-weight: 700;
+    color: var(--color-primary-background);
 }
 
 .nav_bar>a {
-    font-size: 16px;
-    text-align: left;
-    color: #ecec !important;
+    color: var(--white);
+    padding: 1rem 1rem;
 }
 
-.Header_container {
-    width: 90%;
-    height: 75%;
-    border-radius: 35%;
-    background-color: #191d62;
+.nav_bar_consumer>a{
+    color: var(--color-primary-background)
+}
+
+
+.nav_demo_btn_container {
+    float: right;
 }
 
 

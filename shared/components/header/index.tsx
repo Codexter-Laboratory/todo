@@ -1,17 +1,43 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './style.module.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import useTranslation from "hooks/useTranslations";
 import NavLink from "../NavLink";
-import {linksStubs} from "shared/stubs/links.stubs";
-import {NavLinksInterface} from "shared/stubs/nav-links-interface";
+import {BusinessLinksStubs} from "shared/stubs/header.links.stubs";
+import {NavLinksInterface} from "shared/interfaces/NavLinkInterface";
+import Link from "next/link";
+import {ConsumerLinksStubs} from "shared/stubs/header.links.stubs.2";
 
 interface Props {
+    pageName: string;
 }
 
 const Header = (props: Props) => {
     const {locale} = useTranslation();
+    const [navbarClass, setNavbarClass] = useState(style.nav_bar_container) ,
+        [navbarContent, setNavbarContent] = useState(style.nav_bar) ,
+        [navbarLogo, setNavbarLogo] = useState(style.Pay)
+
+    let handleScroll = () => {
+        if (window.scrollY < 30 ){
+            setNavbarClass(style.nav_bar_container)
+            setNavbarContent(style.nav_bar)
+            setNavbarLogo(style.Pay)
+        }
+        else {
+            setNavbarClass(style.nav_bar_container_scroll)
+            setNavbarContent(style.nav_bar_consumer)
+            setNavbarLogo(style.pay_consumer)
+        }
+    }
+
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll);
+    },[])
 
     const dir = locale === 'ar' ? 'rtl' : 'ltr';
     const [state, setState] = useState({
@@ -36,48 +62,92 @@ const Header = (props: Props) => {
         }
     };
     const renderListItem = (item: NavLinksInterface) => (
-        <li className={style.nav_bar} key={item.route} dir={dir}>
+        props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' || props.pageName === 'page_business_privacy' ? <>
+        <li className={style.nav_bar_consumer} key={item.route} dir={dir}>
             <NavLink route={item.route} as={item.route} label={item.title[locale]}/>
         </li>
+        </> : <> <li className={navbarContent} key={item.route} dir={dir}>
+            <NavLink route={item.route} as={item.route} label={item.title[locale]}/>
+        </li>
+        </>
 
     );
-    const renderLabel = (name) => {
-        const arr = linksStubs.filter(l => l.name === name);
-        const label = arr[0];
-        return label[locale];
 
-    };
+        return(
 
-    return (
-
-        <nav className={`navbar navbar-expand-lg navbar-light bg-light ${style.nav_bar_container}`}>
-
-                <a className={`navbar-brand`} href="#">
-                    <span className={style.Pot}>Pot</span>
-                    <span className={style.Pay}>Pay</span>
-                </a>
-                <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
-                    <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
-                        {
-                            linksStubs.map(renderListItem)
-                        }
-                    </ul>
-                <div className={style.nav_demo_btn_container}>
-                    <button className={`btn btn-sm btn-outline-secondary ${style.nav_demo_btn} `}
-                            type="submit">Request Demo
+        <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${navbarClass}`}>
+            {
+                props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' ? <>
+                    <Link href={`/${locale}`}>
+                        <a className={`navbar-brand`}>
+                            <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                            <span className={`${style.pay_consumer} font-family--logo`}>Pay</span>
+                        </a>
+                    </Link>
+                    <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                        <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
+                            {
+                                ConsumerLinksStubs.map(renderListItem)
+                            }
+                        </ul>
+                    </div>
+                    <button onClick={handleMenuClick} className="navbar-toggler">
+                        <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
                     </button>
-                </div>
-            </div>
-            <button
-                type="button" onClick={handleMenuClick} className="navbar-toggler"
-                data-toggle="collapse" data-target="#navlinks"
-                aria-controls="navlinks" aria-expanded="false" aria-label="Toggle navigation">
-                <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
-            </button>
+                </> : props.pageName === 'page_business_privacy' ? <>
+                    <Link href={`/${locale}`}>
+                        <a className={`navbar-brand`}>
+                            <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                            <span className={`${style.pay_consumer} font-family--logo`}>Pay</span>
+                        </a>
+                    </Link>
+                    <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                        <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
+                            {
+                                BusinessLinksStubs.map(renderListItem)
+                            }
+                        </ul>
+                        <div className={style.nav_demo_btn_container}>
+                            <button className={`button-request-demo`} type="submit">
+                                <text className={style.button_text}>
+                                    Request Demo
+                                </text>
+                            </button>
+                        </div>
+                    </div>
+                    <button onClick={handleMenuClick} className="navbar-toggler">
+                        <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
+                    </button>
+                </> : <>
+                     <Link href={`/${locale}`}>
+                        <a className={`navbar-brand`}>
+                        <span className={`${style.Pot} font-family--logo`}>Pot</span>
+                        <span className={`${navbarLogo} font-family--logo`}>Pay</span>
+                        </a>
+                    </Link>
+                    <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                            <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
+                            {
+                                BusinessLinksStubs.map(renderListItem)
+                            }
+                            </ul>
+                        <div className={style.nav_demo_btn_container}>
+                            <button className={`button-request-demo`} type="submit">
+                                <text className={style.button_text}>
+                                    Request Demo
+                                </text>
+                            </button>
+                        </div>
+                    </div>
+                     <button onClick={handleMenuClick} className="navbar-toggler">
+                        <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
+                     </button>
+                </>
+            }
         </nav>
 
     );
-};
+ };
 
 export default Header;
 

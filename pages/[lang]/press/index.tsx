@@ -7,6 +7,8 @@ import CardDeck from "shared/components/card-deck";
 import Cards from "shared/components/card";
 import useTranslation from "hooks/useTranslations";
 import {PageNames} from "../../../shared/enums/page-names.enum";
+import Service from "../../../shared/components/service";
+import {ArticlesApiInterface} from "../../../shared/interfaces/articles.interface";
 
 interface Props {
     pageData: any;
@@ -17,14 +19,15 @@ const Press: NextPage<Props> = (props: Props) => {
 
     const {locale} = useTranslation();
 
-    return(
+    return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <CardDeck>
                 {props.services.cards.map(item => {
                     return (
-                        <Cards title={item.title[locale]} description={item.description[locale]}
-                               sub_description={item.subDescription[locale]}
-                               icon={item.image}/>
+                        <Service icon={item.image} title={item.title[locale]} description={item.description[locale]}
+                                 subDescription={item.subDescription[locale]}>
+
+                        </Service>
                     )
                 })}
             </CardDeck>
@@ -38,8 +41,9 @@ Press.getInitialProps = async (ctx) => {
     let services;
     return {
         pageData,
-        services: new CardDeckModel(pageData.card_groups.filter((c: CardDeckApiInterface) => c.name === 'services')[0])
-        };
+        articles: new CardDeckModel(pageData.article.filter((c: ArticlesApiInterface) => c.name === 'articles')[0])
+    };
 }
 
 export default withLocale(Press);
+

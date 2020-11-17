@@ -1,3 +1,5 @@
+import {ImageInterface} from "./image.interface";
+
 export interface CardApiInterface {
     title_en: string;
     title_ar: string;
@@ -5,15 +7,7 @@ export interface CardApiInterface {
     description_ar: string;
     sub_description_en: string;
     sub_description_ar: string;
-    image: {
-        name: string,
-        file: {
-            name: string,
-            alternativeText: string,
-            url: string,
-        },
-        url: string
-    }
+    image: ImageInterface
 
 }
 
@@ -30,15 +24,7 @@ interface CardInterface {
         en: string;
         ar: string;
     };
-    image: [{
-        name: string,
-        file: {
-            name: string,
-            alternativeText: string,
-            url: string
-        },
-        url: string,
-    }]
+    image: ImageInterface
 }
 
 export class CardModel implements CardInterface {
@@ -54,15 +40,7 @@ export class CardModel implements CardInterface {
         en: string;
         ar: string;
     };
-    image: [{
-        name: string,
-        file: {
-            name: string,
-            alternativeText: string,
-            url: string,
-        },
-        url: string,
-    }]
+    image: ImageInterface
 
     constructor(card: CardApiInterface) {
         this.title = {
@@ -77,15 +55,7 @@ export class CardModel implements CardInterface {
             en: card.sub_description_en,
             ar: card.sub_description_ar,
         };
-        this.image = [{
-            name: card.image.name,
-            file: {
-                name: card.image.file.name,
-                alternativeText: card.image.file.alternativeText,
-                url: card.image.file.url,
-            },
-            url: card.image.url,
-        }];
+        this.image = card.image
     }
 
     getTitle = (locale: 'ar' | 'en'): string => {

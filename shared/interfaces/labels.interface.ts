@@ -1,7 +1,5 @@
 export interface LabelsInterface {
-    name:{
-        ar: string;
-        en: string;
-    };
-    route: string;
+    title: string;
+    ar: string;
+    en: string;
 }

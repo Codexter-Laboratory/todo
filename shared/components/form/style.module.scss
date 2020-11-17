@@ -1,24 +1,17 @@
 .form_container{
-  background: #2a2a73;
   width: 100%;
   height: 100%;
 }
 
 .demo{
-  font-family: Muli;
-  font-size: 26px;
-  font-weight: 600;
   line-height: 2.88;
   text-align: left;
-  color: #ffffff;
+  color: var(--color-white);
 }
 .form_sub_title{
-
-  font-family: Muli;
-  font-size: 13px;
-  line-height: 3;
+  line-height: 2.5;
   text-align: left;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .lastName{
@@ -44,14 +37,18 @@
 }
 
 .button{
+  @media only screen and (max-width: 768px)
+  {
+    margin: 2rem 0rem 2rem -1rem;
+  }
   width: 130px;
   height: 45px;
   border-radius: 32px;
   background-color: #f7a502;
-  margin: 30px 10px 25px 25px;
-  border: 1em #f7a502;
+  margin: 2rem 0rem 2rem 2rem;
+  border: 1rem #f7a502;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 16px !important;
   color: #ffffff;
   font-family:btn-icon;
 }
@@ -68,4 +65,8 @@
 .label {
   margin-bottom: 0;
   font-weight: 100;
+}
+
+.error {
+  color: var(--color-danger);
 }

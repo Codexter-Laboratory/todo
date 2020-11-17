@@ -1,0 +1,55 @@
+.button {
+}
+
+.button-primary {
+
+  background-color: var(--color-primary-button);
+  color: var(--color-secondary);
+  height: 45px;
+  padding: 5px 30px;
+  border: none;
+  border-radius: 25px;
+  &:focus {
+
+  }
+}
+
+.button-request-demo{
+  background-color: var(--color-primary-button);
+  color: var(--color-secondary);
+  height: 45px;
+  padding: 5px 25px 0.5rem 25px;
+  border: none;
+  border-radius: 25px;
+  &:focus {
+
+  }
+}
+
+.button-secondary {
+  background-color: var(--color-secondary-button) !important;
+  color: var(--color-secondary);
+  height: 50px;
+  padding: 5px 45px;
+  border: none;
+  border-radius: 25px;
+}
+
+.button-thirdly {
+  background-color: var(--color-primary-secondary-button) !important;
+  color: var(--color-secondary);
+  height: 50px;
+  padding: 5px 45px;
+  border: none;
+  border-radius: 25px;
+}
+
+.button-lg {
+  font-size: 16px !important;
+}
+
+button {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: var(--color-secondary);
+}

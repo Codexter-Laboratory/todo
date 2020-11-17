@@ -1,0 +1,86 @@
+.page__first_image_section {
+  z-index: -2;
+  top: 0;
+  height: 50rem;
+  width: 70%;
+  position: absolute;
+  display: block;
+}
+
+.page__first_image {
+  @media only screen and (max-width: 768px) {
+    width: 23rem;
+    height: 16rem;
+  }
+  z-index: 1;
+  width: 45rem;
+  height: 31rem;
+  overflow: hidden;
+}
+
+.page__intro_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+  //margin-left: -5rem;
+}
+
+.page__one_col_section {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  margin: -5rem 0rem 10rem 0rem;
+}
+
+.page__two_col_section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
+
+.page__two_col_section_contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 500px){
+    margin-top: 7%;
+  }
+}
+
+.page__two_col_section_grey {
+  background: var(--color-secondary);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.page__two_col_section_contact_container {
+  background: var(--color-primary-background);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.page__first_section {
+
+}
+
+p, .body-text {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.page-content {
+  padding: 5rem var(--layout-padding-X);
+}
+
+.page__first_noimage_section {
+
+  z-index: -2;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  display: block;
+}

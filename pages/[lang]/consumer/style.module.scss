@@ -1,0 +1,243 @@
+.section_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.section_positioning{
+  @media only screen and (max-width: 768px) {
+    padding: 22rem 0 0 0rem;
+  }
+}
+
+.paragraph_container{
+  @media only screen and (max-width: 768px)
+  {
+    margin: 2rem 0rem 0rem 2rem;
+  }
+  margin-top: 5rem;
+}
+
+.section_title{
+  margin-bottom: 5rem;
+  width:100%;
+  text-align: center;
+}
+
+.feature_img_container{
+  border-radius: 100%;
+  background: var(--white);
+  box-shadow: 6px 17px 20px 0px rgba(0, 0, 0, 0.2), 8px 17px 20px 0px rgba(0, 0, 0, 0.19);
+  margin-bottom: 5rem;
+}
+
+.feature_img1{
+  width: 80%;
+  position: relative;
+  margin: -3rem 0rem 0rem 5rem;
+}
+
+.feature_img2{
+  width: 80%;
+  position: absolute;
+}
+
+.feature_img3{
+  @media only screen and (max-width: 768px){
+    margin: -2rem 0rem 0rem -3rem;
+  }
+  width: 100%;
+  position: absolute;
+  margin: -4rem 0rem 0rem -4rem;
+}
+
+.page__intro_section_h2 {
+  color: var(--color-secondary-links);
+}
+
+.page__intro_section_h1 {
+  padding-bottom: 1%;
+  color: var(--color-primary-background);
+}
+
+.page__intro_section_paragraph {
+  font-weight: 100;
+  color: var(--color-primary);
+}
+
+.page__intro_section_button {
+  background-color: transparent;
+  object-fit: contain;
+  width: 10rem;
+  height: 3rem;
+  border: solid transparent;
+}
+
+.btn_image{
+  width: 9rem;
+  height: 9rem;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.page__right_section_image {
+  @media only screen and (max-width: 768px) {
+    padding-top: 3rem;
+    width: -webkit-fill-available;
+    margin: 0rem -1rem 0rem 1.4rem;
+  }
+  margin: -7rem 0rem 0rem -2rem;
+  width: 45rem;
+  float: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image1 {
+  @media only screen and (max-width: 768px) {
+    padding-top: 3rem;
+    width: -webkit-fill-available;
+    margin: 0rem -1rem 0rem 1.4rem;
+  }
+  margin: -8rem 0rem 0rem -1.5rem;
+  width: 45rem;
+  position: absolute;
+
+}
+
+.image2 {
+  @media only screen and (max-width: 768px) {
+    padding-top: 3rem;
+    margin: 0 0 0 0;
+  }
+  margin: 3rem 0rem 0rem -30rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}
+
+.image3{
+  @media only screen and (max-width: 768px) {
+    margin: 0 0 0 -8rem;
+  }
+  width: 100%;
+  position: absolute;
+  margin: -8rem 0rem 0rem -8rem;
+}
+
+.image4{
+  width: 100%;
+  position: relative;
+  margin: 2rem 0rem 0rem 0rem;
+
+}
+
+.image5{
+  @media only screen and (max-width: 768px) {
+    margin: -10rem 0rem 0rem -1rem;
+  }
+  width: 100%;
+  position: absolute;
+  margin: -8rem 0rem 0rem 7.5rem;
+  transform: scaleX(-1);
+}
+
+.image6{
+  @media only screen and (max-width: 768px) {
+    margin: -5rem 0 0 -20rem;
+  }
+  width: 52rem;
+  position: absolute;
+  margin: -14rem 0rem 0rem -50rem;
+  transform: scaleX(-1);
+  z-index: -1;
+}
+
+.image7{
+  @media only screen and (max-width: 768px) {
+    margin: 3rem -3rem 2rem 7rem;
+  }
+  width: 40rem;
+  position: relative;
+  margin: 0rem 0rem 0rem 0rem;
+  padding: 8rem 0rem 0rem 18rem;
+}
+
+.image8{
+  @media only screen and (max-width: 768px) {
+    height: 100%;
+  }
+  transform: scale(-1,-1);
+  object-fit: cover;
+  width: 100%;
+  height: 400%;
+}
+
+.side_crop{
+  @media only screen and (max-width: 768px) {
+    height: 40rem;
+    width: auto;
+    margin: -20rem 0rem -20rem -1rem;
+  }
+  position: absolute;
+  z-index: -1;
+  height: 30rem;
+  overflow: hidden;
+  width: 90rem;
+  margin: -25rem 0rem -5rem -10rem;
+}
+
+.side_crop>img {
+  max-width: initial;
+}
+
+.page__left_section {
+  margin-top: 5%;
+}
+
+.page__services_section:before {
+  content: url("../../../public/illustrations/gray-bckg.svg");
+  position: absolute;
+  width: 100%;
+}
+
+.page__small_cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 10%;
+  width: 18rem;
+  height: 12rem;
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem 0 0 0;
+  align-items: center;
+  background: var(--color-white);
+  -webkit-box-shadow: 0px 0px 52px 0px var(--color-shadow);
+  -moz-box-shadow: 0px 0px 52px 0px var(--color-shadow);
+  box-shadow: 0px 0px 10px -3px var(--color-shadow);
+}
+
+.page__small_cards_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.par {
+  padding: 10rem 0rem 0rem 3rem;
+}
+.imagePar{
+  padding: 4rem 0rem 0rem 0rem;
+}
+.imagePar1{
+  padding: 8rem 0rem 0rem 0rem;
+}
+.imagePar2{
+  padding: 1rem 2rem 0rem 1rem;
+}

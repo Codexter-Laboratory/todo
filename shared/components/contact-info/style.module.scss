@@ -1,28 +1,41 @@
-.contact_container{
-  background: #2a2a73;
+.contact_container {
 }
 
-.container{
+.container {
+
 }
 
 .contact_list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   list-style-type: none;
+  padding-left: 0rem;
 }
 
-.title{
+.title {
+  padding-bottom: 3%;
+  text-align: left;
+  color: var(--color-white);
   font-weight: 600;
-  color: #ffffff;
 }
 
-.content{
-  color: #ffffff;
+.content {
+  display: flex;
+  flex-direction: row;
+  color: var(--color-white);
 }
 
-.icon{
-  padding-bottom: 1%;
+.icon {
 }
 
-.icon_container{
+.icon_container {
   width: 1.5rem;
-  padding-bottom: 2.5%;
+  padding-bottom: 3.5%;
+}
+
+.form_list_text {
+  margin: 0.5rem 0.5rem .5rem .5rem;
+  float: left;
+  padding-bottom: 0.5rem;
 }

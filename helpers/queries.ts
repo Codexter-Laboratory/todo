@@ -2,18 +2,11 @@ let tagsQuery = `tags {
     title_en,
     title_ar
 }`;
-
 let imagesQuery = `image {
       url,
       name,
-      file{
-      url,
-      name,
-      alternativeText,
-      previewUrl
-      }
+      alternativeText
 }`;
-
 let articlesQuery = `articles {
     title_en,
     title_ar,
@@ -25,26 +18,22 @@ let articlesQuery = `articles {
     link,
     ${tagsQuery},
     ${imagesQuery}
-
 }`;
-
 let cardsQuery = `card {
     title_en,
     title_ar,
     description_en,
     description_ar,
     sub_description_en,
+    sub_description_ar,
     ${imagesQuery}
 }`;
-
 let cardGroupsQuery = `card_groups{
     name,
     display_name_en,
     display_name_ar,
     ${cardsQuery}
 }`;
-
-
 let paragraphsQuery = `paragraphs {
     title_en,
     title_ar,
@@ -54,9 +43,6 @@ let paragraphsQuery = `paragraphs {
     sub_description_ar,
     date
 }`;
-
-
-
 let teamMembersQuery = `team_members {
     title_en,
     title_ar,
@@ -64,7 +50,6 @@ let teamMembersQuery = `team_members {
     name_ar,
     ${imagesQuery}
 }`;
-
 function getPageData(pageName: string) {
     return `query {
         pages(where: {name_en: "${pageName}"}){
@@ -72,7 +57,8 @@ function getPageData(pageName: string) {
             name_ar,
             description_en,
             description_ar,
-            ${articlesQuery}
+            ${imagesQuery},
+            ${articlesQuery},
             ${cardGroupsQuery},
             ${paragraphsQuery},
             ${teamMembersQuery}
@@ -80,8 +66,6 @@ function getPageData(pageName: string) {
     }
 `
 }
-
 export {
     getPageData
 };
-

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, FC, useState, createContext} from 'react'
 import { useRouter } from 'next/router'
 import { Locale, isLocale } from 'translations/types'
 
@@ -7,24 +7,24 @@ interface ContextProps {
     readonly setLocale: (locale: Locale) => void
 }
 
-export const LocaleContext = React.createContext<ContextProps>({
+export const LocaleContext = createContext<ContextProps>({
     locale: 'en',
     setLocale: () => null,
 });
 
-export const LocaleProvider: React.FC<{ lang: Locale  }> = ({ lang, children }) => {
-    const [locale, setLocale] = React.useState(lang);
+export const LocaleProvider: FC<{ lang: Locale  }> = ({ lang, children }) => {
+    const [locale, setLocale] = useState(lang);
     const { query } = useRouter();
 
     // store the preference
-    React.useEffect(() => {
+    useEffect(() => {
         if (locale !== localStorage.getItem('locale')) {
             localStorage.setItem('locale', locale)
         }
     }, [locale]);
 
     // sync locale value on client-side route changes
-    React.useEffect(() => {
+    useEffect(() => {
         if (typeof query.lang === 'string' && isLocale(query.lang) && locale !== query.lang) {
             setLocale(query.lang)
         }
