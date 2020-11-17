@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
@@ -35,7 +35,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
         return label[locale];
     };
 
-    let renderOtherCard = (item, i: number) => <Cards title={item.title[locale]} description={item.description[locale]}
+    let renderOtherCard = (item: any, i: number) => <Cards title={item.title[locale]} description={item.description[locale]}
                                            sub_description={item.subDescription[locale]} icon={item.image}
                                            number={renderLabel(`0${i + 1}.`)} key={i} />
 

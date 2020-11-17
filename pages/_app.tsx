@@ -41,6 +41,7 @@ PotPayApp.getInitialProps = async ({Component, ctx}) => {
     let pageProps = {};
     let pageName = '';
 
+
     if (Component.getInitialProps) {
         pageProps = await Component.getInitialProps(ctx);
         pageName = pageProps.pageData.name_en;

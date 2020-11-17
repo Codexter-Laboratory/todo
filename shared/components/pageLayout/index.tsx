@@ -3,7 +3,7 @@ import useTranslation from "hooks/useTranslations";
 
 interface Props {
     pageData: any;
-    pageName: string;
+    pageName?: string;
     children?: any;
 }
 

@@ -77,5 +77,4 @@ Home.getInitialProps = async (ctx) => {
     };
 }
 
-
 export default withLocale(Home);

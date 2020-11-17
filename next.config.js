@@ -18,20 +18,17 @@ const pathList = [
         route: "/ar",
         page: "/[lang]",
         query: {lang: "ar"}
-    },
-    {
-        route: "/en/business/home",
-        page: "/[lang]/business/home",
-        query: {lang: "en"}
-    },
-    {
-        route: "/ar/business/home",
-        page: "/[lang]/business/home",
-        query: {lang: "ar"}
-    },
+    }
 ]
 
 const nextConfig = {
+    typescript: {
+        // !! WARN !!
+        // Dangerously allow production builds to successfully complete even if
+        // your project has type errors.
+        // !! WARN !!
+        ignoreBuildErrors: true,
+    },
     exportPathMap: async (
         defaultPathMap,
         {dev, dir, outDir, distDir, buildId}
