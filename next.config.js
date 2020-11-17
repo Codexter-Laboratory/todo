@@ -18,7 +18,77 @@ const pathList = [
         route: "/ar",
         page: "/[lang]",
         query: {lang: "ar"}
-    }
+    },
+    {
+        route: "/en/business",
+        page: "/[lang]/business",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/business",
+        page: "/[lang]/business",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/business/privacy_policy",
+        page: "/[lang]/business/privacy_policy",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/business/privacy_policy",
+        page: "/[lang]/business/privacy_policy",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/consumer",
+        page: "/[lang]/consumer",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/consumer",
+        page: "/[lang]/consumer",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/consumer/privacy_policy",
+        page: "/[lang]/consumer/privacy_policy",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/consumer/privacy_policy",
+        page: "/[lang]/consumer/privacy_policy",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/consumer/careers",
+        page: "/[lang]/consumer/careers",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/consumer/careers",
+        page: "/[lang]/consumer/careers",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/out_story",
+        page: "/[lang]/out_story",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/out_story",
+        page: "/[lang]/out_story",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/press",
+        page: "/[lang]/press",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/press",
+        page: "/[lang]/press",
+        query: {lang: "ar"}
+    },
 ]
 
 const nextConfig = {
