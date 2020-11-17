@@ -1,0 +1,35 @@
+.logo_deck_container{
+  @media only screen and (max-width: 768px)
+  {
+    margin-left: 0;
+  }
+  margin-left: 3rem;
+}
+
+.container__logo_container {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.container__logo1 {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  padding-left: 1rem;
+}
+.container__logo2 {
+  width: 10rem;
+  height: 5rem;
+  object-fit: contain;
+  padding-left: 1rem;
+}
+.title {
+  padding-left: 1rem;
+}
+
+.logo_distribution{
+  display: flex;
+  flex-direction: row;
+}

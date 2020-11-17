@@ -1,0 +1,42 @@
+.service__container{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.service__top_image_container {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+  background: var(--white);
+  box-shadow: 6px 17px 20px 0px rgba(0, 0, 0, 0.15), 8px 17px 20px 0px rgba(0, 0, 0, 0);
+  margin-bottom: 5rem;
+}
+
+.service__top_image {
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0%;
+}
+
+.service__title {
+  font-size: 18px !important;
+  width: 15rem;
+  height: 5rem;
+}
+
+@media (max-width: 768px) {
+  .service__container {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.service_description{
+  font-size: 14px !important;
+  width: 75% !important;
+  line-height: 18px !important;
+}

@@ -1,0 +1,72 @@
+.form_container{
+  width: 100%;
+  height: 100%;
+}
+
+.demo{
+  line-height: 2.88;
+  text-align: left;
+  color: var(--color-white);
+}
+.form_sub_title{
+  line-height: 2.5;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.lastName{
+  bottom: 345px;
+  right: 245px;
+  padding: 10px
+}
+
+.company{
+  bottom: 270px;
+  left: 900px;
+  padding: 10px
+}
+
+.email{
+  bottom: 200px;
+  left: 900px;
+  padding: 10px
+}
+
+.button_container{
+  padding-left: 69%;
+}
+
+.button{
+  @media only screen and (max-width: 768px)
+  {
+    margin: 2rem 0rem 2rem -1rem;
+  }
+  width: 130px;
+  height: 45px;
+  border-radius: 32px;
+  background-color: #f7a502;
+  margin: 2rem 0rem 2rem 2rem;
+  border: 1rem #f7a502;
+  font-weight: bold;
+  font-size: 16px !important;
+  color: #ffffff;
+  font-family:btn-icon;
+}
+
+.input_field{
+  border-radius: 100px;
+  height: 2rem;
+  width: 100%;
+  border: none;
+  padding: 16px;
+  font-size: 12px;
+}
+
+.label {
+  margin-bottom: 0;
+  font-weight: 100;
+}
+
+.error {
+  color: var(--color-danger);
+}

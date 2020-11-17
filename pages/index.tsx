@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Head from 'next/head';
+import { getInitLocale } from 'translations/getInitLocale';
 import { useRouter } from 'next/router';
 
 const Index = () => {
     const router = useRouter();
-    React.useEffect(() => {
-        router.replace(`/`);
+    useEffect(() => {
+        router.replace(`/${getInitLocale()}`);
     });
     return (
         <Head>
@@ -13,6 +14,7 @@ const Index = () => {
             <meta name="robots" content="noindex, nofollow" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <link rel="shortcut icon" href="/favicon.png" />
+            <title>Pot Pay</title>
         </Head>
     );
 };

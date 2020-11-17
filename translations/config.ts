@@ -1,5 +1,3 @@
-const Config = {};
+export const defaultLocale = 'en' as const;
 
-export {
-    Config
-};
+export const locales = ['en', 'ar'] as const;
