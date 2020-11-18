@@ -2,6 +2,7 @@
 
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const pathList = [
     {
@@ -70,13 +71,13 @@ const pathList = [
         query: {lang: "ar"}
     },
     {
-        route: "/en/out_story",
-        page: "/[lang]/out_story",
+        route: "/en/our_story",
+        page: "/[lang]/our_story",
         query: {lang: "en"}
     },
     {
-        route: "/ar/out_story",
-        page: "/[lang]/out_story",
+        route: "/ar/our_story",
+        page: "/[lang]/our_story",
         query: {lang: "ar"}
     },
     {
@@ -126,7 +127,7 @@ const nextConfig = {
     },
     webpack: config => {
         config.plugins = config.plugins || [];
-
+        config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];
         config.plugins = [
             ...config.plugins,
 

@@ -22,14 +22,14 @@ const Press: NextPage<Props> = (props: Props) => {
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <CardDeck>
-                {props.services.cards.map(item => {
-                    return (
-                        <Service icon={item.image} title={item.title[locale]} description={item.description[locale]}
-                                 subDescription={item.subDescription[locale]}>
+                {/*{props.services.cards.map(item => {*/}
+                {/*    return (*/}
+                {/*        <Service icon={item.image} title={item.title[locale]} description={item.description[locale]}*/}
+                {/*                 subDescription={item.subDescription[locale]}>*/}
 
-                        </Service>
-                    )
-                })}
+                {/*        </Service>*/}
+                {/*    )*/}
+                {/*})}*/}
             </CardDeck>
         </div>
     );
@@ -41,7 +41,7 @@ Press.getInitialProps = async (ctx) => {
     let services;
     return {
         pageData,
-        articles: new CardDeckModel(pageData.article.filter((c: ArticlesApiInterface) => c.name === 'articles')[0])
+        // articles: new CardDeckModel(pageData.article.filter((c: ArticlesApiInterface) => c.name === 'articles')[0])
     };
 }
 
