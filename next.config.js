@@ -1,7 +1,7 @@
 // next.config.js
 
 const path = require('path');
-// const Dotenv = require('dotenv-webpack');
+const Dotenv = require('dotenv-webpack');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const pathList = [
@@ -128,15 +128,15 @@ const nextConfig = {
     webpack: config => {
         config.plugins = config.plugins || [];
         config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];
-        // config.plugins = [
-        //     ...config.plugins,
-        //
-        //     new Dotenv({ // Config in .env file
-        //         path: path.join(__dirname, '.env'),
-        //         systemvars: true,
-        //         development: false,
-        //     }),
-        // ];
+        config.plugins = [
+            ...config.plugins,
+
+            new Dotenv({ // Config in .env file
+                path: path.join(__dirname, '.env'),
+                systemvars: true,
+                development: false,
+            }),
+        ];
 
         return config;
     }
