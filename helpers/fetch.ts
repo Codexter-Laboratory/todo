@@ -4,7 +4,7 @@ import {PageNames} from "../shared/enums/page-names.enum";
 
 function Fetcher (pageName: PageNames) {
     return axios({
-        url: `${process.env.CMS_URL}/graphql`,
+        url: `https://api.potpay.io/graphql`,
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
