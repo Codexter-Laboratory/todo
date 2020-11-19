@@ -2,7 +2,7 @@
 
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+// const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const pathList = [
     {
@@ -111,23 +111,23 @@ const nextConfig = {
         });
         return paths;
     },
-    redirects: async () => {
-        return [
-            {
-                source: '/en',
-                destination: '/en/business',
-                permanent: true,
-            },
-            {
-                source: '/ar',
-                destination: '/ar/business',
-                permanent: true,
-            },
-        ]
-    },
+    // redirects: async () => {
+    //     return [
+    //         {
+    //             source: '/en',
+    //             destination: '/en/business',
+    //             permanent: true,
+    //         },
+    //         {
+    //             source: '/ar',
+    //             destination: '/ar/business',
+    //             permanent: true,
+    //         },
+    //     ]
+    // },
     webpack: config => {
         config.plugins = config.plugins || [];
-        config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];
+        // config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];
         config.plugins = [
             ...config.plugins,
 
