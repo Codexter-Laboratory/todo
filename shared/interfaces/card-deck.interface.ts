@@ -4,7 +4,7 @@ export interface CardDeckApiInterface {
     name: string;
     display_name_en: string;
     display_name_ar: string;
-    card: CardApiInterface[];
+    cards: CardApiInterface[];
 }
 
 interface CardDeckInterface {
@@ -28,7 +28,7 @@ export class CardDeckModel implements CardDeckInterface {
             en: cardDeck.display_name_en,
             ar: cardDeck.display_name_ar,
         };
-        this.cards = cardDeck.card.map((c) => new CardModel(c));
+        this.cards = cardDeck.cards.map((c) => new CardModel(c));
     }
 
     getDisplayName = (locale: 'ar' | 'en'): string => {

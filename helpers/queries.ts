@@ -19,7 +19,7 @@ let articlesQuery = `articles {
     ${tagsQuery},
     ${imagesQuery}
 }`;
-let cardsQuery = `card {
+let cardsQuery = `cards {
     title_en,
     title_ar,
     description_en,

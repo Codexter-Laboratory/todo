@@ -24,7 +24,7 @@ const Cards = (props: Props) => {
             }
             <div className={styles.card__image_container}>
                 {
-                    props.icon ?<img className={styles.card__image} src={`${process.env.CMS_URL}${props.icon.url}`}
+                    props.icon ?<img className={styles.card__image} src={`https://api.potpay.io${props.icon.url}`}
                          alt={props.icon.name}/>: null
 
                 }

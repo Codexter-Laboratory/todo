@@ -32,6 +32,8 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.PROD_NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
           NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
+          NODE_ENV: "production"
+          CMS_URL: "https://api.potpay.io"
         with:
           args: deploy --dir=out --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'

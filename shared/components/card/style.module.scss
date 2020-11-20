@@ -2,9 +2,7 @@
   width: 25%;
   flex-basis: 25%;
   margin: 1rem 2rem;
-  box-shadow: 0px 0px 10px -3px var(--color-shadow);
   padding: 0px 0px 10px 10px;
-  border-radius: 1rem;
 
   &[dir='rtl'] {
     .card__title, .card__description, .card__sub_description, .card__number {

@@ -20,7 +20,7 @@ const Service = (props: serviceProps) => {
                 props.title ? (
                     <React.Fragment>
                         <div className={style.service__top_image_container}>
-                            <img className={style.service__top_image} src={`${process.env.CMS_URL}${props.icon.url}`}
+                            <img className={style.service__top_image} src={`https://api.potpay.io${props.icon.url}`}
                                  alt={props.icon.name}/>
                         </div>
                         <h2 className={style.service__title}>{props.title}</h2>

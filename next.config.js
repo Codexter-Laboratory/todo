@@ -2,6 +2,7 @@
 
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const pathList = [
     {
@@ -20,18 +21,85 @@ const pathList = [
         query: {lang: "ar"}
     },
     {
-        route: "/en/business/home",
-        page: "/[lang]/business/home",
+        route: "/en/business",
+        page: "/[lang]/business",
         query: {lang: "en"}
     },
     {
-        route: "/ar/business/home",
-        page: "/[lang]/business/home",
+        route: "/ar/business",
+        page: "/[lang]/business",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/business/privacy_policy",
+        page: "/[lang]/business/privacy_policy",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/business/privacy_policy",
+        page: "/[lang]/business/privacy_policy",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/consumer",
+        page: "/[lang]/consumer",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/consumer",
+        page: "/[lang]/consumer",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/consumer/privacy_policy",
+        page: "/[lang]/consumer/privacy_policy",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/consumer/privacy_policy",
+        page: "/[lang]/consumer/privacy_policy",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/consumer/careers",
+        page: "/[lang]/consumer/careers",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/consumer/careers",
+        page: "/[lang]/consumer/careers",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/our_story",
+        page: "/[lang]/our_story",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/our_story",
+        page: "/[lang]/our_story",
+        query: {lang: "ar"}
+    },
+    {
+        route: "/en/press",
+        page: "/[lang]/press",
+        query: {lang: "en"}
+    },
+    {
+        route: "/ar/press",
+        page: "/[lang]/press",
         query: {lang: "ar"}
     },
 ]
 
 const nextConfig = {
+    typescript: {
+        // !! WARN !!
+        // Dangerously allow production builds to successfully complete even if
+        // your project has type errors.
+        // !! WARN !!
+        ignoreBuildErrors: true,
+    },
     exportPathMap: async (
         defaultPathMap,
         {dev, dir, outDir, distDir, buildId}
@@ -59,7 +127,7 @@ const nextConfig = {
     },
     webpack: config => {
         config.plugins = config.plugins || [];
-
+        config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];
         config.plugins = [
             ...config.plugins,
 
