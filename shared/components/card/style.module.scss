@@ -1,19 +1,23 @@
 .card__container{
-  width: 25%;
-  flex-basis: 25%;
-  margin: 1rem 2rem;
-  padding: 0px 0px 10px 10px;
+  width: 33%;
+  //flex-basis: 25%;
+  //margin: 1rem 2rem 0rem 0rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  //padding: 0px 0px 10px 10px;
 
   &[dir='rtl'] {
     .card__title, .card__description, .card__sub_description, .card__number {
       text-align: right;
     }
   }
-
+  .card__number{
+    font-weight: 100 !important;
+  }
 }
 
 .card__container_padding {
-  padding: 2rem 0 0 0;
+  padding: 2rem 0rem 0rem 0rem;
 
 }
 
@@ -36,8 +40,8 @@
 .card__title{
   margin-bottom: 5%;
   line-height: 1;
-  font-weight: 100 !important;
-  font-size: 2rem !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
 }
 
 @media (max-width: 768px) {

@@ -18,6 +18,49 @@ const Home: NextPage<Props> = () => {
 
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            <div className={'row'}>
+
+                <div className="col-md-6 col-12">
+                    <Cards />
+                </div>
+                <div className={'col-md-6 col-12'}>
+                </div>
+            </div>
+            <div className={`row`}>
+                <div className={"col-md-6 col-12"}>
+
+                    <CardDeck>
+                        <div className={"row"}>
+                            <div className={"col-md-6 col-12"}>
+                                <Cards/>
+                            </div>
+                            <div className={"col-md-6 col-12"}>
+                                <Cards/>
+                            </div>
+                        </div>
+                    </CardDeck>
+
+                </div>
+                <div className={"col-md-6 col-12"}>
+                    <Paragraph/>
+                </div>
+            </div>
+            <div className={`row`}>
+                <LogoDeck/>
+                <div className="col-md-6 col-12">
+                    <div className={"row"}>
+                        <LogoDeck/>
+                    </div>
+                </div>
+            </div>
+            <div className={`row`}>
+                <div className="col-md-6 col-12">
+                    <Contact/>
+                </div>
+                <div className="col-md-6 col-12">
+                    <Form/>
+                </div>
+            </div>
         </div>
     );
 };
@@ -28,5 +71,6 @@ Home.getInitialProps = async (ctx) => {
         pageData
     };
 }
+
 
 export default withLocale(Home);

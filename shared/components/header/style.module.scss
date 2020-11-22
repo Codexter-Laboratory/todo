@@ -23,6 +23,8 @@
 
 .button_text{
     font-size: 14px;
+    font-weight: 400;
+    font-family: Muli;
     text-align: center;
 }
 
@@ -44,25 +46,41 @@
 .Pot {
     font-size: 2.1em;
     font-weight: 700;
+    font-family: Muli,sans-serif;
     color: var(--color-secondary-button);
 }
 
 .Pay {
     font-size: 2.1em;
     font-weight: 700;
+    font-family: Muli,sans-serif;
     color: var(--color-secondary);
 }
 
 .pay_consumer{
     font-size: 2.1em;
     font-weight: 700;
+    font-family: Muli,sans-serif;
     color: var(--color-primary-background);
 }
 
 .nav_bar>a {
     color: var(--white);
     padding: 1rem 1rem;
+    float: left;
+    position: relative;
 }
+
+.navbar-light .nav_bar > .active:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: " ";
+    border-bottom: 5px solid #5BC0EB;
+}
+
+
 
 .nav_bar_consumer>a{
     color: var(--color-primary-background)

@@ -5,17 +5,17 @@
 }
 
 .cardDeck__top_container {
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding-top: 2%;
 }
 
 .cardDeck__card_holder {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-self: center;
+  margin: 0rem 0rem 0rem -2rem;
 }
 
 .cardDeck_title{
-  font-size: 40px;
-  font-weight: 600;
+  font-size: 35px;
+  font-weight: 700;
+  padding-bottom: 5rem;
 }

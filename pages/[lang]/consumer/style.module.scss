@@ -149,18 +149,21 @@
 
 .image6{
   @media only screen and (max-width: 768px) {
-    margin: -5rem 0 0 -20rem;
+    margin: -2rem 0 0 -19rem;
+    width: 40rem;
   }
   width: 52rem;
   position: absolute;
-  margin: -14rem 0rem 0rem -50rem;
+  margin: -14rem 0rem 0rem -10rem;
   transform: scaleX(-1);
   z-index: -1;
 }
 
 .image7{
   @media only screen and (max-width: 768px) {
-    margin: 3rem -3rem 2rem 7rem;
+    margin: 1rem 0rem 0rem 0rem;
+    width: 21rem;
+    padding: 12rem 0rem 0rem 0rem;
   }
   width: 40rem;
   position: relative;

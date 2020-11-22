@@ -3,7 +3,7 @@ import useTranslation from "hooks/useTranslations";
 
 interface Props {
     pageData: any;
-    pageName?: string;
+    pageName: string;
     children?: any;
 }
 
@@ -17,7 +17,7 @@ export const ServicePageLayout = (props: Props) => {
         } else if (props.pageData.image) {
             return <>
                 <div className='page__first_image_section'>
-                    <img className='page__first_image' src={`https://api.potpay.io${props.pageData.image.url}`}
+                    <img className='page__first_image' src={`${process.env.CMS_URL}${props.pageData.image.url}`}
                          alt={props.pageData.image.name}/>
                 </div>
             </>
@@ -25,8 +25,17 @@ export const ServicePageLayout = (props: Props) => {
             return <>
                 <div/>
             </>
-        } else {
+        } else if (props.pageData.name_en === 'page_business_home') {
             return <div className='page__first_noimage_section'>
+                <img className='page__first_image' src='/assets/b2b_background.png'
+                     alt='home-bgck'>
+                </img>
+
+
+            </div>
+        }
+        else {
+            return<div className='page__first_noimage_section'>
                 <img className='page__first_image' src='/illustrations/home-bgck.svg'
                      alt='home-bgck'/>
             </div>

@@ -144,8 +144,8 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
             </section>
                 <section className={style.section_container}>
                     <div className={`col-md-8 col-12 ${style.parent}`}>
-                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                         <img className={style.image6} src='/assets/b2c-back.svg'/>
+                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                     </div>
                     <div className={`col-12 col-md-4 ${style.par}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                         {

@@ -19,16 +19,20 @@ const Service = (props: serviceProps) => {
             {
                 props.title ? (
                     <React.Fragment>
+                        <div className={style.container}>
                         <div className={style.service__top_image_container}>
                             <img className={style.service__top_image} src={`https://api.potpay.io${props.icon.url}`}
                                  alt={props.icon.name}/>
                         </div>
-                        <h2 className={style.service__title}>{props.title}</h2>
-                        <div className="brand-separator"/>
+                            <h2 className={`text-center ${style.service__title}`}>{props.title}</h2>
+                        <div className={style.separator}>
+                            <div className='brand-separator'/>
+                        </div>
+                        </div>
                     </React.Fragment>
                 ) : null
             }
-            <p className={`paragraph ${style.service_description}`}>{props.description}</p>
+            <p className={`text-center ${style.service_description}`}>{props.description}</p>
             {props.subDescription? <p className={`paragraph ${style.service_description}`}>{props.subDescription}</p>: null}
 
         </div>
