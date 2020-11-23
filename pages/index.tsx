@@ -6,8 +6,10 @@ import { useRouter } from 'next/router';
 const Index = () => {
     const router = useRouter();
     useEffect(() => {
-        router.replace(`/${getInitLocale()}`);
-    });
+        (async () => {
+            await router.replace(`/${getInitLocale()}/business`);
+        })();
+    }, []);
     return (
         <Head>
             {/*To not Index the page on search engine*/}

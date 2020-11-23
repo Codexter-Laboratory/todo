@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
@@ -28,7 +28,9 @@ interface Props {
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-
+    const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+    const myRef = useRef(null)
+    const Scroll = () => scrollToRef(myRef)
     const renderLabel = (title: string) => {
         const arr = LabelsStubs.filter(l => l.title === title);
         const label = arr[0];
@@ -61,7 +63,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                             digitizing
                             your customers receipts.</p>
                         <button className={`button-secondary`}>Request Demo</button>
-                        <button className={`button-thirdly ${style.page__intro_section_button}`}>How It Works?</button>
+                        <button className={`button-thirdly ${style.page__intro_section_button}`} onClick={Scroll}>How It Works?</button>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
@@ -86,7 +88,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     }
 
                 </section>
-                <section id='how'>
+                <section id='how' ref={myRef}>
                     {
                         props.cards && props.cards.cards ?
                             <CardDeck title='howItWorks'>
@@ -185,7 +187,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                               title={"Featured in"}/>
                 </div>
             </section>
-            <section className='page__two_col_section_contact_container'>
+            <section className='page__two_col_section_contact_container' id='contact'>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
                 <section className='page__two_col_section_contact'>
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>

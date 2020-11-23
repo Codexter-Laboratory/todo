@@ -20,13 +20,13 @@ export const BusinessLinksStubs: NavLinksInterface[] = [
             ar: 'الرئيسية',
             en: 'How it Works'
         },
-        route: '/'
+        route: '/business#howItWorks'
     },
     {
         title: {
             ar: 'الرئيسية',
             en: 'Get in Touch'
         },
-        route: '/'
+        route: '/business#contact'
     },
 ]

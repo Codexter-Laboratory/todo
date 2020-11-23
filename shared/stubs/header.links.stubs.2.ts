@@ -6,27 +6,27 @@ export const ConsumerLinksStubs: NavLinksInterface[] = [
             ar: 'الرئيسية',
             en: 'Home'
         },
-        route: '/consumer'
+        route: '/consumer',
     },
     {
         title: {
-            ar: 'الرئيسية',
+            ar: 'لماذا PotPay؟',
             en: 'Why PoyPay?'
         },
         route: '/consumer#why'
     },
     {
         title: {
-            ar: 'الرئيسية',
+            ar: 'الميزات الرئيسية',
             en: 'Key Features'
         },
-        route: '/'
+        route: '/consumer#keyFeatures'
     },
     {
         title: {
-            ar: 'الرئيسية',
+            ar: 'ابق على تواصل معنا',
             en: 'Get in Touch'
         },
-        route: '/'
+        route: '/business#contact'
     },
 ]

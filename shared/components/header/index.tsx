@@ -78,7 +78,7 @@ const Header = (props: Props) => {
         <nav style={{ transition: '1s ease' }} className={`navbar navbar-expand-lg ${navbarClass}`}>
             {
                 props.pageName === 'page_consumer_home' || props.pageName === 'page_consumer_privacy' ? <>
-                    <Link href={`/${locale}`}>
+                    <Link href={`/${locale}/business`}>
                         <a className={`navbar-brand`}>
                             <span className={`${style.Pot} font-family--logo`}>Pot</span>
                             <span className={`${style.pay_consumer} font-family--logo`}>Pay</span>
@@ -119,7 +119,7 @@ const Header = (props: Props) => {
                         <FontAwesomeIcon className={style.navbar__menuIcon} icon={faBars} size="1x"/>
                     </button>
                 </> : <>
-                     <Link href={`/${locale}`}>
+                     <Link href={`/${locale}/business`}>
                         <a className={`navbar-brand`}>
                         <span className={`${style.Pot} font-family--logo`}>Pot</span>
                         <span className={`${navbarLogo} font-family--logo`}>Pay</span>
