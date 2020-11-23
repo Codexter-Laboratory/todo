@@ -31,7 +31,8 @@
 
 .page__right_section_image {
   @media only screen and (max-width: 768px) {
-    width: 100%;
+    width: 30rem;
+    margin: 3rem 0rem 0rem 0rem;
   }
   width: 50rem;
   float: right;
@@ -82,9 +83,9 @@
 
 .image5 {
   @media only screen and (max-width: 768px) {
-    margin: -10rem 0rem 0rem 4rem;
-    width: 15rem;
-    height: 20rem;
+    margin: -103rem 0rem 0rem 1rem;
+    width: 22rem;
+    height: 30rem;
   }
   width: 33.5rem;
   height: 50rem;
@@ -110,16 +111,19 @@
 .image7{
   @media only screen and (max-width: 768px) {
     margin: 1rem 0rem 0rem 0rem;
-    width: 21rem;
-    padding: 12rem 0rem 0rem 0rem;
+    width: 17rem;
+    padding: 11rem 0rem 0rem 0rem;
   }
   width: 38rem;
   position: relative;
   margin: 0rem 0rem 0rem 0rem;
-  padding: 8rem 0rem 0rem 18rem;
+  padding: 7rem 0rem 0rem 18rem;
 }
 
 .par {
+  @media (max-width: 768px) {
+    padding-left: 2rem;
+  }
   padding: 10rem 0rem 0rem 3rem;
 }
 
@@ -135,4 +139,27 @@
   padding: 5px 30px !important;
   border: none !important;
   border-radius: 30px !important;
+}
+
+.privacy_mobile{
+  @media (max-width: 768px) {
+    padding-top: 0rem;
+    margin-top: -10rem;
+  }
+}
+
+.privacy_image_container{
+  @media (max-width: 768px) {
+    margin: 13rem 0rem 0rem 0rem;
+    width: 18rem;
+    height: 18rem;
+  }
+  z-index: -1;
+  background-color: white;
+  border-radius: 100%;
+  width: 21rem;
+  height: 21rem;
+  margin: 8rem 0rem 0rem 18rem;
+  position: absolute;
+
 }

@@ -29,11 +29,13 @@
 }
 
 .page__intro_section {
+  @media (min-width: 768px){
+    margin-left: -5.2rem;
+  }
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 5rem;
-  margin-left: -5.2rem;
 }
 
 .page__one_col_section {
@@ -44,6 +46,10 @@
 }
 
 .page__two_col_section {
+  @media (max-width: 768px) {
+    margin-top: 0rem;
+    padding-top: 0rem;
+  }
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

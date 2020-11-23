@@ -113,10 +113,12 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 <section className='page__one_col_section'>
                     <button className={`button-primary ${style.demo_button}`}>Book a Demo</button>
                 </section>
-                <section className='page__two_col_section'>
+                <section className={`page__two_col_section ${style.privacy_mobile}`}>
                     <div className={`col-md-8 col-12 ${style.parent}`}>
                         <img className={style.image6} src='/assets/b2c-back.svg'/>
+                        <div className={style.privacy_image_container}/>
                         <img className={style.image7} src='/assets/privacy_policy_business.svg'/>
+
                     </div>
                     <div className={`col-12 col-md-4 ${style.par}`}>
                         {

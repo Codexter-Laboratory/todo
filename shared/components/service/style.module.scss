@@ -32,8 +32,12 @@
 
 @media (max-width: 768px) {
   .service__container {
-    width: 100%;
+    width: 48%;
     flex-basis: 100%;
+  }
+  .service__top_image_container{
+    width: 12rem;
+    height: 12rem;
   }
 }
 
