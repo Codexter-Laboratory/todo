@@ -86,7 +86,9 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 }
                             </CardDeck> : null
                     }
-                    <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
+                    <div className={style.overflow}>
+                        <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
+                    </div>
                 </section>
                 <section className={style.page__card_section} id='how'>
                     {
@@ -197,6 +199,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 <section className='page__two_col_section_contact'>
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <Contact/>
+                        <text className={style.potpay_opacity}>PotPay</text>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
                         <Form/>

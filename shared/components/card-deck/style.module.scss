@@ -1,6 +1,8 @@
 .cardDeck__container {
+  @media (min-width: 768px){
+    display: flex;
+  }
   align-items: center;
-  display: flex;
   flex-direction: column;
   margin: 5rem auto;
 }
@@ -12,15 +14,31 @@
 .cardDeck__card_holder {
   @media (min-width: 768px) {
     display: flex;
-
   }
   align-self: center;
-  margin: 0rem 0rem 0rem -1rem;
+  margin: 0rem 0rem 0rem -1.5rem;
+}
+
+.cardDeck__card_holder_how {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  align-self: center;
+  margin: 0rem 0rem 0rem -3.7rem;
 }
 
 .cardDeck_title{
   @media (max-width: 768px) {
-    margin-right: 1rem;
+    //margin-right: 1rem;
+  }
+  font-size: 35px;
+  font-weight: 700;
+  padding-bottom: 5rem;
+}
+
+.cardDeck_title_how{
+  @media (max-width: 768px) {
+    margin-right: 2rem;
   }
   font-size: 35px;
   font-weight: 700;

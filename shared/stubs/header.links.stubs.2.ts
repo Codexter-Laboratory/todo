@@ -22,11 +22,11 @@ export const ConsumerLinksStubs: NavLinksInterface[] = [
         },
         route: '/'
     },
-    {
-        title: {
-            ar: 'الرئيسية',
-            en: 'Get in Touch'
-        },
-        route: '/'
-    },
+    // {
+    //     title: {
+    //         ar: 'الرئيسية',
+    //         en: 'Get in Touch'
+    //     },
+    //     route: '/'
+    // },
 ]
