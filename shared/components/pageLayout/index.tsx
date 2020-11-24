@@ -17,7 +17,7 @@ export const ServicePageLayout = (props: Props) => {
         } else if (props.pageData.image) {
             return <>
                 <div className='page__first_image_section'>
-                    <img className='page__first_image' src={`${process.env.CMS_URL}${props.pageData.image.url}`}
+                    <img className='page__first_image' src={`https://api.potpay.io${props.pageData.image.url}`}
                          alt={props.pageData.image.name}/>
                 </div>
             </>

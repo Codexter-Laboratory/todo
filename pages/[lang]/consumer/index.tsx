@@ -41,7 +41,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         Join the 1,000,000+
                     </h2>
                     <h1 className={style.page__intro_section_h1}>Who digitized<br/> their paper receipts</h1>
-                    <p className={style.page__intro_section_paragraph_title}><br/><br/><br/><br/>Get started by downloading the app!</p>
+                    <p className={style.page__intro_section_paragraph_title}>Get started by downloading the app!</p>
                     <p className={style.page__intro_section_paragraph}> Available for iOS & Android</p>
 
                     <button className={style.page__intro_section_button}>
