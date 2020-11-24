@@ -8,6 +8,7 @@ import {BusinessLinksStubs} from "shared/stubs/header.links.stubs";
 import {NavLinksInterface} from "shared/interfaces/NavLinkInterface";
 import Link from "next/link";
 import {ConsumerLinksStubs} from "shared/stubs/header.links.stubs.2";
+import {useRouter} from "next/router";
 
 interface Props {
     pageName: string;
@@ -15,6 +16,7 @@ interface Props {
 
 const Header = (props: Props) => {
     const {locale} = useTranslation();
+    const router = useRouter();
     const [navbarClass, setNavbarClass] = useState(style.nav_bar_container) ,
         [navbarContent, setNavbarContent] = useState(style.nav_bar) ,
         [navbarLogo, setNavbarLogo] = useState(style.Pay)
@@ -44,6 +46,9 @@ const Header = (props: Props) => {
         menuOpened: false,
         collapseClass: 'collapse',
     });
+    const [btnState, setBtnState] = useState({
+        show: true
+    })
 
     const handleMenuClick = () => {
         let {menuOpened} = state;
@@ -102,17 +107,30 @@ const Header = (props: Props) => {
                         </a>
                     </Link>
                     <div className={`${state.collapseClass} navbar-collapse navbar-nav`} id='navlinks'>
+                        {
+                            BusinessLinksStubs.map((i)=>{
+                                return i.route
+                            })
+                        }
                         <ul className={`navbar-nav mr-auto ${style.nav_links_list}`}>
                             {
                                 BusinessLinksStubs.map(renderListItem)
                             }
                         </ul>
                         <div className={style.nav_demo_btn_container}>
-                            <button className={`button-request-demo`} type="submit">
-                                <text className={style.button_text}>
-                                    Request Demo
-                                </text>
-                            </button>
+                            {
+                                <>: props.pageName === 'page_consumer_home' ?
+                                    {btnState.show=false}
+                                </>
+                            }
+                            <div>
+                                <button className={`button-request-demo`} type="submit" onClick={() => router.push('/en/business#form').then(() => window.scrollTo(0, 0))}>
+                                    <text className={style.button_text}>
+                                        Request Demo
+                                    </text>
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                     <button onClick={handleMenuClick} className="navbar-toggler">

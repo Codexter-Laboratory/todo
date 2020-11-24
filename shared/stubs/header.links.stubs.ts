@@ -10,21 +10,21 @@ export const BusinessLinksStubs: NavLinksInterface[] = [
     },
     {
         title: {
-            ar: 'الرئيسية',
+            ar: 'لماذا PotPay؟',
             en: 'Why PotPay?'
         },
         route: '/business#why'
     },
     {
         title: {
-            ar: 'الرئيسية',
+            ar: 'كيف تعمل',
             en: 'How it Works'
         },
-        route: '/business#howItWorks'
+        route: '/business#how'
     },
     {
         title: {
-            ar: 'الرئيسية',
+            ar: 'ابقى على تواصل',
             en: 'Get in Touch'
         },
         route: '/business#contact'

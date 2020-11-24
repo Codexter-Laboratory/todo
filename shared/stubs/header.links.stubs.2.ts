@@ -27,6 +27,6 @@ export const ConsumerLinksStubs: NavLinksInterface[] = [
             ar: 'ابق على تواصل معنا',
             en: 'Get in Touch'
         },
-        route: '/business#contact'
+        route: '/consumer#contact'
     },
 ]

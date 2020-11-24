@@ -29,8 +29,10 @@ interface Props {
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
-    const myRef = useRef(null)
-    const Scroll = () => scrollToRef(myRef)
+    const howRef = useRef(null)
+    const demoRef = useRef(null)
+    const howItWorksScroll = () => scrollToRef(howRef)
+    const demoScroll = () => scrollToRef(demoRef)
     const renderLabel = (title: string) => {
         const arr = LabelsStubs.filter(l => l.title === title);
         const label = arr[0];
@@ -62,8 +64,8 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by
                             digitizing
                             your customers receipts.</p>
-                        <button className={`button-secondary`}>Request Demo</button>
-                        <button className={`button-thirdly ${style.page__intro_section_button}`} onClick={Scroll}>How It Works?</button>
+                        <button className={`button-secondary`} onClick={demoScroll}>Request Demo</button>
+                        <button className={`button-thirdly ${style.page__intro_section_button}`} onClick={howItWorksScroll}>How It Works?</button>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
@@ -88,7 +90,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     }
 
                 </section>
-                <section id='how' ref={myRef}>
+                <section id='how' ref={howRef}>
                     {
                         props.cards && props.cards.cards ?
                             <CardDeck title='howItWorks'>
@@ -193,7 +195,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <Contact/>
                     </div>
-                    <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
+                    <div className={`col-12 col-md-6 ${style.page__right_section_margin}`} id="form" ref={demoRef}>
                         <Form/>
                     </div>
                 </section>
