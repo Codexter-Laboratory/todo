@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, {useEffect} from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
@@ -35,7 +36,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
         return label[locale];
     };
 
-    let renderOtherCard = (item: any, i: number) => <Cards title={item.title[locale]} description={item.description[locale]}
+    let renderOtherCard = (item, i: number) => <Cards title={item.title[locale]} description={item.description[locale]}
                                            sub_description={item.subDescription[locale]} icon={item.image}
                                            number={renderLabel(`0${i + 1}.`)} key={i} />
 
@@ -54,14 +55,13 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 <section className='page__intro_section'>
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <h2 className={style.page__intro_section_h2}>
-                            Say Hello to
+                            Say hello to
                         </h2>
                         <h1 className={style.page__intro_section_h1}>Digital Receipts</h1>
-                        <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by
-                            digitizing
+                        <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by digitizing  <br/>
                             your customers receipts.</p>
-                        <button className={`button-secondary`}>Request Demo</button>
-                        <button className={`button-thirdly ${style.page__intro_section_button}`}>How It Works?</button>
+                        <button className={`button-secondary ${style.page__intro_section_button}`}>Request Demo</button>
+                        <button className={`button-thirdly ${style.page__intro_section_button}`}>How it Works</button>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
@@ -69,9 +69,12 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     </div>
                 </section>
                 <section className={`page__first_section ${style.page__services_section}`} id='why'>
+
                     {
                         props.services && props.services.cards ?
+
                             <CardDeck title='whyPotPay'>
+
                                 {
                                     props.services.cards.map(item => {
                                         return (
@@ -81,37 +84,43 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                         )
                                     })
                                 }
-                                <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
                             </CardDeck> : null
                     }
-
+                    <div className={style.overflow}>
+                        <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
+                    </div>
                 </section>
-                <section id='how'>
+                <section className={style.page__card_section} id='how'>
                     {
                         props.cards && props.cards.cards ?
-                            <CardDeck title='howItWorks'>
-                                {props.cards.cards.map((item, i) => {
-                                    return (
-                                        i !== 1 ?
-                                            <Cards title={item.title[locale]} description={item.description[locale]}
-                                                   sub_description={item.subDescription[locale]} icon={item.image}
-                                                   number={renderLabel(`0${i + 1}.`)} key={i}/> :
-                                            <Cards padding title={item.title[locale]}
-                                                   description={item.description[locale]}
-                                                   sub_description={item.subDescription[locale]} icon={item.image}
-                                                   number={renderLabel(`0${i + 1}.`)} key={i}/>
-                                    )
-                                })}
-                            </CardDeck> : null
+                            <div className={style.cardHolder}>
+                                <CardDeck  title='howItWorks'>
+                                    {props.cards.cards.map((item, i) => {
+                                        return (
+                                            i !== 1 ?
+                                                <Cards title={item.title[locale]} description={item.description[locale]}
+                                                       sub_description={item.subDescription[locale]} icon={item.image}
+                                                       number={renderLabel(`0${i + 1}.`)} key={i}/> :
+                                                <Cards padding title={item.title[locale]}
+                                                       description={item.description[locale]}
+                                                       sub_description={item.subDescription[locale]} icon={item.image}
+                                                       number={renderLabel(`0${i + 1}.`)} key={i}/>
+
+                                        )
+                                    })}
+                                </CardDeck>
+                            </div>: null
                     }
                 </section>
                 <section className='page__one_col_section'>
-                    <button className='button-primary'>Book a Demo</button>
+                    <button className={`button-primary ${style.demo_button}`}>Book a Demo</button>
                 </section>
-                <section className='page__two_col_section'>
+                <section className={`page__two_col_section ${style.privacy_mobile}`}>
                     <div className={`col-md-8 col-12 ${style.parent}`}>
-                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                         <img className={style.image6} src='/assets/b2c-back.svg'/>
+                        <div className={style.privacy_image_container}/>
+                        <img className={style.image7} src='/assets/privacy_policy_business.svg'/>
+
                     </div>
                     <div className={`col-12 col-md-4 ${style.par}`}>
                         {
@@ -190,6 +199,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 <section className='page__two_col_section_contact'>
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <Contact/>
+                        <text className={style.potpay_opacity}>PotPay</text>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
                         <Form/>

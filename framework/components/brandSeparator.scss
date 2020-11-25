@@ -1,8 +1,9 @@
 .brand-separator {
-  width: 40px;
-  border: solid 1.5px var(--color-primary-secondary-button);
+  width: 1.5rem;
+  border: solid 1px var(--color-primary-background);
   border-radius: 25px;
-  margin: 2rem;
+  align-self: center;
+  margin: 1rem 0rem 1rem 5.2rem;
 }
 
 @media only screen and (max-width: 600px) {

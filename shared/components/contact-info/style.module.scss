@@ -6,11 +6,15 @@
 }
 
 .contact_list {
+  @media (max-width: 768px) {
+    padding-left: 0rem;
+    margin-bottom: 8rem;
+  }
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   list-style-type: none;
-  padding-left: 0rem;
+  padding-left: 2rem;
 }
 
 .title {

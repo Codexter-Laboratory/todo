@@ -26,6 +26,7 @@
 .item{
   color: var(--color-white);
   text-align: center;
+  font-weight: 400 ;
 }
 .listLinks {
   display: flex;
@@ -51,7 +52,7 @@
 
 @media screen and (max-width: 480px) and (min-width: 0) {
   .footer_container {
-    padding-bottom: 0;
+    padding-bottom: 2rem;
     //align-content: center;
   }
 }
