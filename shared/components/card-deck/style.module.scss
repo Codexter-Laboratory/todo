@@ -1,21 +1,46 @@
 .cardDeck__container {
-  display: flex;
+  @media (min-width: 768px){
+    display: flex;
+  }
+  align-items: center;
   flex-direction: column;
   margin: 5rem auto;
 }
 
 .cardDeck__top_container {
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding-top: 2%;
 }
 
 .cardDeck__card_holder {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  align-self: center;
+  margin: 0rem 0rem 0rem -1.5rem;
+}
+
+.cardDeck__card_holder_how {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  align-self: center;
+  margin: 0rem 0rem 0rem -3.7rem;
 }
 
 .cardDeck_title{
-  font-size: 40px;
-  font-weight: 600;
+  @media (max-width: 768px) {
+    //margin-right: 1rem;
+  }
+  font-size: 35px;
+  font-weight: 700;
+  padding-bottom: 5rem;
+}
+
+.cardDeck_title_how{
+  @media (max-width: 768px) {
+    margin-right: 2rem;
+  }
+  font-size: 35px;
+  font-weight: 700;
+  padding-bottom: 5rem;
 }
