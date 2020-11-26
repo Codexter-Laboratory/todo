@@ -78,7 +78,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 }
             </section>
             </div>
-            <section className={style.section_positioning_key}>
+            <section className={style.section_positioning_key} id='keyFeatures'>
                 <h1 className={style.section_title}>Key Features</h1>
             <section className={style.section_container}>
             <div className={`col-md-6 col-12 ${style.imagePar2}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>

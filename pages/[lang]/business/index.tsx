@@ -1,5 +1,4 @@
-
-import React, {useEffect} from "react";
+import React, {useRef} from "react";
 import {NextPage} from "next";
 import withLocale from "hocs/withLocale";
 import {Fetcher} from "helpers/fetch";
@@ -29,7 +28,13 @@ interface Props {
 
 const BusinessHome: NextPage<Props> = (props: Props) => {
     const {locale} = useTranslation();
-
+    const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+    const howRef = useRef(null)
+    const demoRef = useRef(null)
+    const contactRef = useRef(null)
+    const contactScroll = () => scrollToRef(contactRef)
+    const howItWorksScroll = () => scrollToRef(howRef)
+    const demoScroll = () => scrollToRef(demoRef)
     const renderLabel = (title: string) => {
         const arr = LabelsStubs.filter(l => l.title === title);
         const label = arr[0];
@@ -60,8 +65,8 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         <h1 className={style.page__intro_section_h1}>Digital Receipts</h1>
                         <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by digitizing  <br/>
                             your customers receipts.</p>
-                        <button className={`button-secondary ${style.page__intro_section_button}`}>Request Demo</button>
-                        <button className={`button-thirdly ${style.page__intro_section_button}`}>How it Works</button>
+                        <button className={`button-secondary ${style.page__intro_section_button}`} onClick={demoScroll}>Request Demo</button>
+                        <button className={`button-thirdly ${style.page__intro_section_button}`} onClick={howItWorksScroll}>How It Works?</button>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
@@ -90,7 +95,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                         <img className={style.image5} src='/assets/whyPotPay-back.svg'/>
                     </div>
                 </section>
-                <section className={style.page__card_section} id='how'>
+                <section className={style.page__card_section} id='how' ref={howRef}>
                     {
                         props.cards && props.cards.cards ?
                             <div className={style.cardHolder}>
@@ -112,7 +117,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                             </div>: null
                     }
                 </section>
-                <section className='page__one_col_section'>
+                <section className='page__one_col_section' onClick={demoScroll}>
                     <button className={`button-primary ${style.demo_button}`}>Book a Demo</button>
                 </section>
                 <section className={`page__two_col_section ${style.privacy_mobile}`}>
@@ -176,7 +181,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 })
                                 : null
                         }
-                        <button className='button-primary'>Get In Touch</button>
+                        <button className='button-primary' onClick={contactScroll}>Get In Touch</button>
                     </div>
                 </section>
                 <section>
@@ -194,14 +199,14 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                               title={"Featured in"}/>
                 </div>
             </section>
-            <section className='page__two_col_section_contact_container'>
+            <section className='page__two_col_section_contact_container' id='contact' ref={contactRef}>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
                 <section className='page__two_col_section_contact'>
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>
                         <Contact/>
                         <text className={style.potpay_opacity}>PotPay</text>
                     </div>
-                    <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
+                    <div className={`col-12 col-md-6 ${style.page__right_section_margin}`} id="form" ref={demoRef}>
                         <Form/>
                     </div>
                 </section>
