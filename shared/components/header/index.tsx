@@ -46,9 +46,6 @@ const Header = (props: Props) => {
         menuOpened: false,
         collapseClass: 'collapse',
     });
-    const [btnState, setBtnState] = useState({
-        show: true
-    })
 
     const handleMenuClick = () => {
         let {menuOpened} = state;
@@ -117,14 +114,15 @@ const Header = (props: Props) => {
                                 BusinessLinksStubs.map(renderListItem)
                             }
                         </ul>
+
                         <div className={style.nav_demo_btn_container}>
-                            {
-                                <>: props.pageName === 'page_consumer_home' ?
-                                    {btnState.show=false}
-                                </>
-                            }
+                            {/*{*/}
+                            {/*    <>: props.pageName === 'page_consumer_home' ?*/}
+                            {/*        {btnState.show=false}*/}
+                            {/*    </>*/}
+                            {/*}*/}
                             <div>
-                                <button className={`button-request-demo`} type="submit" onClick={() => router.push('/en/business#form').then(() => window.scrollTo(0, 0))}>
+                                <button className={`button-request-demo`} type="submit">
                                     <text className={style.button_text}>
                                         Request Demo
                                     </text>
@@ -150,11 +148,20 @@ const Header = (props: Props) => {
                             }
                             </ul>
                         <div className={style.nav_demo_btn_container}>
-                            <button className={`button-request-demo`} type="submit">
-                                <text className={style.button_text}>
-                                    Request Demo
-                                </text>
-                            </button>
+                            {/*/!*<Link>*!/*/}
+                            {/*    <button className={`button-request-demo`} type="submit" onClick={() => router.push('/en/business#form')}>*/}
+                            {/*        <text className={style.button_text}>*/}
+                            {/*            Request Demo*/}
+                            {/*        </text>*/}
+                            {/*    </button>*/}
+                            {/*/!*</Link>*!/*/}
+                            <Link href={`/${locale}/business#form`}>
+                                <a className={`navbar-brand`}>
+                                    <text className={style.button_text}>
+                                        Request Demo
+                                    </text>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                      <button onClick={handleMenuClick} className="navbar-toggler">

@@ -31,6 +31,8 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
     const howRef = useRef(null)
     const demoRef = useRef(null)
+    const contactRef = useRef(null)
+    const contactScroll = () => scrollToRef(contactRef)
     const howItWorksScroll = () => scrollToRef(howRef)
     const demoScroll = () => scrollToRef(demoRef)
     const renderLabel = (title: string) => {
@@ -109,7 +111,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                             </CardDeck> : null
                     }
                 </section>
-                <section className='page__one_col_section'>
+                <section className='page__one_col_section' onClick={demoScroll}>
                     <button className='button-primary'>Book a Demo</button>
                 </section>
                 <section className='page__two_col_section'>
@@ -171,7 +173,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 })
                                 : null
                         }
-                        <button className='button-primary'>Get In Touch</button>
+                        <button className='button-primary' onClick={contactScroll}>Get In Touch</button>
                     </div>
                 </section>
                 <section>
@@ -189,7 +191,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                               title={"Featured in"}/>
                 </div>
             </section>
-            <section className='page__two_col_section_contact_container' id='contact'>
+            <section className='page__two_col_section_contact_container' id='contact' ref={contactRef}>
                 <h1 className={`page__intro_section_h1 ${style.page_contact_let}`}>Let's Talk</h1>
                 <section className='page__two_col_section_contact'>
                     <div className={`col-12 col-md-6 ${style.page__left_section}`}>
