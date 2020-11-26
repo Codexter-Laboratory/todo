@@ -23,6 +23,8 @@
 
 .button_text{
     font-size: 14px;
+    font-weight: 400;
+    font-family: Muli;
     text-align: center;
     color: var(--color-white);
 }
@@ -63,7 +65,20 @@
 .nav_bar>a {
     color: var(--white);
     padding: 1rem 1rem;
+    float: left;
+    position: relative;
 }
+
+.navbar-light .nav_bar > .active:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: " ";
+    border-bottom: 5px solid #5BC0EB;
+}
+
+
 
 .nav_bar_consumer>a{
     color: var(--color-primary-background)

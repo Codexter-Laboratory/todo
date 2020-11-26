@@ -51,7 +51,7 @@ const Footer = (props: Props) => {
                     </ul>
                     <div>
                         <div className={style.PP}>
-                            © 2020 PotPay
+                            All rights reserved © 2020 PotPay
                         </div>
                     </div>
                 </> : <>
@@ -62,7 +62,7 @@ const Footer = (props: Props) => {
                     </ul>
                     <div>
                         <div className={style.PP}>
-                            © 2020 PotPay
+                            All rights reserved © 2020 PotPay
                         </div>
                     </div>
                 </>

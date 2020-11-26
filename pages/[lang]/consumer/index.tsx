@@ -41,7 +41,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         Join the 1,000,000+
                     </h2>
                     <h1 className={style.page__intro_section_h1}>Who digitized<br/> their paper receipts</h1>
-                    <p className={style.page__intro_section_paragraph}><br/><br/><br/><br/>Get started by downloading the app!</p>
+                    <p className={style.page__intro_section_paragraph_title}>Get started by downloading the app!</p>
                     <p className={style.page__intro_section_paragraph}> Available for iOS & Android</p>
 
                     <button className={style.page__intro_section_button}>
@@ -78,7 +78,7 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 }
             </section>
             </div>
-            <section id='keyFeatures'>
+            <section className={style.section_positioning_key} id='keyFeatures'>
                 <h1 className={style.section_title}>Key Features</h1>
             <section className={style.section_container}>
             <div className={`col-md-6 col-12 ${style.imagePar2}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
@@ -139,13 +139,13 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                 </div>
             </section>
             </section>
-            <section>
-                <h1 className={style.section_title}>PotPay Retailers</h1>
-            </section>
+            {/*<section className={style.section_positioning}>*/}
+            {/*    <h1 className={style.section_title}>PotPay Retailers</h1>*/}
+            {/*</section>*/}
                 <section className={style.section_container}>
                     <div className={`col-md-8 col-12 ${style.parent}`}>
-                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                         <img className={style.image6} src='/assets/b2c-back.svg'/>
+                        <img className={style.image7} src='/assets/privacy-b2c.svg'/>
                     </div>
                     <div className={`col-12 col-md-4 ${style.par}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                         {
@@ -178,7 +178,9 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
             </section>
             <section className={style.side_crop}>
                  <img className={style.image8} src='/assets/b2c-back.svg'/>
+
             </section>
+            <text className={style.potpay_opacity}>PotPay</text>
         </ServicePageLayout>
     );
 }
