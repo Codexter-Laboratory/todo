@@ -21,12 +21,5 @@ export const ConsumerLinksStubs: NavLinksInterface[] = [
             en: 'Key Features'
         },
         route: '/consumer#keyFeatures'
-    },
-    {
-        title: {
-            ar: 'ابق على تواصل معنا',
-            en: 'Get in Touch'
-        },
-        route: '/consumer#contact'
-    },
+    }
 ]
