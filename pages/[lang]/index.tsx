@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NextPage} from "next";
 import useTranslation from 'hooks/useTranslations';
 import withLocale from "hocs/withLocale";
@@ -11,9 +11,12 @@ interface Props {
 const Home: NextPage<Props> = () => {
     const {locale} = useTranslation();
 
+    useEffect(() => {
+
+    }, [])
+
     return (
         <div className="page-wrapper" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-
         </div>
     );
 };

@@ -167,8 +167,8 @@ const ConsumerHome: NextPage<Props> = (props: Props) => {
                         props.measurements ? props.measurements.cards.map(card => {
                                 return (
                                     <div className={style.page__small_cards}>
-                                        <h1>{card.title[locale]}</h1>
-                                        <p>{card.description[locale]}</p>
+                                        <h1 className={style.page__small_card_title}>{card.title[locale]}</h1>
+                                        <p className={style.page__small_card_description}>{card.description[locale]}</p>
                                     </div>
                                 )
                             })

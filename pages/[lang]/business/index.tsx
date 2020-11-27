@@ -16,6 +16,7 @@ import style from './style.module.scss';
 import Contact from "shared/components/contact-info";
 import Form from "shared/components/form";
 import LogoDeck from "shared/components/logo-deck";
+import Logo from "../../../shared/components/logo-deck/logo";
 
 interface Props {
     pageData: any;
@@ -42,11 +43,11 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
     };
 
     let renderOtherCard = (item, i: number) => <Cards title={item.title[locale]} description={item.description[locale]}
-                                           sub_description={item.subDescription[locale]} icon={item.image}
-                                           number={renderLabel(`0${i + 1}.`)} key={i} />
+                                                      sub_description={item.subDescription[locale]} icon={item.image}
+                                                      number={renderLabel(`0${i + 1}.`)} key={i}/>
 
-    let renderOtherCardDecks = (item: CardDeckModel) => {
-        return <CardDeck>
+    let renderOtherCardDecks = (item: CardDeckModel, i: number) => {
+        return <CardDeck key={i}>
             {
                 item.cards.map(renderOtherCard)
             }
@@ -63,10 +64,15 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                             Say hello to
                         </h2>
                         <h1 className={style.page__intro_section_h1}>Digital Receipts</h1>
-                        <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by digitizing  <br/>
+                        <p className={style.page__intro_section_paragraph}>Unlock the power of your in-store data by
+                            digitizing <br/>
                             your customers receipts.</p>
-                        <button className={`button-secondary ${style.page__intro_section_button}`} onClick={demoScroll}>Request Demo</button>
-                        <button className={`button-thirdly ${style.page__intro_section_button}`} onClick={howItWorksScroll}>How It Works?</button>
+                        <button className={`button-secondary ${style.page__intro_section_button}`}
+                                onClick={demoScroll}>Request Demo
+                        </button>
+                        <button className={`button-thirdly ${style.page__intro_section_button}`}
+                                onClick={howItWorksScroll}>How It Works?
+                        </button>
                     </div>
                     <div className={`col-12 col-md-6 ${style.page__right_section}`}>
                         <img className={`${style.page__right_section_image}`} src='/assets/main-image.png'
@@ -78,7 +84,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     {
                         props.services && props.services.cards ?
 
-                            <CardDeck title='whyPotPay'>
+                            <CardDeck title='whyPotPay' key='whyPotPay'>
 
                                 {
                                     props.services.cards.map(item => {
@@ -99,7 +105,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                     {
                         props.cards && props.cards.cards ?
                             <div className={style.cardHolder}>
-                                <CardDeck  title='howItWorks'>
+                                <CardDeck title='howItWorks'>
                                     {props.cards.cards.map((item, i) => {
                                         return (
                                             i !== 1 ?
@@ -114,7 +120,7 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                         )
                                     })}
                                 </CardDeck>
-                            </div>: null
+                            </div> : null
                     }
                 </section>
                 <section className='page__one_col_section' onClick={demoScroll}>
@@ -162,8 +168,8 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                                 props.measurements.cards.map(card => {
                                     return (
                                         <div className={`${style.page__small_cards}`}>
-                                            <h1>{card.title[locale]}</h1>
-                                            <p>{card.description[locale]}</p>
+                                            <h1 className={style.page__small_card_title}>{card.title[locale]}</h1>
+                                            <p className={style.page__small_card_description}>{card.description[locale]}</p>
                                         </div>
                                     )
                                 })
@@ -191,12 +197,17 @@ const BusinessHome: NextPage<Props> = (props: Props) => {
                 </section>
             </ServicePageLayout>
             <section className='page__two_col_section_grey'>
-                <div className={`col-12 col-md-6 ${style.page__left_section}`}>
-                    <LogoDeck logo_1="/assets/500-logo.jpg" logo_2="/assets/flat6labs-logo.png" logo_3={"null"} title={"Funded by"}/>
+                <div className={`col-12 col-md-6 ${style.page__partner_logos}`}>
+                    <LogoDeck title={"Funded by"}>
+                        <Logo source='/assets/500-logo.jpg' shape={1}/>
+                        <Logo source='/assets/flat6labs-logo.png' shape={2}/>
+                    </LogoDeck>
                 </div>
-                <div className={`col-12 col-md-6 ${style.page__right_section_margin}`}>
-                    <LogoDeck logo_3="/assets/arabnet-logo.png" logo_2="/assets/berytech-logo.png"
-                              title={"Featured in"}/>
+                <div className={`col-12 col-md-6 ${style.page__partner_logos}`}>
+                    <LogoDeck title={"Featured in"}>
+                        <Logo source='/assets/arabnet-logo.png' shape={2}/>
+                        <Logo source='/assets/berytech-logo.png' shape={2}/>
+                    </LogoDeck>
                 </div>
             </section>
             <section className='page__two_col_section_contact_container' id='contact' ref={contactRef}>

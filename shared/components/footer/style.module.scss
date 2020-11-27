@@ -34,6 +34,9 @@
   width: 100%;
   margin-left: -4rem;
 }
+.listLinks li::before {
+  display: none;
+}
 
 
 .footer_container{
