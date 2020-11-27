@@ -14,7 +14,7 @@
     position: fixed;
     width: 100%;
     padding: 0 5%;
-    background-color: var(--white);
+    background-color: var(--color-white);
 }
 
 .navbar_fixed_top {
@@ -26,6 +26,7 @@
     font-weight: 400;
     font-family: Muli;
     text-align: center;
+    color: var(--color-white);
 }
 
 .navbar_fixed_top .h2-style {
@@ -87,6 +88,4 @@
 .nav_demo_btn_container {
     float: right;
 }
-
-
 

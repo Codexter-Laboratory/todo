@@ -12,7 +12,7 @@ const Contact = () => {
                 </li>
                 <li className={style.content}>
                     <img className={style.icon} src='/icons/email-icon.svg' alt='email'/>
-                    <p className={style.form_list_text}>example@example.com</p>
+                    <p className={style.form_list_text}>info@potpay.io</p>
                 </li>
                 <li className={style.content}>
                     <img className={style.icon} src='/icons/pin-icon.svg' alt='pin'/>

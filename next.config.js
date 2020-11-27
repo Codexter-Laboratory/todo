@@ -111,20 +111,7 @@ const nextConfig = {
         });
         return paths;
     },
-    redirects: async () => {
-        return [
-            {
-                source: '/en',
-                destination: '/en/business',
-                permanent: true,
-            },
-            {
-                source: '/ar',
-                destination: '/ar/business',
-                permanent: true,
-            },
-        ]
-    },
+
     webpack: config => {
         config.plugins = config.plugins || [];
         config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];

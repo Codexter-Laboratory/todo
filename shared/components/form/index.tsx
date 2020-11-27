@@ -1,4 +1,5 @@
 import React, {ChangeEvent, FormEvent, useState} from 'react';
+import * as emailjs from 'emailjs-com';
 import style from './style.module.scss'
 
 export interface FormData {
@@ -90,6 +91,22 @@ export const Form = () => {
             setSubmitResult(result);
             setSubmitted(true);
         }
+        const templateParams = {
+            from_name: firstName + ' ' +lastName,
+            from_email: email,
+            message: 'Company: ' +company + ', Email: ' +email,
+            to_name: 'PotPay'
+        };
+        emailjs.send(
+            'potpay',
+            'template_5n2hdnt',
+            templateParams,
+            'user_lQowDxyydyAJ0HDUNWpKH'
+        )
+        setFirstName("");
+        setLastName("");
+        setCompany("");
+        setEmail("");
     };
     return (
         <form noValidate={true} onSubmit={handleSubmit}>
