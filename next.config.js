@@ -111,7 +111,6 @@ const nextConfig = {
         });
         return paths;
     },
-
     webpack: config => {
         config.plugins = config.plugins || [];
         config.resolve.plugins = [new TsconfigPathsPlugin({configFile: './tsconfig.json'})];

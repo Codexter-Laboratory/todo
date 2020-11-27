@@ -11,6 +11,7 @@ const PotPayApp = ({Component, pageProps, pageName}) => {
     const {locale} = useTranslation();
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+
     useEffect(() => {
         const handleStart = (url) => (url !== router.pathname);
         const handleComplete = (url) => (url !== router.pathname);

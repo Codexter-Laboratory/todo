@@ -16,7 +16,6 @@ interface Props {
 
 const Header = (props: Props) => {
     const {locale} = useTranslation();
-    const router = useRouter();
     const [navbarClass, setNavbarClass] = useState(style.nav_bar_container),
         [navbarContent, setNavbarContent] = useState(style.nav_bar),
         [navbarLogo, setNavbarLogo] = useState(style.Pay)
@@ -115,11 +114,6 @@ const Header = (props: Props) => {
                         </ul>
 
                         <div className={style.nav_demo_btn_container}>
-                            {/*{*/}
-                            {/*    <>: props.pageName === 'page_consumer_home' ?*/}
-                            {/*        {btnState.show=false}*/}
-                            {/*    </>*/}
-                            {/*}*/}
                             <div>
                                 <button className={`button-request-demo`} type="submit">
                                     <text className={style.button_text}>

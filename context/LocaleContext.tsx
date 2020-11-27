@@ -1,6 +1,6 @@
 import React, {useEffect, FC, useState, createContext} from 'react'
-import { useRouter } from 'next/router'
-import { Locale, isLocale } from 'translations/types'
+import {useRouter} from 'next/router'
+import {Locale, isLocale} from 'translations/types'
 
 interface ContextProps {
     readonly locale: Locale
@@ -12,9 +12,10 @@ export const LocaleContext = createContext<ContextProps>({
     setLocale: () => null,
 });
 
-export const LocaleProvider: FC<{ lang: Locale  }> = ({ lang, children }) => {
+export const LocaleProvider: FC<{ lang: Locale }> = ({lang, children}) => {
     const [locale, setLocale] = useState(lang);
-    const { query } = useRouter();
+    const {pathname} = useRouter();
+    const {query} = useRouter();
 
     // store the preference
     useEffect(() => {
@@ -23,6 +24,13 @@ export const LocaleProvider: FC<{ lang: Locale  }> = ({ lang, children }) => {
         }
     }, [locale]);
 
+    useEffect(() => {
+        // Check that initial route is OK
+        if (pathname === '/[lang]') {
+            window.location.href = `/${locale}/business`;
+        }
+    }, [])
+
     // sync locale value on client-side route changes
     useEffect(() => {
         if (typeof query.lang === 'string' && isLocale(query.lang) && locale !== query.lang) {
@@ -30,5 +38,5 @@ export const LocaleProvider: FC<{ lang: Locale  }> = ({ lang, children }) => {
         }
     }, [query.lang, locale]);
 
-    return <LocaleContext.Provider value={{ locale, setLocale }}>{children}</LocaleContext.Provider>
+    return <LocaleContext.Provider value={{locale, setLocale}}>{children}</LocaleContext.Provider>
 };

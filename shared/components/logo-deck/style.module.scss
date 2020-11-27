@@ -13,20 +13,29 @@
   flex-direction: row;
 }
 
-.container__logo1 {
+.container__rectangle {
+  width: 12rem;
+  height: 5rem;
+  object-fit: contain;
+  margin-right: 2rem;
+  @media only screen and (max-width: 768px) {
+    width: 8rem;
+  }
+}
+.container__squared {
   width: 5rem;
   height: 5rem;
   object-fit: contain;
-  padding-left: 1rem;
+  margin-right: 2rem;
 }
-.container__logo2 {
-  width: 10rem;
-  height: 5rem;
-  object-fit: contain;
-  padding-left: 1rem;
+.container__title {
+  font-size: 22px !important;
+  font-weight: 600 !important;
 }
-.title {
-  padding-left: 1rem;
+.container__container_separator {
+  border-bottom: 2px solid #000;
+  width: 5%;
+  margin-bottom: 5%;
 }
 
 .logo_distribution{
