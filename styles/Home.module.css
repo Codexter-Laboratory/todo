@@ -1,0 +1,107 @@
+.main{
+    padding: 0 2rem;
+    flex: 1;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100%;
+}
+
+.container {
+    width: 40%;
+    position: relative;
+}
+.headerContainer{
+    margin: 10% 0 5% 0;
+}
+
+.inputContainer {
+    display: flex;
+    background-color: hsl(235, 24%, 19%);
+    height: 60px;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.inputContainer input {
+    width: 90%;
+    border: 0;
+    font-size: 18px;
+    height: 40px;
+    outline: none;
+    font-weight: 400;
+    color: hsl(234, 39%, 85%);
+}
+
+
+.todoContainer {
+    background-color: hsl(235, 19%, 35%);
+    border-radius: 10px;
+    box-shadow:0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+
+.containerFooter {
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 3% 0 3%;
+    height: 60px;
+    background-color: hsl(235, 24%, 19%);
+    align-items: center;
+
+}
+
+.filterContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+
+.containerFooter,.filterContainer p{
+    font-size: 14px;
+    font-weight: 700;
+    color: hsl(234, 39%, 85%)
+}
+
+.containerFooter p:hover,.filterContainer p:hover{
+    color: hsl(236, 33%, 92%);
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h3 {
+    margin: 0 2.5rem 0 0;
+}
+
+.themeImg {
+    cursor: pointer;
+}
+
+/*Nexus 10 has a width of 800px that's why I used 800*/
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
+    .main{
+        background-size: 100% 30% ;
+    }
+    .headerContainer{
+        margin-top: 5%;
+    }
+    .filterContainer{
+        width: 40%;
+    }
+    .containerFooter p,.filterContainer p{
+        font-size: 10px;
+    }
+}

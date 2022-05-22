@@ -1,0 +1,29 @@
+.checkbox {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background: hsl(235, 24%, 19%);
+}
+
+.borderWrapper{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(235, 24%, 19%);
+    border-radius: 50%;
+    margin: 0 10px 0 10px
+}
+
+.borderWrapper:hover {
+    background: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+}
+
+.checkImg {
+    cursor: pointer;
+}
