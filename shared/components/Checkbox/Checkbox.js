@@ -8,7 +8,8 @@ const Checkbox = (props) => {
             <div className={styles.checkbox} onClick={props.onClick}
                  style={
                      {
-                         background: props.isSelected && props.completed ? 'linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%))' : 'hsl(235, 24%, 19%)',
+                         background: props.isSelected && props.completed ? 'linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%))' :
+                             props.theme === 'light' && 'white' ,
                          border: props.isSelected && props.completed ? "none" : '1px solid hsl(234, 11%, 52%)'
                      }
                  }>

@@ -35,7 +35,8 @@ const TodoItem = (props) => {
              onMouseLeave={() => setShowClear(false)}>
             <Checkbox onClick={onTodoClick}
                       isSelected={isSelected} completed={completed}/>
-            <p>{isSelected && completed ? <s>{props.todo.text}</s> : props.todo.text}</p>
+            <p style={{color: props.theme === 'light' ? 'hsl(235, 24%, 19%)' : 'hsl(236, 33%, 92%)'}}>{isSelected && completed ?
+                <s>{props.todo.text}</s> : props.todo.text}</p>
             {
                 showClear &&
                 <span>

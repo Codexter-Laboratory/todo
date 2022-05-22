@@ -9,7 +9,7 @@ import Checkbox from "../shared/components/Checkbox/Checkbox";
 import {ReactSortable} from "react-sortablejs";
 
 const Home = () => {
-    const {resolvedTheme, setTheme} = useTheme()
+    const {theme, resolvedTheme, setTheme} = useTheme()
     const [bgImage, setBgImage] = useState('')
     const [bgColor, setBgColor] = useState('hsl(235, 24%, 19%)')
     const [textInput, setTextInput] = useState('')
@@ -96,7 +96,7 @@ const Home = () => {
                          style={{backgroundColor: bgColor}}>
                         <Checkbox
                             onClick={onMouseClickEvent}
-                            isSelected={false} bgColor={bgColor}/>
+                            isSelected={false} bgColor={bgColor} theme={theme}/>
                         <input onChange={onInputChange} value={textInput} placeholder={placeholder}
                                onFocus={() => setPlaceholder("")}
                                onBlur={() => setPlaceholder("Add to list")}
